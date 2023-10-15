@@ -1,6 +1,6 @@
 Hello, I'm Gustavo Martins Ribeiro, (also known as lxgustxl). I am a Software Engineering student at [UnB (University of Brasília)](https://www.unb.br/) - [FGA Campus (Gama College)](https://fga.unb.br/) and I love studying topics related to the area, such as Artificial Intelligence, Database Systems and Agile Development.
 
-Currently I have experience, mainly, with object-oriented systems (Python & Java), game development using the Pygame library, Programming Paradigms, Software Requirements, Human-Computer Interaction, Data Structures, Software Architecture and Design, among many others. other topics belonging to the universe of **Software Engineering**.
+Currently I have experience, mainly, with object-oriented systems (Python & Java), game development using the Pygame library, Programming Paradigms, Software Requirements, Human-Computer Interaction, Data Structures, Software Architecture and Design, among many others topics belonging to the universe of **Software Engineering**.
 
 Finally, out of curiosity, my favorite programming language is C, which I have trained in since the beginning of my graduation process until today. Check out some projects I participated in below.
 

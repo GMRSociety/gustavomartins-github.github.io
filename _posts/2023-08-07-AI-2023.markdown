@@ -1,0 +1,74 @@
+---
+layout:     post
+title:      "O que é uma AI?"
+subtitle:   " \"Inteligência artificial: a tecnologia que vem dominando o mundo!\""
+date:       2023-08-07 12:30:00
+author:     "Gustavo M.R."
+header-img: "img/post-bg-2015.jpg"
+catalog: true
+tags:
+    - AI
+---
+
+> “Um computador mereceria ser chamado de inteligente se pudesse enganar um humano fazendo-o acreditar que era humano.” - ***Alan Turing***
+
+<p align = "justify">
+Desde sua criação, a Inteligência Artificial vem impactando profundamente o modo de vida do ser humano. Nos dias atuais, ela auxilia diversas áreas, tais como saúde, tecnologia, educação, comércio, segurança, entreterimento, etc. Diante disso, o presente artigo tem como objetivo apresentar uma introdução sobre o qué uma <strong>inteligência artificial</strong> por meio de conceitos básicos, os quais são de suma importância para área.
+</p>
+
+
+<p id = "build"></p>
+
+## O que é inteligência?
+
+<p align = "justify">
+
+De início, é importante entender sobre o que é inteligência. De maneira geral, podemos defini-la como:
+
+<ul>
+    <li> Ato de entender: compreensão;</li>
+    <li> Capacidade de aprender, entender ou lidar com situações novas;</li>
+    <li> Uso hábil da razão;</li>
+    <li> Capacidade de aplicar conhecimento para manipular o ambiente;</li>
+    <li> Etc.</li>
+</ul>
+
+Por outro lado, vale ressaltar que inteligência pode ser interpretada de maneiras diferentes, de acordo com o contexto e a àrea de estudo a qual está sendo relacionada. Sendo assim, alguns tipos de inteligência são:
+
+<br><br>
+<ul>
+    <li> <strong>Inteligência Geral</strong>: capacidade de aprender, raciocinar, resolver problemas, compreender ideias complexas e se adaptar ao ambiente.</li>
+    <li> <strong>Inteligência Emocional</strong>: capacidade de reconhecer, compreender e gerenciar as próprias emoções e as emoções dos outros, bem como utilizar as emoções de maneira construtiva.</li>
+    <li> <strong>Inteligência Social</strong>: envolve a capacidade de interagir eficazmente com outras pessoas, compreender seus sentimentos, motivos e comportamentos, e responder de maneira apropriada.</li>
+    <li> <strong>Inteligência Linguística</strong> envolve a capacidade de compreender, usar e apreciar a linguagem, incluindo a escrita, a leitura e a comunicação verbal.</li>
+    <li> <strong>Inteligência Criativa</strong>: envolve a capacidade de gerar ideias originais, soluções inovadoras e expressar-se de maneira única.</li>
+</ul>
+
+
+Portanto, o que seria uma <strong>Inteligência Artificial</strong>? Dentre diversas outras definições, segundo a <a href="https://www.ibm.com/topics/artificial-intelligence"> <i>International Business Machines Corporation (IBM)</i></a>, podemos entender uma inteligência artificial como uma ferramenta que permite computadores e máquinas imitarem os recursos de resolução de problemas e tomada de decisão da mente humana.
+
+</p>
+
+## Fidelidade à performance humana Vs Racionalidade
+
+<p align = "justify">
+
+Digitar conteúdo...
+
+</p>
+
+## Raciocínio Vs Comportamento
+
+Digitar conteúdo...
+
+## Modelo Padrão
+
+Digitar conteúdo...
+
+## Fundamentos da Inteligência Artificial
+
+Digitar conteúdo...
+
+## Conclusão
+
+Digitar conclusão...

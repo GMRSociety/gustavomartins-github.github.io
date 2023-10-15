@@ -5,9 +5,84 @@
     <description>这里是 @Hux黄玄 的个人博客，与你一起发现更大的世界 | 要做一个有 swag 的程序员</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 14 Oct 2023 20:37:30 -0300</pubDate>
-    <lastBuildDate>Sat, 14 Oct 2023 20:37:30 -0300</lastBuildDate>
+    <pubDate>Sun, 15 Oct 2023 00:06:13 -0300</pubDate>
+    <lastBuildDate>Sun, 15 Oct 2023 00:06:13 -0300</lastBuildDate>
     <generator>Jekyll v4.3.2</generator>
+    
+      <item>
+        <title>O que é uma AI?</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;“Um computador mereceria ser chamado de inteligente se pudesse enganar um humano fazendo-o acreditar que era humano.” - &lt;strong&gt;&lt;em&gt;Alan Turing&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+Desde sua criação, a Inteligência Artificial vem impactando profundamente o modo de vida do ser humano. Nos dias atuais, ela auxilia diversas áreas, tais como saúde, tecnologia, educação, comércio, segurança, entreterimento, etc. Diante disso, o presente artigo tem como objetivo apresentar uma introdução sobre o qué uma &lt;strong&gt;inteligência artificial&lt;/strong&gt; por meio de conceitos básicos, os quais são de suma importância para área.
+&lt;/p&gt;
+
+&lt;p id=&quot;build&quot;&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;o-que-é-inteligência&quot;&gt;O que é inteligência?&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+
+De início, é importante entender sobre o que é inteligência. De maneira geral, podemos defini-la como:
+
+&lt;ul&gt;
+    &lt;li&gt; Ato de entender: compreensão;&lt;/li&gt;
+    &lt;li&gt; Capacidade de aprender, entender ou lidar com situações novas;&lt;/li&gt;
+    &lt;li&gt; Uso hábil da razão;&lt;/li&gt;
+    &lt;li&gt; Capacidade de aplicar conhecimento para manipular o ambiente;&lt;/li&gt;
+    &lt;li&gt; Etc.&lt;/li&gt;
+&lt;/ul&gt;
+
+Por outro lado, vale ressaltar que inteligência pode ser interpretada de maneiras diferentes, de acordo com o contexto e a àrea de estudo a qual está sendo relacionada. Sendo assim, alguns tipos de inteligência são:
+
+&lt;br /&gt;&lt;br /&gt;
+&lt;ul&gt;
+    &lt;li&gt; &lt;strong&gt;Inteligência Geral&lt;/strong&gt;: capacidade de aprender, raciocinar, resolver problemas, compreender ideias complexas e se adaptar ao ambiente.&lt;/li&gt;
+    &lt;li&gt; &lt;strong&gt;Inteligência Emocional&lt;/strong&gt;: capacidade de reconhecer, compreender e gerenciar as próprias emoções e as emoções dos outros, bem como utilizar as emoções de maneira construtiva.&lt;/li&gt;
+    &lt;li&gt; &lt;strong&gt;Inteligência Social&lt;/strong&gt;: envolve a capacidade de interagir eficazmente com outras pessoas, compreender seus sentimentos, motivos e comportamentos, e responder de maneira apropriada.&lt;/li&gt;
+    &lt;li&gt; &lt;strong&gt;Inteligência Linguística&lt;/strong&gt; envolve a capacidade de compreender, usar e apreciar a linguagem, incluindo a escrita, a leitura e a comunicação verbal.&lt;/li&gt;
+    &lt;li&gt; &lt;strong&gt;Inteligência Criativa&lt;/strong&gt;: envolve a capacidade de gerar ideias originais, soluções inovadoras e expressar-se de maneira única.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+Portanto, o que seria uma &lt;strong&gt;Inteligência Artificial&lt;/strong&gt;? Dentre diversas outras definições, segundo a &lt;a href=&quot;https://www.ibm.com/topics/artificial-intelligence&quot;&gt; &lt;i&gt;International Business Machines Corporation (IBM)&lt;/i&gt;&lt;/a&gt;, podemos entender uma inteligência artificial como uma ferramenta que permite computadores e máquinas imitarem os recursos de resolução de problemas e tomada de decisão da mente humana.
+
+&lt;/p&gt;
+
+&lt;h2 id=&quot;fidelidade-à-performance-humana-vs-racionalidade&quot;&gt;Fidelidade à performance humana Vs Racionalidade&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+
+Digitar conteúdo...
+
+&lt;/p&gt;
+
+&lt;h2 id=&quot;raciocínio-vs-comportamento&quot;&gt;Raciocínio Vs Comportamento&lt;/h2&gt;
+
+&lt;p&gt;Digitar conteúdo…&lt;/p&gt;
+
+&lt;h2 id=&quot;modelo-padrão&quot;&gt;Modelo Padrão&lt;/h2&gt;
+
+&lt;p&gt;Digitar conteúdo…&lt;/p&gt;
+
+&lt;h2 id=&quot;fundamentos-da-inteligência-artificial&quot;&gt;Fundamentos da Inteligência Artificial&lt;/h2&gt;
+
+&lt;p&gt;Digitar conteúdo…&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusão&quot;&gt;Conclusão&lt;/h2&gt;
+
+&lt;p&gt;Digitar conclusão…&lt;/p&gt;
+</description>
+        <pubDate>Mon, 07 Aug 2023 09:30:00 -0300</pubDate>
+        <link>http://localhost:4000/2023/08/07/AI-2023/</link>
+        <guid isPermaLink="true">http://localhost:4000/2023/08/07/AI-2023/</guid>
+        
+        <category>AI</category>
+        
+        
+      </item>
     
   </channel>
 </rss>
