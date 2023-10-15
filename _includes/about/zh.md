@@ -1,9 +1,16 @@
-Olá, eu sou o Gustavo Martins Ribeiro, (tambem conhecido como lxgustxl). Sou estudante de Engenharia de Software na [UnB (Universidade de Brasília)](https://www.unb.br/) - [Campus FGA (Faculdade do Gama)](https://fga.unb.br/) e adoro estudar temas relacionados à área, tais como Inteligência Artificial, Sistemas de Banco de Dados e Desenvolvimento Ágil.
+<p align = "justify">
 
-Atualmente tenho experiência, principalmente, com sistemas orientados à objeto (Python & Java), desenvolvimento de games utilizando a biblioteca Pygame, Paradigmas de Programação, Requisitos de Software, Interação Humano-Computador, Estruturas de Dados, Arquitetura e Desenho de Software, dentre diversos outros temas pertencentes ao universo da **Engenharia de Software**.
+    Olá, eu sou o Gustavo Martins Ribeiro, (tambem conhecido como lxgustxl). Sou estudante de Engenharia de Software na <a href="https://www.unb.br/">UnB (Universidade de Brasília)</a> - <a href="https://fga.unb.br/">Campus FGA (Faculdade do Gama)</a> e adoro estudar temas relacionados à área, tais como Inteligência Artificial, Sistemas de Banco de Dados e Desenvolvimento Ágil.
 
-Por fim, a fim de curiosidade, minha linguagem de programação preferida é o C, a qual treino desde o início do meu processo de graduação até os dias de hoje. Confira abaixo alguns projetos os quais participei.
+    <br><br>
 
+    Atualmente tenho experiência, principalmente, com sistemas orientados à objeto (Python & Java), desenvolvimento de games utilizando a biblioteca Pygame, Paradigmas de Programação, Requisitos de Software, Interação Humano-Computador, Estruturas de Dados, Arquitetura e Desenho de Software, dentre diversos outros temas pertencentes ao universo da <strong>Engenharia de Software</strong>.
+
+    <br><br>
+
+    Por fim, a fim de curiosidade, minha linguagem de programação preferida é o C, a qual treino desde o início do meu processo de graduação até os dias de hoje. Confira abaixo alguns projetos os quais participei.
+
+</p>
 
 ##### Alguns Projetos
 
