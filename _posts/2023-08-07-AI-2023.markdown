@@ -13,7 +13,7 @@ tags:
 > “Um computador mereceria ser chamado de inteligente se pudesse enganar um humano fazendo-o acreditar que era humano.” - ***Alan Turing***
 
 <p align = "justify">
-Desde sua criação, a Inteligência Artificial vem impactando profundamente o modo de vida do ser humano. Nos dias atuais, ela auxilia diversas áreas, tais como saúde, tecnologia, educação, comércio, segurança, entreterimento, etc. Diante disso, o presente artigo tem como objetivo apresentar uma introdução sobre o qué uma <strong>inteligência artificial</strong> por meio de conceitos básicos, os quais são de suma importância para área.
+Desde sua criação, a Inteligência Artificial vem impactando profundamente o modo de vida do ser humano. Nos dias atuais, ela auxilia diversas áreas, tais como saúde, tecnologia, educação, comércio, segurança, entreterimento, etc. Diante disso, o presente artigo tem como objetivo apresentar uma introdução sobre o qué uma <strong>inteligência artificial</strong>, apresentando alguns conceitos de suma importância para área.
 </p>
 
 
@@ -22,21 +22,21 @@ Desde sua criação, a Inteligência Artificial vem impactando profundamente o m
 ## O que é inteligência?
 
 <p align = "justify">
-
 De início, é importante entender sobre o que é inteligência. De maneira geral, podemos defini-la como:
+</p>
 
-<ul>
+<ul align = "justify">
     <li> Ato de entender: compreensão;</li>
     <li> Capacidade de aprender, entender ou lidar com situações novas;</li>
     <li> Uso hábil da razão;</li>
     <li> Capacidade de aplicar conhecimento para manipular o ambiente;</li>
-    <li> Etc.</li>
 </ul>
 
-Por outro lado, vale ressaltar que inteligência pode ser interpretada de maneiras diferentes, de acordo com o contexto e a àrea de estudo a qual está sendo relacionada. Sendo assim, alguns tipos de inteligência são:
+<p align = "justify">
+Por outro lado, vale ressaltar que inteligência pode ser interpretada de maneiras diferentes, de acordo com o contexto e/ou a àrea de estudo a qual está sendo relacionada. Sendo assim, alguns tipos de inteligência são:
+</p>
 
-<br><br>
-<ul>
+<ul align = "justify">
     <li> <strong>Inteligência Geral</strong>: capacidade de aprender, raciocinar, resolver problemas, compreender ideias complexas e se adaptar ao ambiente.</li>
     <li> <strong>Inteligência Emocional</strong>: capacidade de reconhecer, compreender e gerenciar as próprias emoções e as emoções dos outros, bem como utilizar as emoções de maneira construtiva.</li>
     <li> <strong>Inteligência Social</strong>: envolve a capacidade de interagir eficazmente com outras pessoas, compreender seus sentimentos, motivos e comportamentos, e responder de maneira apropriada.</li>
@@ -44,22 +44,84 @@ Por outro lado, vale ressaltar que inteligência pode ser interpretada de maneir
     <li> <strong>Inteligência Criativa</strong>: envolve a capacidade de gerar ideias originais, soluções inovadoras e expressar-se de maneira única.</li>
 </ul>
 
-
+<p align = "justify">
 Portanto, o que seria uma <strong>Inteligência Artificial</strong>? Dentre diversas outras definições, segundo a <a href="https://www.ibm.com/topics/artificial-intelligence"> <i>International Business Machines Corporation (IBM)</i></a>, podemos entender uma inteligência artificial como uma ferramenta que permite computadores e máquinas imitarem os recursos de resolução de problemas e tomada de decisão da mente humana.
-
 </p>
 
 ## Fidelidade à performance humana Vs Racionalidade
 
 <p align = "justify">
+Uma questão de suma importância no desenvolvimento de uma AI (Artificial Inteligence) é determinar qual abordagem será utilizada ao projetar e treinar tais sistemas. Nesse contexto, existem duas abordagens principais (<strong>Fidelidade à Performance Humana</strong> e <strong>Racionalidade</strong>), cada uma com suas respectivas vantagens e desevantagens. A <strong>Tabela 01</strong> a seguir apresenta um comparativo entre as duas abordagens.
+</p>
 
-Digitar conteúdo...
+<!-- Tabela gerada a partir do site: https://www.tablesgenerator.com/html_tables# -->
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:sans-serif, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:sans-serif, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:middle}
+.tg .tg-3xi5{background-color:#ffffff;border-color:inherit;text-align:center;vertical-align:middle}
+.tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:middle}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-3xi5" colspan="3"><span style="font-weight:bold">Abordagens de Desenvolvimento de AI</span></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-7btt">nome</td>
+    <td class="tg-c3ow">Fidelidade à  Performance Humana</td>
+    <td class="tg-c3ow">Racionalidade</td>
+  </tr>
+  <tr>
+    <td class="tg-7btt">Objetivo</td>
+    <td class="tg-c3ow"> 
+        Desenvolver uma AI sistema capaz de realizar tarefas de maneira parecida com a qual um ser humano realizaria. 
+    </td>
+    <td class="tg-c3ow"> 
+        Desenvolver uma AI que tome decisões com base em lógica, raciocínio e evidências objetivas.
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-7btt">Vantagens</td>
+    <td class="tg-c3ow"> 
+        Pode ser usada em aplicações as quais a interação com humanos é importante. 
+        <br>
+        <strong>Ex.:</strong> assistentes virtuais, chatbots, sistemas de recomendação, etc.
+    </td>
+    <td class="tg-c3ow"> 
+    Pode ser usada em aplicações as quais a busca da melhor solução prevalece em relação similaridade com o comportamento humano.
+    <br>
+    <strong>Ex.:</strong> diagnóstico médico, previsão do tempo, jogos de estratégia, algoritmos de otimização, etc. </td>
+  </tr>
+  <tr>
+    <td class="tg-7btt">Desvantagens</td>
+    <td class="tg-c3ow"> 
+        Apesar de levar a criação de sistemas mais acessíveis e naturais para os usuários humanos, pode ser limitada em termos de objetividade e eficiência em certas tarefas.
+    </td>
+    <td class="tg-c3ow"> 
+        Pode não ser tão compreensível para as pessoas como os sistemas que imitam o comportamento humano.
+    </td>
+  </tr>
+</tbody>
+    <caption>
+        Tabela 01
+    </caption>
+</table>
 
+<p align = "justify">
+Após o entendimento sobre as duas principais abordagens de desenvolvimento de AI, é comum o surgimento da seguinte dúvida: <strong>Qual é a melhor abordagem a ser usada?</strong> A resposta é bastante simples: a escolha da abordagem varia de acordo com o contexto, isto é, o objetivo da aplicação a ser construida. Ná pratica, um projeto de desenvolvimento de AI leva em consideração um equilíbrio entre as duas abordagens apresentadas.
 </p>
 
 ## Raciocínio Vs Comportamento
 
+<p align = "justify">
 Digitar conteúdo...
+</p>
 
 ## Modelo Padrão
 

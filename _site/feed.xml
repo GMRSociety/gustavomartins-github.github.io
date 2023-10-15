@@ -5,8 +5,8 @@
     <description>这里是 @Hux黄玄 的个人博客，与你一起发现更大的世界 | 要做一个有 swag 的程序员</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 15 Oct 2023 00:22:09 -0300</pubDate>
-    <lastBuildDate>Sun, 15 Oct 2023 00:22:09 -0300</lastBuildDate>
+    <pubDate>Sun, 15 Oct 2023 09:50:20 -0300</pubDate>
+    <lastBuildDate>Sun, 15 Oct 2023 09:50:20 -0300</lastBuildDate>
     <generator>Jekyll v4.3.2</generator>
     
       <item>
@@ -16,7 +16,7 @@
 &lt;/blockquote&gt;
 
 &lt;p align=&quot;justify&quot;&gt;
-Desde sua criação, a Inteligência Artificial vem impactando profundamente o modo de vida do ser humano. Nos dias atuais, ela auxilia diversas áreas, tais como saúde, tecnologia, educação, comércio, segurança, entreterimento, etc. Diante disso, o presente artigo tem como objetivo apresentar uma introdução sobre o qué uma &lt;strong&gt;inteligência artificial&lt;/strong&gt; por meio de conceitos básicos, os quais são de suma importância para área.
+Desde sua criação, a Inteligência Artificial vem impactando profundamente o modo de vida do ser humano. Nos dias atuais, ela auxilia diversas áreas, tais como saúde, tecnologia, educação, comércio, segurança, entreterimento, etc. Diante disso, o presente artigo tem como objetivo apresentar uma introdução sobre o qué uma &lt;strong&gt;inteligência artificial&lt;/strong&gt;, apresentando alguns conceitos de suma importância para área.
 &lt;/p&gt;
 
 &lt;p id=&quot;build&quot;&gt;&lt;/p&gt;
@@ -24,21 +24,21 @@ Desde sua criação, a Inteligência Artificial vem impactando profundamente o m
 &lt;h2 id=&quot;o-que-é-inteligência&quot;&gt;O que é inteligência?&lt;/h2&gt;
 
 &lt;p align=&quot;justify&quot;&gt;
-
 De início, é importante entender sobre o que é inteligência. De maneira geral, podemos defini-la como:
+&lt;/p&gt;
 
-&lt;ul&gt;
+&lt;ul align=&quot;justify&quot;&gt;
     &lt;li&gt; Ato de entender: compreensão;&lt;/li&gt;
     &lt;li&gt; Capacidade de aprender, entender ou lidar com situações novas;&lt;/li&gt;
     &lt;li&gt; Uso hábil da razão;&lt;/li&gt;
     &lt;li&gt; Capacidade de aplicar conhecimento para manipular o ambiente;&lt;/li&gt;
-    &lt;li&gt; Etc.&lt;/li&gt;
 &lt;/ul&gt;
 
-Por outro lado, vale ressaltar que inteligência pode ser interpretada de maneiras diferentes, de acordo com o contexto e a àrea de estudo a qual está sendo relacionada. Sendo assim, alguns tipos de inteligência são:
+&lt;p align=&quot;justify&quot;&gt;
+Por outro lado, vale ressaltar que inteligência pode ser interpretada de maneiras diferentes, de acordo com o contexto e/ou a àrea de estudo a qual está sendo relacionada. Sendo assim, alguns tipos de inteligência são:
+&lt;/p&gt;
 
-&lt;br /&gt;&lt;br /&gt;
-&lt;ul&gt;
+&lt;ul align=&quot;justify&quot;&gt;
     &lt;li&gt; &lt;strong&gt;Inteligência Geral&lt;/strong&gt;: capacidade de aprender, raciocinar, resolver problemas, compreender ideias complexas e se adaptar ao ambiente.&lt;/li&gt;
     &lt;li&gt; &lt;strong&gt;Inteligência Emocional&lt;/strong&gt;: capacidade de reconhecer, compreender e gerenciar as próprias emoções e as emoções dos outros, bem como utilizar as emoções de maneira construtiva.&lt;/li&gt;
     &lt;li&gt; &lt;strong&gt;Inteligência Social&lt;/strong&gt;: envolve a capacidade de interagir eficazmente com outras pessoas, compreender seus sentimentos, motivos e comportamentos, e responder de maneira apropriada.&lt;/li&gt;
@@ -46,22 +46,85 @@ Por outro lado, vale ressaltar que inteligência pode ser interpretada de maneir
     &lt;li&gt; &lt;strong&gt;Inteligência Criativa&lt;/strong&gt;: envolve a capacidade de gerar ideias originais, soluções inovadoras e expressar-se de maneira única.&lt;/li&gt;
 &lt;/ul&gt;
 
-
+&lt;p align=&quot;justify&quot;&gt;
 Portanto, o que seria uma &lt;strong&gt;Inteligência Artificial&lt;/strong&gt;? Dentre diversas outras definições, segundo a &lt;a href=&quot;https://www.ibm.com/topics/artificial-intelligence&quot;&gt; &lt;i&gt;International Business Machines Corporation (IBM)&lt;/i&gt;&lt;/a&gt;, podemos entender uma inteligência artificial como uma ferramenta que permite computadores e máquinas imitarem os recursos de resolução de problemas e tomada de decisão da mente humana.
-
 &lt;/p&gt;
 
 &lt;h2 id=&quot;fidelidade-à-performance-humana-vs-racionalidade&quot;&gt;Fidelidade à performance humana Vs Racionalidade&lt;/h2&gt;
 
 &lt;p align=&quot;justify&quot;&gt;
+Uma questão de suma importância no desenvolvimento de uma AI (Artificial Inteligence) é determinar qual abordagem será utilizada ao projetar e treinar tais sistemas. Nesse contexto, existem duas abordagens principais (&lt;strong&gt;Fidelidade à Performance Humana&lt;/strong&gt; e &lt;strong&gt;Racionalidade&lt;/strong&gt;), cada uma com suas respectivas vantagens e desevantagens. A &lt;strong&gt;Tabela 01&lt;/strong&gt; a seguir apresenta um comparativo entre as duas abordagens.
+&lt;/p&gt;
 
-Digitar conteúdo...
+&lt;!-- Tabela gerada a partir do site: https://www.tablesgenerator.com/html_tables# --&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:sans-serif, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:sans-serif, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:middle}
+.tg .tg-3xi5{background-color:#ffffff;border-color:inherit;text-align:center;vertical-align:middle}
+.tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:middle}
+&lt;/style&gt;
 
+&lt;table class=&quot;tg&quot;&gt;
+&lt;thead&gt;
+  &lt;tr&gt;
+    &lt;th class=&quot;tg-3xi5&quot; colspan=&quot;3&quot;&gt;&lt;span style=&quot;font-weight:bold&quot;&gt;Abordagens de Desenvolvimento de AI&lt;/span&gt;&lt;/th&gt;
+  &lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-7btt&quot;&gt;nome&lt;/td&gt;
+    &lt;td class=&quot;tg-c3ow&quot;&gt;Fidelidade à  Performance Humana&lt;/td&gt;
+    &lt;td class=&quot;tg-c3ow&quot;&gt;Racionalidade&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-7btt&quot;&gt;Objetivo&lt;/td&gt;
+    &lt;td class=&quot;tg-c3ow&quot;&gt; 
+        Desenvolver uma AI sistema capaz de realizar tarefas de maneira parecida com a qual um ser humano realizaria. 
+    &lt;/td&gt;
+    &lt;td class=&quot;tg-c3ow&quot;&gt; 
+        Desenvolver uma AI que tome decisões com base em lógica, raciocínio e evidências objetivas.
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-7btt&quot;&gt;Vantagens&lt;/td&gt;
+    &lt;td class=&quot;tg-c3ow&quot;&gt; 
+        Pode ser usada em aplicações as quais a interação com humanos é importante. 
+        &lt;br /&gt;
+        &lt;strong&gt;Ex.:&lt;/strong&gt; assistentes virtuais, chatbots, sistemas de recomendação, etc.
+    &lt;/td&gt;
+    &lt;td class=&quot;tg-c3ow&quot;&gt; 
+    Pode ser usada em aplicações as quais a busca da melhor solução prevalece em relação similaridade com o comportamento humano.
+    &lt;br /&gt;
+    &lt;strong&gt;Ex.:&lt;/strong&gt; diagnóstico médico, previsão do tempo, jogos de estratégia, algoritmos de otimização, etc. &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-7btt&quot;&gt;Desvantagens&lt;/td&gt;
+    &lt;td class=&quot;tg-c3ow&quot;&gt; 
+        Apesar de levar a criação de sistemas mais acessíveis e naturais para os usuários humanos, pode ser limitada em termos de objetividade e eficiência em certas tarefas.
+    &lt;/td&gt;
+    &lt;td class=&quot;tg-c3ow&quot;&gt; 
+        Pode não ser tão compreensível para as pessoas como os sistemas que imitam o comportamento humano.
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+    &lt;caption&gt;
+        Tabela 01
+    &lt;/caption&gt;
+&lt;/table&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+Após o entendimento sobre as duas principais abordagens de desenvolvimento de AI, é comum o surgimento da seguinte dúvida: &lt;strong&gt;Qual é a melhor abordagem a ser usada?&lt;/strong&gt; A resposta é bastante simples: a escolha da abordagem varia de acordo com o contexto, isto é, o objetivo da aplicação a ser construida. Ná pratica, um projeto de desenvolvimento de AI leva em consideração um equilíbrio entre as duas abordagens apresentadas.
 &lt;/p&gt;
 
 &lt;h2 id=&quot;raciocínio-vs-comportamento&quot;&gt;Raciocínio Vs Comportamento&lt;/h2&gt;
 
-&lt;p&gt;Digitar conteúdo…&lt;/p&gt;
+&lt;p align=&quot;justify&quot;&gt;
+Digitar conteúdo...
+&lt;/p&gt;
 
 &lt;h2 id=&quot;modelo-padrão&quot;&gt;Modelo Padrão&lt;/h2&gt;
 
