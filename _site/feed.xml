@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>lxgustxl Blog</title>
+    <title>GMR Blog</title>
     <description>这里是 @Hux黄玄 的个人博客，与你一起发现更大的世界 | 要做一个有 swag 的程序员</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 15 Oct 2023 09:50:20 -0300</pubDate>
-    <lastBuildDate>Sun, 15 Oct 2023 09:50:20 -0300</lastBuildDate>
+    <pubDate>Sun, 15 Oct 2023 22:17:53 -0300</pubDate>
+    <lastBuildDate>Sun, 15 Oct 2023 22:17:53 -0300</lastBuildDate>
     <generator>Jekyll v4.3.2</generator>
     
       <item>
@@ -31,7 +31,7 @@ De início, é importante entender sobre o que é inteligência. De maneira gera
     &lt;li&gt; Ato de entender: compreensão;&lt;/li&gt;
     &lt;li&gt; Capacidade de aprender, entender ou lidar com situações novas;&lt;/li&gt;
     &lt;li&gt; Uso hábil da razão;&lt;/li&gt;
-    &lt;li&gt; Capacidade de aplicar conhecimento para manipular o ambiente;&lt;/li&gt;
+    &lt;li&gt; Capacidade de aplicar conhecimento para manipular o ambiente.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p align=&quot;justify&quot;&gt;
@@ -83,10 +83,10 @@ Uma questão de suma importância no desenvolvimento de uma AI (Artificial Intel
   &lt;tr&gt;
     &lt;td class=&quot;tg-7btt&quot;&gt;Objetivo&lt;/td&gt;
     &lt;td class=&quot;tg-c3ow&quot;&gt; 
-        Desenvolver uma AI sistema capaz de realizar tarefas de maneira parecida com a qual um ser humano realizaria. 
+        Desenvolver um sistema capaz de realizar tarefas de maneira similar à um ser humano. 
     &lt;/td&gt;
     &lt;td class=&quot;tg-c3ow&quot;&gt; 
-        Desenvolver uma AI que tome decisões com base em lógica, raciocínio e evidências objetivas.
+        Desenvolver um sistema que tome decisões com base em lógica, raciocínio e evidências objetivas.
     &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
@@ -117,26 +117,176 @@ Uma questão de suma importância no desenvolvimento de uma AI (Artificial Intel
 &lt;/table&gt;
 
 &lt;p align=&quot;justify&quot;&gt;
-Após o entendimento sobre as duas principais abordagens de desenvolvimento de AI, é comum o surgimento da seguinte dúvida: &lt;strong&gt;Qual é a melhor abordagem a ser usada?&lt;/strong&gt; A resposta é bastante simples: a escolha da abordagem varia de acordo com o contexto, isto é, o objetivo da aplicação a ser construida. Ná pratica, um projeto de desenvolvimento de AI leva em consideração um equilíbrio entre as duas abordagens apresentadas.
+Após o entendimento sobre as duas principais abordagens de desenvolvimento de AI, é comum o surgimento da seguinte dúvida: &lt;strong&gt;qual é a melhor abordagem a ser usada?&lt;/strong&gt; A resposta é bem simples: a escolha da abordagem varia de acordo com o contexto, isto é, o objetivo da aplicação a ser construida. Ná pratica, um projeto de desenvolvimento de AI leva em consideração um equilíbrio entre as duas abordagens apresentadas.
 &lt;/p&gt;
 
-&lt;h2 id=&quot;raciocínio-vs-comportamento&quot;&gt;Raciocínio Vs Comportamento&lt;/h2&gt;
+&lt;h2 id=&quot;comportamento--raciocínio&quot;&gt;Comportamento &amp;amp; Raciocínio&lt;/h2&gt;
 
 &lt;p align=&quot;justify&quot;&gt;
-Digitar conteúdo...
+A maior parte do universo da inteligência artificial gira em torno de 6 disciplinas, as quais representam atividades tecnicamente comuns à um ser humano saudável. São elas:
+&lt;/p&gt;
+
+&lt;ul align=&quot;justify&quot;&gt;
+  &lt;li&gt;
+    &lt;strong&gt;Processamento de linguagem Natural&lt;/strong&gt;: capacidade de comunicar-se em uma linguagem humana.
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;strong&gt;Representação do conhecimento&lt;/strong&gt;: capacidade de armazenar o que sabe ou ouve.
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;strong&gt;Raciocínio automatizado&lt;/strong&gt;: capacidade de responder perguntas e tirar novas conclusões.
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;strong&gt;Aprendizado de Máquina&lt;/strong&gt;: capacidade de adaptar-se à novas circunstâncias, além de detectar e extrapolar padrões.
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;strong&gt;Visão computacional &amp;amp; Reconhecimento de fala&lt;/strong&gt;: capacidade de percepção de mundo zdo sistema.
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;strong&gt;Robótica&lt;/strong&gt;: permite a manipulação de objetos e movimentar-se.
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+É nesse contexto que o matemático britânico Alan Turing, em meados dos anos 50, publicou em seu artigo &lt;a href=&quot;https://www.cse.chalmers.se/~aikmitr/papers/Turing.pdf#page=442&quot;&gt;&lt;strong&gt;&lt;i&gt;&quot;Computing Machinery and Intelligence&quot;&lt;/i&gt;&lt;/strong&gt;&lt;/a&gt;, uma técnica conhecida até os dias atuais como &lt;strong&gt;Teste de Turing&lt;/strong&gt;. De maneira geral, esse teste consiste em classificar uma máquina como inteligente caso uma pessoa denominada &quot;examinadora&quot; não consiga destinguir, com precisão, a diferença entre a máquina e uma pessoa humana. Para isso, a pessoa examinadora realizaria um dialogo com cada uma das entidades (pessoa e máquina) para depois fornecer seu veredito.
+&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+Na prática, poucos sistemas inteligentes atingiram consistentemente o nível de inteligência humana necessário para passar no Teste de Turing, contudo há diversas críticas em relação ao fato desse teste não considerar os outros tipos de inteligência. Além disso, pesquisadores de AI geralmente dedicam pouco esforço para passar no teste de Turing, pois priorizam o estudo dos princípios os quais envolvem a inteligência artificial.
+&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+Um outro assunto de suma importância é a racionalidade dos sitemas inteligentes. Diante disso, a fim de explicar melhor esse contexto, é importante entender dois termos importantes: a &lt;strong&gt;Modelagem Cognitiva&lt;/strong&gt; e as &lt;strong&gt;Leis do Pensamento&lt;/strong&gt;. O primeiro termo refere-se a um modelo de desenvolvimento de IA baseado na comparação entre a IA e a ciência cognitiva, geralmente centrada em 3 atividades:
+&lt;/p&gt;
+
+&lt;ul align=&quot;justify&quot;&gt;
+  &lt;li&gt;
+    &lt;strong&gt;Introspecção&lt;/strong&gt;: captação de pensamentos humanos enquanto eles passam pelo cérebro;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;strong&gt;Experimentos Psicológicos&lt;/strong&gt;: observação de uma pessoa em ação;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;strong&gt;Análise do Cérebro&lt;/strong&gt;: observando o cérebro em ação por meio de imagens.
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+Logo, esse modelo possui como objetivo não só desenvolver um sistema inteligente, mas também comparar a etapas utilizadas pela máquina até a solução do problema e comparar tal algoritmo aos seres humanos resolvendo o mesmo problema.
+&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+Já o segundo termo (Leis do Pensamento), refere-se à 3 áreas do conhecimento muito utilizadas na matemática. São elas:
+&lt;/p&gt;
+
+&lt;ul align=&quot;justify&quot;&gt;
+  &lt;li&gt;
+    &lt;strong&gt;silogismo aristotélico&lt;/strong&gt;: fornece padrões para a estrutura de argumentos que sempre produzem conclusões corretas quando dadas premissas corretas;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;strong&gt;Lógica&lt;/strong&gt;: traz notações precisas para afirmações sobre objetos do mundo e as relações entre eles;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;strong&gt;probabilidade&lt;/strong&gt;: traz esclarecimento à problemas os quais não conhecemos todas as regras.
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+Diante disso, a pesar das leis do pensamento forenecer subisídio teórico para construção de um modelo abrangente de pensamento racional, elas não são suficientes para gerar um comportamento inteligente, pois para isso, é necessário outro conhecimento extra, isto é, uma &lt;strong&gt;teoria de ação racional&lt;/strong&gt; a qual relacione a ação de um agente de acordo com suas preferências e objetivos.
+&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+&lt;strong&gt;Obs.:&lt;/strong&gt; o que seria um agente?
 &lt;/p&gt;
 
 &lt;h2 id=&quot;modelo-padrão&quot;&gt;Modelo Padrão&lt;/h2&gt;
 
-&lt;p&gt;Digitar conteúdo…&lt;/p&gt;
+&lt;p align=&quot;justify&quot;&gt;
+Antes de adentrarmos em um modelo padrão de AI, é necessário responder a pergunta apresentada no final do tópico anterior. Sendo assim, podemos entender um &lt;strong&gt;agente&lt;/strong&gt; como algo capaz de agir. Logo, espera-se que um &lt;strong&gt;agente inteligente&lt;/strong&gt; seja capaz de:
+&lt;/p&gt;
+
+&lt;ul align=&quot;justify&quot;&gt;
+  &lt;li&gt;
+    Operar a si mesmo de maneira autônoma;
+  &lt;/li&gt;
+  &lt;li&gt;
+    Perceber o ambiente a sua volta;
+  &lt;/li&gt;
+  &lt;li&gt;
+    Persistir, por um período de tempo prolongado, na resolução de problemas;
+  &lt;/li&gt;
+  &lt;li&gt;
+    Adaptar-se à eventuais mudanças;
+  &lt;/li&gt;
+  &lt;li&gt;
+    Criar e buscar objetivos.
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+Diante do exposto, também é válido o seguinte questionamento: &lt;strong&gt;o que é um agente racional?&lt;/strong&gt;. Um agente racional pode ser entendido como um agente que age de modo a atingir o melhor resultado exato ou esperado, a depender do nível de incerteza do problema a ser resolvido. Esse tipo de agente possui duas principais vantagens em relação aos outros agentes discutidos: 
+&lt;/p&gt;
+
+&lt;ul align=&quot;justify&quot;&gt;
+  &lt;li&gt;
+    È mais geral do que a abordagem das &quot;leis do pensamento&quot;, isto é, é aplicável em contextos diversos;
+  &lt;/li&gt;
+  &lt;li&gt;
+    É mais suscetível ao desenvolvimento ciêntífico, pois aproxima-se da ciência cognitiva.
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+Por fim, vale ressaltar que a abordagem do agente racional para o desenvolvimento de AI tem prevalecido na maior parte da história dá inteligência artificial, sendo a maioria das pesquisas realizadas até então centradas na construção de &lt;strong&gt;agentes capazes de atingir um resultado correto&lt;/strong&gt;, sendo tal resultado definido, à priori, como um objetivo a ser atingido pelo agente durante sua construção. Esse paradigma geral de desenvolvimento de agente evoluiu ao que hoje chama-se &lt;strong&gt;Modelo Padrão&lt;/strong&gt;. 
+&lt;/p&gt;
+
+&lt;h2 id=&quot;problemas-do-modelo-padrão&quot;&gt;Problemas do Modelo Padrão&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+A pesar de seu sucesso, o modelo padrão possui alguns problemas os quais devem ser destacados. Muito disso se deve ao fato de que tal modelo necessita de um &lt;strong&gt;objetivo totalmente especificado&lt;/strong&gt; para a máquina, limitando sua aplicação à medida em que os problemas vão se aproximando do &lt;strong&gt;mundo real&lt;/strong&gt;, pois torna-se cada vez mais difícil especificar o objetivo de forma completa, sendo um sistema implementado com um objetivo incorreto tendencioso à consequências negativas. É nesse contexto que surge o &lt;strong&gt;problema de alinhamento de valor&lt;/strong&gt;, isto é, a dificuldade de se conciliar nossas preferências com o objetivo programado ná maquina.
+&lt;/p&gt;
 
 &lt;h2 id=&quot;fundamentos-da-inteligência-artificial&quot;&gt;Fundamentos da Inteligência Artificial&lt;/h2&gt;
 
-&lt;p&gt;Digitar conteúdo…&lt;/p&gt;
+&lt;p align=&quot;justify&quot;&gt;
+Os principais fundamentos da inteligência artificial podem ser abordados a partir das principais áreas do conhecimento as quais vêm contribuindo, ao longo do tempo, com ideias, pontos de vista e técnicas. Confira a seguir uma lista contendo algumas dessas áreas seguidas, respectivamente, de perguntas as quais cada uma delas tentam responder.
+&lt;/p&gt;
+
+&lt;ul align=&quot;justify&quot;&gt;
+  &lt;li&gt;
+    &lt;strong&gt;Filosofia&lt;/strong&gt;: de onde vem o conhecimento? Como o conhecimento leva à ação? 
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;strong&gt;Matemática&lt;/strong&gt;: o que pode ser computado? Como raciocinamos conciderando incertezas?
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;strong&gt;Economia&lt;/strong&gt;: como tomar decisões de acordo com nossas preferências? Como devemos fazer algo levando em consideração o fato de a recompensar estar em um futuro distante?
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;strong&gt;Neurociência&lt;/strong&gt;: como o cérebro humano processa informação?
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;strong&gt;Psicologia&lt;/strong&gt;: como seres humanos e outros animais pensam e agem?
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;strong&gt;Engenharia da Computação&lt;/strong&gt;: como podemos construir um sistema computacional eficiente?
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;strong&gt;Cibernética (Teoria do Controle)&lt;/strong&gt;: como os artefatos podem operar de maneira autônoma? 
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;strong&gt;Linguística&lt;/strong&gt;: qual a relação entre o pensamento e a linguagem?
+  &lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&quot;conclusão&quot;&gt;Conclusão&lt;/h2&gt;
 
-&lt;p&gt;Digitar conclusão…&lt;/p&gt;
+&lt;p align=&quot;justify&quot;&gt;
+  De acordo com o exposto nesse artigo, pode-se concluir que a ciência a qual envolve a pesquisa e projetos de inteligência artificial, ao contrário do senso comum, consiste em uma área multidisciplinar, envolvendo desde conceitos oriundos da psicologia e filosofia até a matemática e ciência da computação. Somado a isso, é importante destacar algumas abordagens de desenvolvimento para sistemas inteligentes, uma fiel à performance humana e outra centrada na racionalidade, cada uma com suas respectivas qualidades e defeitos, os quais devem ser ponderados a fim de escolher a melhor abordagem de acordo com a necessidade do projeto. 
+&lt;/p&gt;
+&lt;p align=&quot;justify&quot;&gt;
+  Por fim, com o passar dos anos, as tecnicas e abordagens de desenvolvimento vêm evoluindo cada vez mais, auxiliando o desenvolvimento de sistemas cada vez melhores e evidenciando novas necessidades e tendências. Um bom exemplo desse contexto e o modelo padrão que, a pesar de bastante utilizado, mostra-se frágil á medida em que nos aproximamos em determinados problemas reais.
+&lt;/p&gt;
 </description>
         <pubDate>Mon, 07 Aug 2023 09:30:00 -0300</pubDate>
         <link>http://localhost:4000/2023/08/07/AI-2023/</link>

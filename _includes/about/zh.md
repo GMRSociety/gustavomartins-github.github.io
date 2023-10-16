@@ -1,6 +1,6 @@
 <p align = "justify">
 
-    Olá, eu sou o Gustavo Martins Ribeiro, (tambem conhecido como lxgustxl). Sou estudante de Engenharia de Software na <a href="https://www.unb.br/">UnB (Universidade de Brasília)</a> - <a href="https://fga.unb.br/">Campus FGA (Faculdade do Gama)</a> e adoro estudar temas relacionados à área, tais como Inteligência Artificial, Sistemas de Banco de Dados e Desenvolvimento Ágil.
+    Olá, eu sou o Gustavo Martins Ribeiro, (tambem conhecido como GMR). Sou estudante de Engenharia de Software na <a href="https://www.unb.br/">UnB (Universidade de Brasília)</a> - <a href="https://fga.unb.br/">Campus FGA (Faculdade do Gama)</a> e adoro estudar temas relacionados à área, tais como Inteligência Artificial, Sistemas de Banco de Dados e Desenvolvimento Ágil.
 
     <br><br>
 

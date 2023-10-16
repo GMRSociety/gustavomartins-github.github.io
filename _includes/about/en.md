@@ -1,5 +1,5 @@
 <p align = "justify">
-    Hello, I'm Gustavo Martins Ribeiro, (also known as lxgustxl). I am a Software Engineering student at <a href="https://www.unb.br/">UnB (University of Brasília)</a> - <a href="https://fga.unb.br/">FGA Campus (Gama College)</a> and I love studying topics related to the area, such as Artificial Intelligence, Database Systems and Agile Development.
+    Hello, I'm Gustavo Martins Ribeiro, (also known as GMR). I am a Software Engineering student at <a href="https://www.unb.br/">UnB (University of Brasília)</a> - <a href="https://fga.unb.br/">FGA Campus (Gama College)</a> and I love studying topics related to the area, such as Artificial Intelligence, Database Systems and Agile Development.
 
     <br><br>
 
