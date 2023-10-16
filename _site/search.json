@@ -1,8 +1,16 @@
 [
   
     {
+      "title"    : "A história da AI",
+      "subtitle" : " &quot;Kasparov X DeepBlue: o homem contra a máquina&quot;",
+      "tags"     : "AI",
+      "url"      : "/2023/08/08/AI-2023/",
+      "date"     : "2023-08-08 19:30:00 -0300"
+    } ,
+  
+    {
       "title"    : "O que é uma AI?",
-      "subtitle" : " &quot;Inteligência artificial: a tecnologia que vem dominando o mundo!&quot;",
+      "subtitle" : " &quot;Inteligência artificial: a tecnologia que vem dominando o mundo&quot;",
       "tags"     : "AI",
       "url"      : "/2023/08/07/AI-2023/",
       "date"     : "2023-08-07 09:30:00 -0300"

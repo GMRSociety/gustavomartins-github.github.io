@@ -5,9 +5,129 @@
     <description>这里是 @Hux黄玄 的个人博客，与你一起发现更大的世界 | 要做一个有 swag 的程序员</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 15 Oct 2023 22:17:53 -0300</pubDate>
-    <lastBuildDate>Sun, 15 Oct 2023 22:17:53 -0300</lastBuildDate>
+    <pubDate>Mon, 16 Oct 2023 14:03:14 -0300</pubDate>
+    <lastBuildDate>Mon, 16 Oct 2023 14:03:14 -0300</lastBuildDate>
     <generator>Jekyll v4.3.2</generator>
+    
+      <item>
+        <title>A história da AI</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;“O homem, ao mesmo tempo que sonha com todas as suas forças em inventar uma máquina mais forte do que ele mesmo, não pode admitir a possibilidadede não ser o mestre de suas criaturas. Tanto quanto Deus. Poderia Deus ter sonhado em criar o homem superior ao criador e em enfrentá-lo num combate decisivo? É o que, contudo, fazemos com nossas criaturas cibernéticas, às quais oferecemos a oportunidade de nos derrotar.” - &lt;strong&gt;Baudrillard 1997, p. 134&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    No dia 11 de maio de 1997, o maior jogador de xadrez da época e um entre os melhores da história, Garry Kasparov, perdeu uma série de 5 partidas para um computador especializado em xadrez denominado Deep Blue, uma inteligência artificial desenvolvida pela grandiosa IBM. Tal evento histórico atraiu muita atenção da mídia, principalmente pelo fato de, no ultimo jogo, Kasparov perder em apenas 19 lançes (algo muito dificil até mesmo entre os melhores enxadristas da época). Sendo assim, além de ser a primeira vez na história em que um computador venceu campeão mundial em uma partida de vários jogos, esse fato serviu como o início de uma nova era: a era da inteligência artificial.
+&lt;/p&gt;
+
+&lt;h2 id=&quot;a-influência-da-mitologia-e-ficção-para-a-ai&quot;&gt;A influência da Mitologia e Ficção para a AI&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    Antes do surgimento da primeira inteligência artificial, a mitologia e a ficção científica teve um forte papel na difusão de ideias sobre sistemas inteligêntes capazes de imitar o ser humano. Em 400 A.C., de acordo com a mitologia grega, existia um ser construído em bronze que protegia a &lt;strong&gt;Ilha de Creta&lt;/strong&gt;, atualmente localizada na Gŕecia. Já em 1818, a escritora britânica &lt;strong&gt;Mary Shelley&lt;/strong&gt; publica sua obra &lt;strong&gt;&lt;i&gt;Frankenstein or The Modern Prometheus&lt;/i&gt;&lt;/strong&gt;, onde o cientista &lt;strong&gt;Victor Frankenstein&lt;/strong&gt; cria um ser inteligente a partir de partes de seres humanos mortos. Mas foi somente em 1863 que &lt;strong&gt;Samuel Butler&lt;/strong&gt;, por meio de seu artigo &lt;strong&gt;&lt;i&gt;Darwin among the Machines&lt;/i&gt;&lt;/strong&gt;, publicada no jornal The Press, sugeriu pela primeira vez que as máquinas, por evoluirem muito mais rápido e de maneira constante, superariam o ser humano com base na teoria da seleção natural darwiniana, podendo eventualmente torna-se a forma de vida dominante na terra.
+&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    Seguindo a cronológia dos fatos, em 1927, foi publicado a obra &lt;strong&gt;Metrópolis&lt;/strong&gt;, um filme de drama/ficção científica cuja trama girava em torno de Maria, uma líder entre os trabalhadores, e um robô inteligente feito com uma aparência identica à ela, com a finalidade de desacreditá-la em meio aos trabalhadores. Em 1983, o filme &lt;strong&gt;War Games&lt;/strong&gt; levantou algumas discussões interessantes: a inteligência artificial pode tomar decisões críticas como iniciar uma guerra? Como diferenciar a realidade do mundo virtual? Por tanto, tais eventos históricos citados foram de suma importância para o amadurecimento da inteligência artificial como ideia, para que em um futuro próximo viesse a ser realidade.
+&lt;/p&gt;
+
+&lt;h2 id=&quot;o-início-da-inteligência-artificial-1943-1956&quot;&gt;O início da Inteligência Artificial (1943-1956)&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    Em meados de 1943, a obra &lt;strong&gt;&lt;i&gt;A Logical Calculus of Ideas Immanent in Nervous Activity&lt;/i&gt;&lt;/strong&gt; (Warren McCulloch e Walter Pitts) propôs ao mundo um modelo de neurônio artificial que representava um neurôneo como uma unidade lógica que recebe entradas binárias e produz uma saída, também binária, com base em regras lógicas (AND, OR, NOT, etc.), que ficou conhecido como &lt;strong&gt;neurônio de McCulloch-Pitts&lt;/strong&gt;. Tal contribuição foi de suma importância para o desenvolvimento das primeiras redes neurais artificiais, onde o estado de um determinado neurôneo artificial varia conforme o estimulo de um número suficiente de outros neurôneos vizinhos (sinápse), evidenciando a possibilidade da humanidade em desenvolver sistemas computacionais que imitam aspectos da atividade cerebral.
+&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    Já em 1949, o psicólogo &lt;strong&gt;Donald Olding Hebb&lt;/strong&gt; desenvolveu uma ideia, mais tarde conhecida como &lt;strong&gt;Aprendizagem Hebbiana&lt;/strong&gt;, que explica como o cérebro pode aprender e formar memórias associativas com base na coocorrência de atividade entre neurônios. Para isso, tal ideia explica como os neurônios podem fortalecer suas conexões quando ativados simultaneamente. Segundo Hebb, quando um neurônio A é ativado e, em seguida, outro neurônio B é ativado imediatamente após, as sinapses (conexões) entre esses dois neurônios são fortalecidas. Isso ocorre porque a ativação simultânea sugere que a conexão entre eles é importante para a transmissão de informações. Por fim, tal ideia foi de suma importância para o desenvolvimento do que mais tarde ficou conhecido como &lt;strong&gt;Redes Neurais Artificiais&lt;/strong&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    Seguindo a ordem cronológica da evolução da AI, em meados dos anos 50, &lt;strong&gt;Alan Turing&lt;/strong&gt;, conhecido como o pai da computação, apresentou ao mundo conceitos como &lt;strong&gt;Teste de Turing&lt;/strong&gt;, &lt;strong&gt;&lt;i&gt;Machine Learning&lt;/i&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;i&gt;Genetic Algorithms&lt;/i&gt;&lt;/strong&gt; e &lt;strong&gt;&lt;i&gt;Reinforcement Learning&lt;/i&gt;&lt;/strong&gt;, além de defender a ideia de que seria mais fácil criar uma AI de nível humano desenvolvendo algoritmos de aprendizado para ensinar uma máquina ao invés de programar sua inteligência manualmente. Já em 1952, dois estudantes da famosa &lt;i&gt;Harvard University&lt;/i&gt; criaram o sistema &lt;strong&gt;SNARC&lt;/strong&gt; (&lt;i&gt;Stochastic Neural Analog Reinforcement Calculator&lt;/i&gt;), que marcou a história como o primeiro computador de rede neural artificial. 
+&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    Por fim, em 1956, ocorreu um marco histórico na inteligência artificial: um workshop de verão denominado &lt;strong&gt;DSRPAI&lt;/strong&gt; (&lt;i&gt;Dartmouth Summer Research Project on Artificial Intelligence&lt;/i&gt;), organizado pelos proeminentes pesquisadores John McCarthy, Marvin Minsky, Nathaniel Rochester e Claude Shannon, o qual ocorreu na &quot;Universidade de Dartmouth&quot; (EUA). Esse evento foi considerado o primeiro cuja pauta principal era à AI e reuniu os principais pesquisadores de várias áreas do conhecimento para uma discussão aberta sobre inteligência artificial. A &lt;strong&gt;Imagem 1&lt;/strong&gt; a seguir apresenta alguns dos principais membros presentes na DSPAI.
+&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;/img/DSRPAI_members.png&quot; width=&quot;624&quot; height=&quot;532&quot; align=&quot;center&quot; /&gt;
+    &lt;figcaption align=&quot;center&quot;&gt;&lt;strong&gt;Imagem 1&lt;/strong&gt;: &lt;a href=&quot;https://indiaai.gov.in/article/exploring-the-significance-of-the-dartmouth-workshop&quot;&gt;os pais fundadores da AI (DSRPAI)&lt;/a&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;o-entusiasmo-inicial-grandes-expectativas-1952-1969&quot;&gt;O entusiasmo inicial: grandes expectativas (1952-1969)&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    O período de 1952 à 1969 foi marcado por grandes feitos utilizando sistemas inteligentes, os quais geraram grandes expectativas. Alguns deles foram:
+&lt;/p&gt;
+
+&lt;ul align=&quot;justify&quot;&gt;
+    &lt;li&gt;
+        &lt;strong&gt;Arthur Samuel (1956)&lt;/strong&gt;: ensinou um computador a jogar damas em um nível amador forte;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;strong&gt;Herbert Gelernter (1959)&lt;/strong&gt;: contrução do &quot;Provador do Teorema da Geometria&quot; - sistema capaz de provar teoremas considerados complexos por alguns estudantes de Geometria;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;strong&gt;Frank Rosenblatt (1962)&lt;/strong&gt;: desenvolvimento do &quot;perceptron&quot; - usado em redes neuaris;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;strong&gt;Bert Raphael (1969)&lt;/strong&gt;:  blocks world (problemas de micro-mundo) - usado como caso de teste em pesquisas sobre sistemas de IA e lógica.
+    &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;uma-dose-de-realidade-1966-1973&quot;&gt;Uma dose de realidade (1966-1973)&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    Apesar dos avanços mencionados no tópico anterior, alguns problemas vieram a tona. Durante o período de 1966 à 1973, análises foram feitas sobre os problemas resolvidos por meio de IA até então, o que levou a conclusão que tais problemas eram, de maneira geral, pouco complexos. Somado a isso, especificamente em 1969, Marvin Minsky e Seymour Papert, por meio do livro &lt;strong&gt;&lt;i&gt;Perceptrons: An Introduction to Computational Geometry&lt;/i&gt;&lt;/strong&gt;, demonstraram que os perceptrons simples, em sua forma mais básica de um único neurônio de camada única, eram limitados em termos de sua capacidade de representação mesmo que pudessem aprender sobre qualquer coisa as quais fossem capazes de representar. Por fim, a complexidade do &lt;strong&gt;problema da porta XOR&lt;/strong&gt; (ou problema da disjunção exclusiva) desempenhou um papel significativo no que ficou conhecido como o &lt;strong&gt;inverno da AI&lt;/strong&gt; (&lt;i&gt;AI winter&lt;/i&gt;).
+&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    Diante do exposto, o inverno da AI refere a uma época de desaceleração na pesquisa e desenvolvimento em 
+    inteligência artificial, que ocorreu principalmente durante as décadas de 1970 e 1980, onde muitas empresas faliram por não conseguir cumprir promessas extravagantes, como construir e manter &lt;strong&gt;sistemas especialistas&lt;/strong&gt; para dominios complexos (esse assunto será abordado com mais detalhes mais à frente). Não obstante, alguns dos principais fatores para esse cenario baseiam-se nos métodos de raciocínio usados pelos sistemas da época, os quais falharam em face da incerteza, além da necessidade de avanços para permitir que os sistemas inteligentes pudessem aprender com a experiência. 
+&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    Somado a isso, para entender o problema da porta XOR, é necessario entender que essa porta produz uma saída verdadeira apenas quando exatamente
+    uma de suas entradas é verdadeira. Isso faz com que essa porta não seja linearmente separável, fazendo com que o 
+    perceptron não consiga resolvê-lo, levando o mundo à uma desilusão em relação à inteligência artificial e desacelerando
+    as pesquisas sobre aprendizado de máquina e redes neurais.
+&lt;/p&gt;
+
+&lt;h2 id=&quot;sistemas-especialistas1969-1986&quot;&gt;Sistemas Especialistas(1969-1986)&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    As décadas de 70 e 80 ficaram marcadas por pesquisas sobre inteligência artificial. Nesse período, estudava-se muito sobre o propósito geral da inteligência artificial, assim como o surgimento do que ficou conhecido como métodos fracos (AI fraca), isto é, sistemas de AI projetados para realizarem tarefas apenas dentro de um domínio específico, o que desencadeou em sistemas que não lidavam bem com contextos fora de sua área de atuação. Tal fato cuminou no desenvolvimento do que ficou conhecido como &lt;strong&gt;Sistemas Especialistas&lt;/strong&gt;, que consistem em programas de AI capazes de imitar a expertise de um especialista humano em um campo particular do conhecimento, como medicina, engenharia, etc. Tais sistemas tinham como objetivo resolver problemas e responder perguntas dentro do seu domínio de atuação. Alguns exemplos de sistemas especialistas desse período foram: 
+&lt;/p&gt;
+
+&lt;ul align=&quot;justify&quot;&gt;
+    &lt;li&gt;
+        &lt;strong&gt;DENDRAL (1969)&lt;/strong&gt;: sistema para inferir a estrutura molecular a partir de informações fornecidas por um espectrômetro de massa;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;strong&gt;MYCIN (1970)&lt;/strong&gt;: sistema para diagnosticar infecções no sangue (baseado em 450 regras). Esse sistema ficou famoso pelo seu alto desempenho em relação à médicos da época.
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;strong&gt;R1 (1982)&lt;/strong&gt;: sistema de gerenciamento automatizado de empresa desenvolvido pela &lt;i&gt;Digital Equipment Corporation&lt;/i&gt;. Foi considerado o primeiro sistema especialista comercial bem-sucedido e, em 1986, estava economizando cerca de U$ 40 milhões por ano para a empresa.
+    &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    Diante do sucesso dos sistemas especialistas, centenas de empresas ao redor do mundo começaram a desenvolver novos sistemas especialistas, sistemas de visão, robôs, software e hardware especializado para esses fins. Isso fez com que a indústria de AI valorizasse de alguns milhões de dólares em 1980 para bilhões de dólares em 1988, fato este de suma importância para o desenvolvimento dessa indústria emergente. 
+&lt;/p&gt;
+
+&lt;h2 id=&quot;o-retorno-das-redes-neurais-1986-em-diante&quot;&gt;O retorno das Redes Neurais (1986 em diante)&lt;/h2&gt;
+
+&lt;!-- fiz 10 faltam 30 (1/4) --&gt;
+&lt;p align=&quot;justify&quot;&gt;
+    (...)
+&lt;/p&gt;
+</description>
+        <pubDate>Tue, 08 Aug 2023 19:30:00 -0300</pubDate>
+        <link>http://localhost:4000/2023/08/08/AI-2023/</link>
+        <guid isPermaLink="true">http://localhost:4000/2023/08/08/AI-2023/</guid>
+        
+        <category>AI</category>
+        
+        
+      </item>
     
       <item>
         <title>O que é uma AI?</title>
