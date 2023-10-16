@@ -119,6 +119,7 @@ tags:
 
 <p align = "justify">
     Continuando, mais especificamente em 1998, David McAllester critica o isolacionismo que ocorreu no campo da inteligência artificial em seus estágios iniciais, argumentando que muitos pesquisadores  estavam focados em abordagens baseadas em símbolos (web semântica, frames, etc.) e acreditavam que essas abordagens tornariam obsoleta a teoria clássica de computação. Sendo assim, alegando que uma abordagem interdisciplinar e aberta era necessária para o progresso efetivo no campo da IA, David defendeu que a AI deveria ser integrada à outras disciplinas da ciência da computação, em especial o <strong>raciocínio probabilístico</strong> e <strong>aprendizado de máquina</strong>.
+</p>
 
 ## Big Data (2001-presente)
 
