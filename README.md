@@ -1,4 +1,4 @@
-# [lxgustxl Blog](https://gustavomartins-github.github.io/)
+# [GMR Blog](https://gustavomartins-github.github.io/)
 
 Esse repositório hospeda um projeto de Blog baseado na tecnologia Jekyll recomendada pelo própio github para criação de páginas em seu domínio. Para tanto, foi utilizado um modelo pronto, cuja lisença permite adaptações conforme as minhas necessidades, como responsividade para desktop e mobile, além de um layout limpo e intuitivo. As imagens a baixo apresentão uma captura de tela, respectivamente, da versão desktop e mobile.
 
