@@ -46,7 +46,7 @@ tags:
 
 <figure>
     <img src="/img/DSRPAI_members.png"  width="624" height="532" align = "center">
-    <figcaption align = "center"><strong>Imagem 1</strong>: <a href = "https://indiaai.gov.in/article/exploring-the-significance-of-the-dartmouth-workshop">os pais fundadores da AI (DSRPAI)</a></figcaption>
+    <figcaption align = "center"><strong>Imagem 1</strong>: os pais fundadores da AI <a href = "https://indiaai.gov.in/article/exploring-the-significance-of-the-dartmouth-workshop">(DSRPAI)</a></figcaption>
 </figure>
 
 ## O entusiasmo inicial: grandes expectativas (1952-1969)
@@ -112,7 +112,22 @@ tags:
 
 ## O retorno das Redes Neurais (1986 em diante)
 
-<!-- fiz 10 faltam 30 (1/4) -->
+<!-- fiz 10 faltam 30 (1/4) Qual é a política de acesso ao meio em uma rede sem fio? Pesquisar em casa -->
+<p align = "justify">
+    Em meados da década de 80, houve uma evolução significativa sobre os algoritmos de <strong>aprendizado por retropropagação</strong> (desenvolvidos pela primeira vez em 1960). Também conhecido como <strong><i>backpropagation</i></strong>, esse modelo realiza uma passagem para trás para ajustar os parâmetros de um modelo de rede neural até que se ache o valor de peso ideal. Somado a isso, a industria da AI percebeu que os modelos conexionistas representavam melhor a realidade que os demais modelos disponíveis na época, principalmente devido à sua capacidade de aprender por meio de exemplos (dados). Isso tornava os sistemas baseados nesse modelo mais adaptáveis, podendo então ter melhores desempenho em relação à novos dados de treinamento.
+</p>
+
+<p align = "justify">
+    Continuando, mais especificamente em 1998, David McAllester critica o isolacionismo que ocorreu no campo da inteligência artificial em seus estágios iniciais, argumentando que muitos pesquisadores  estavam focados em abordagens baseadas em símbolos (web semântica, frames, etc.) e acreditavam que essas abordagens tornariam obsoleta a teoria clássica de computação. Sendo assim, alegando que uma abordagem interdisciplinar e aberta era necessária para o progresso efetivo no campo da IA, David defendeu que a AI deveria ser integrada à outras disciplinas da ciência da computação, em especial o <strong>raciocínio probabilístico</strong> e <strong>aprendizado de máquina</strong>.
+
+## Big Data (2001-presente)
+
+<p align = "justify">
+    (...)
+</p>
+
+## Deep learning (2011–presente)
+
 <p align = "justify">
     (...)
 </p>
