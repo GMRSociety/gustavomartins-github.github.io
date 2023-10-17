@@ -5,13 +5,141 @@
     <description>这里是 @Hux黄玄 的个人博客，与你一起发现更大的世界 | 要做一个有 swag 的程序员</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 16 Oct 2023 20:31:28 -0300</pubDate>
-    <lastBuildDate>Mon, 16 Oct 2023 20:31:28 -0300</lastBuildDate>
+    <pubDate>Tue, 17 Oct 2023 02:54:18 -0300</pubDate>
+    <lastBuildDate>Tue, 17 Oct 2023 02:54:18 -0300</lastBuildDate>
     <generator>Jekyll v4.3.2</generator>
     
       <item>
         <title>O Estado da Arte da Inteligência Artificial</title>
-        <description>&lt;hr /&gt;
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;“A sociedade está agora em um momento crucial onde deve determinar como implantar tecnologias baseadas em IA de maneiras que promovam, ao invés de dificultarem, valores democráticos como liberdade, igualdade e transparência” - &lt;strong&gt;Stanford University, AI100&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    Antes de entrarmos mais afundo sobre o ápice da inteligência artificial contemporânea, é importante entender sobre onde buscar tais informações. Diante disso, o presente artigo foi baseado no importante projeto de pesquisa denominado &lt;strong&gt;&lt;i&gt;Stanford University’s One Hundred Year Study on AI&lt;/i&gt;&lt;/strong&gt; (&lt;a href=&quot;https://ai100.stanford.edu/&quot;&gt;AI100&lt;/a&gt;) e nos famosos relatórios do (&lt;a href=&quot;https://aiindex.stanford.edu/&quot;&gt;&lt;strong&gt;&lt;i&gt;AI Index&lt;/i&gt;&lt;/strong&gt;&lt;/a&gt;), principalmente por fornecerem, periodicamente, dados imparciais, rigorosamente avaliados e de origem global. Sendo assim, também é interessante ressaltar que o projeto AI100 se baseia nos relatórios fornecidos pela AI Index, sendo esses dois meios de estudo fornecidos pela &lt;a href=&quot;https://www.stanford.edu/&quot;&gt;&lt;strong&gt;&lt;i&gt;Stanford University&lt;/i&gt;&lt;/strong&gt;&lt;/a&gt; (Califórnia - EUA).
+&lt;/p&gt;
+
+&lt;h2 id=&quot;os-efeitos-da-inteligência-artificial-na-sociedade&quot;&gt;Os efeitos da inteligência artificial na sociedade&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    De início, é importante analisar os impactos da inteligência artificial na sociedade. Para tanto, confira a seguir algumas conclusões sobre as informações fornecidas pelos relatórios da AI Index (2018 e 2019) em alguns contextos específicos.
+&lt;/p&gt;
+
+&lt;ul align=&quot;justify&quot;&gt;
+    &lt;li&gt;
+        &lt;strong&gt;Educação&lt;/strong&gt;: o interesse sobre à area de Inteligência Artificial aumentou significativamente no mundo todo. Um bom indicador é o aumento da matrícula em disciplinas de IA em cerca de 5 vezes somente nas universidades dos EUA e 16 vezes no restante do mundo. 
+    &lt;/li&gt;
+
+    &lt;li&gt;
+        &lt;strong&gt;Publicações&lt;/strong&gt;: o número de publicações envolvendo AI aumentou em 20 vezes no período de 2010 à 2019, principalmente envolvendo aprendizado de máquina, visão computacional e processamento de linguagem natural. Além disso, é interessante resaltar que o principal problema abordado é a ética envolvendo sistemas de AI, principalmente no que tange à privacidade de dados e viés de algoritmo. A pesquisadora doutora &lt;strong&gt;Joy Buolamwini&lt;/strong&gt;, uma das principais pesquisadoras sobre ética envolvendo AI, apresenta ao mundo criticas construtivas sobre os perigos de se utilizar dados enviesados no treinamento de sistemas inteligentes em &lt;a href=&quot;https://dspace.mit.edu/handle/1721.1/114068&quot;&gt;uma de suas teses&lt;/a&gt;.
+    &lt;/li&gt;
+
+    &lt;li&gt;
+        &lt;strong&gt;Mercado&lt;/strong&gt;: o mercado de IA está cada vez mais aquecido. Um forte indicado para isso é o aumento de cerca de 20 vezes o número de startups de AI somente nos EUA. Somado a isso, Cingapura, Brasil, Austrália, Canadá e Índia são os países com maior crescimento em termos de número de contratações na área de IA.
+    &lt;/li&gt; 
+
+    &lt;li&gt;
+        &lt;strong&gt;Desempenho&lt;/strong&gt;: é fato que hoje os sitemas de inteligência artificial estão cada vez mais eficiêntes. A queda de 28% na taxa de erro em detecção de objetos em sistemas desenvolvidos no período de 2010 à 2017, o aumento na acurácia de 55% para 68% em sistemas de resposta à perguntas com base em informações visuais (VOA - &lt;i&gt;Vision Question Answering&lt;/i&gt;), o aumento em 100 vezes na velocidade de treinamento de sistemas de reconhecimento de imagens em apenas dois anos e o aumento, em cerca de duas vezes, do poder computacional nos principais aplicativos de AI a cada 3,4 meses, são fortes indicadores para tal aumento de desempenho dos sistemas inteligêntes.
+    &lt;/li&gt;  
+&lt;/ul&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    Diante das informações apresentadas acima (extraidas do AI100 e AI Index), torna-se claro que as tecnologias de AI impactam profundamente a sociedade humana, muitas vezes superando o ser humano em determinadas atividades, gerando duvidas sobre a substituição de pessoas em determinadas áreas de atuação, o que pode causar diversos problemas e benefícios os quais devem ser estudados e ponderados para tomadas de decisões políticas. 
+&lt;/p&gt;
+
+&lt;h2 id=&quot;algumas-tecnologias-de-ia&quot;&gt;Algumas tecnologias de IA&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    Não é segredo que, nos dias atuais, os sistemas computacionais vêm crescendo, em termos de aplicabilidade, cada vez mais. A seguir, confira uma lista contendo os principais sitemas de inteligência artificial que se tem notícia atualmente, os quais muitos deles são considerados o &lt;strong&gt;estado da arte&lt;/strong&gt; da inteligência artificial, isto é, o ápice da tecnologia de AI.
+&lt;/p&gt;
+
+&lt;ul align=&quot;justify&quot;&gt;
+    &lt;li&gt;
+        &lt;strong&gt;Veículos Autônomos&lt;/strong&gt;: carros da empresa TESLA considerados autônomos de nível 2 (automação parcial), capazes de controlar a direção e frenagem ao mesmo tempo. Segundo a &lt;strong&gt;Administração Nacional de Segurança no Trânsito nas Rodovias&lt;/strong&gt; (NHTSA - EUA), existem &lt;a href=&quot;https://proximonivel.embratel.com.br/voce-conhece-os-6-niveis-de-um-carro-autonomo/&quot;&gt;6 níveis de automação de veículos&lt;/a&gt;;
+    &lt;/li&gt;
+
+    &lt;li&gt;
+        &lt;strong&gt;Robôs Avançados&lt;/strong&gt;: robôs autônomos (Ex.: BigDog, Atlas , etc) criados pela empresa estado-unidense de engenharia robótica &lt;strong&gt;&lt;i&gt;Boston Dynamics&lt;/i&gt;&lt;/strong&gt; (Imagem 1). &lt;a href=&quot;https://bostondynamics.com/products/&quot;&gt;Tais robôs&lt;/a&gt; ficaram famosos por possuirem comportamentos notáveis como: mobilidade, agilidade, destreza e velocidade;
+    &lt;/li&gt;
+
+    &lt;li&gt;
+        &lt;strong&gt;Agente Remoto da NASA&lt;/strong&gt;: permite o planejamento, controle e monitoramento e navegação autônoma de aeronaves e robôs; (Ex.: &lt;a href=&quot;https://mars.nasa.gov/mars2020/&quot;&gt; Perseverance Rover&lt;/a&gt;)
+    &lt;/li&gt;
+
+    &lt;li&gt;
+        &lt;strong&gt;Dynamic Analysis and Replanning Tool (DART)&lt;/strong&gt;: programa de inteligência artificial usado pelos militares dos EUA para otimizar e agendar o transporte de suprimentos ou pessoal e resolver outros problemas logísticos.
+    &lt;/li&gt;
+
+&lt;/ul&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    Diversas outras incríveis tecnologias de AI se fazem presente nos dias atuais e muitas delas  consistem em evoluções de sistemas especialistas, superando até mesmo humanos especialistas na área. Não satisfeito, até o campo das artes foram dominadas por inteligência artificial, principalmente por tecnologias de ponta como &lt;a href=&quot;https://openai.com/&quot;&gt;Open AI&lt;/a&gt;, &lt;a href=&quot;https://openai.com/research/gpt-4&quot;&gt;GPT-4&lt;/a&gt;, &lt;a href=&quot;https://www.bing.com/search?q=Bing%20AI&amp;amp;showconv=1&amp;amp;form=MW00X7&quot;&gt;Bing AI&lt;/a&gt;, &lt;a href=&quot;https://www.canva.com/pt_br/gerador-imagem-ia/&quot;&gt;Canvas AI image generator&lt;/a&gt;, etc. Além disso, algumas dessas tecnologias, como o GPT-4, tornaram-se forte aliadas para diversos profissionais e estudantes ao redor do mundo, aumentando a produtividade em suas atividades.
+&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;/img/Boston_Dynamics_robots.jpg&quot; width=&quot;624&quot; height=&quot;532&quot; align=&quot;center&quot; /&gt;
+    &lt;figcaption align=&quot;center&quot;&gt;&lt;strong&gt;Imagem 1&lt;/strong&gt;: robôs avançados criados pela &lt;a href=&quot;https://bostondynamics.com/&quot;&gt;&lt;i&gt;Boston Dynamics&lt;/i&gt;&lt;/a&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;riscos-vs-benefícios&quot;&gt;Riscos Vs Benefícios&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    Ao analisar um contexto de aplicação da inteligência artificial, é necessário ponderar os prós e contras. Diante disso, a tabela a baixo apresenta um comparativo entre os benefícios e os riscos de algumas das principais demandas de aplicação atualmente.
+&lt;/p&gt;
+
+&lt;!-- Tabela gerada por meio do site https://www.tablesgenerator.com/html_tables --&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:sans-serif, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:sans-serif, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-9wq8{border-color:inherit;text-align:center;vertical-align:middle}
+.tg .tg-e7kw{background-color:#ecf4ff;border-color:inherit;font-weight:bold;text-align:center;vertical-align:middle}
+.tg .tg-uzvj{border-color:inherit;font-weight:bold;text-align:center;vertical-align:middle}
+&lt;/style&gt;
+
+&lt;table class=&quot;tg&quot;&gt;
+&lt;thead&gt;
+  &lt;tr&gt;
+    &lt;th class=&quot;tg-e7kw&quot; colspan=&quot;3&quot;&gt;Riscos e benefícios da IA&lt;/th&gt;
+  &lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-uzvj&quot;&gt;Contexto&lt;/td&gt;
+    &lt;td class=&quot;tg-uzvj&quot;&gt;Benefício&lt;/td&gt;
+    &lt;td class=&quot;tg-uzvj&quot;&gt;Risco&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-9wq8&quot;&gt;Tomadas &lt;br /&gt;de &lt;br /&gt;decisão&lt;/td&gt;
+    &lt;td class=&quot;tg-9wq8&quot;&gt;Pode agilizar e otimizar serviços, &lt;br /&gt;aumentar o ganho de empresas,&lt;br /&gt; minimizar riscos, etc;&lt;/td&gt;
+    &lt;td class=&quot;tg-9wq8&quot;&gt;Uso descuidado ou deliberado de regras de tomada de decisão &lt;br /&gt;podem enviesar os resultados,&lt;br /&gt; desfavorecendo sexo, raça, preferências, etc.&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-9wq8&quot;&gt;Aplicações críticas &lt;br /&gt;de &lt;br /&gt;segurança&lt;/td&gt;
+    &lt;td class=&quot;tg-9wq8&quot;&gt;Pode otimizar e reduzir riscos em&lt;br /&gt; transportes de cargas e pessoas,&lt;br /&gt; distribuição de água, energia elétrica, etc.&lt;/td&gt;
+    &lt;td class=&quot;tg-9wq8&quot;&gt;Questões éticas devem ser levadas em conta,&lt;br /&gt;podendo encarecer os projetos;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-9wq8&quot;&gt;Cybersegurança&lt;/td&gt;
+    &lt;td class=&quot;tg-9wq8&quot;&gt;Identificar e prevenir ataques &lt;br /&gt;como proliferação de &lt;span style=&quot;font-weight:bold;font-style:italic&quot;&gt;vírus&lt;/span&gt; e &lt;span style=&quot;font-weight:bold;font-style:italic&quot;&gt;malware&lt;/span&gt;,&lt;br /&gt; &lt;span style=&quot;font-weight:bold;font-style:italic&quot;&gt;blackmail&lt;/span&gt;, &lt;span style=&quot;font-weight:bold;font-style:italic&quot;&gt;phishing&lt;/span&gt;, &lt;span style=&quot;font-weight:bold;font-style:italic&quot;&gt;fake News&lt;/span&gt;, etc.&lt;/td&gt;
+    &lt;td class=&quot;tg-9wq8&quot;&gt;Se utilizado de forma errada, &lt;br /&gt;poderá limitar a &lt;span style=&quot;font-weight:bold&quot;&gt;liberdade de expressão;&lt;/span&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-9wq8&quot;&gt;&lt;span style=&quot;font-style:normal&quot;&gt;tarefas cognitivas e intelectuais &lt;/span&gt;&lt;br /&gt;(human-level AI)&lt;/td&gt;
+    &lt;td class=&quot;tg-9wq8&quot;&gt;Pode acelerar as descobertas científicas &lt;br /&gt;e solucionar problemas de difícil solução;&lt;/td&gt;
+    &lt;td class=&quot;tg-9wq8&quot;&gt;Cientistas famosos de IA alertam que essa pode ser uma má ideia: &lt;br /&gt;&lt;span style=&quot;font-weight:bold;font-style:italic&quot;&gt;Yudkowsky&lt;/span&gt; (2008), &lt;br /&gt;&lt;span style=&quot;font-weight:bold;font-style:italic&quot;&gt;Turing&lt;/span&gt; (1951), &lt;br /&gt;&lt;span style=&quot;font-weight:bold&quot;&gt;Butler&lt;/span&gt; (1863), &lt;br /&gt;&lt;span style=&quot;font-weight:bold;font-style:italic&quot;&gt;Bostrom&lt;/span&gt; (2014),&lt;br /&gt; e personalidades como: &lt;br /&gt;&lt;span style=&quot;font-weight:bold;font-style:italic&quot;&gt;Stephen Hawking&lt;/span&gt;,&lt;br /&gt; &lt;span style=&quot;font-weight:bold;font-style:italic&quot;&gt;Bill Gates&lt;/span&gt;,&lt;br /&gt; &lt;span style=&quot;font-weight:bold;font-style:italic&quot;&gt;Martin Rees&lt;/span&gt;, &lt;br /&gt;&lt;span style=&quot;font-weight:bold;font-style:italic&quot;&gt;Elon Musk&lt;/span&gt;.&lt;br /&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;conclusão&quot;&gt;Conclusão&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    Diante do exposto, é notavel a grande evolução que a inteligência artificial teve desde sua criação como área de pesquisa até as diversas aplicações nos dias atuais. Contudo, apesar do rápido crescimento dessa indústria, novas questões como ética, viés e proteção mostram-se cada vez mais importantes, atraindo atenção do mundo todo.
+&lt;/p&gt;
+&lt;hr /&gt;
 </description>
         <pubDate>Wed, 09 Aug 2023 20:00:00 -0300</pubDate>
         <link>http://localhost:4000/2023/08/09/AI-2023/</link>
