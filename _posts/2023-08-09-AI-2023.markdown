@@ -9,6 +9,7 @@ catalog: true
 tags:
     - AI
 ---
+
 > “A sociedade está agora em um momento crucial onde deve determinar como implantar tecnologias baseadas em IA de maneiras que promovam, ao invés de dificultarem, valores democráticos como liberdade, igualdade e transparência” - <strong>Stanford University, AI100</strong>.
 
 <p align = "justify">
