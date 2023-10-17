@@ -10,5 +10,149 @@ tags:
     - AI
 ---
 
-> (Em desenvolvimento ...)
+> "É difícil pensar em uma grande indústria que não será transformada pela inteligência artificial. Isso inclui saúde, educação, meios de transporte, verejo, comunicações e agricultura. Existem caminhos surpreendentemente claros para a IA fazer uma grande diferença em todas essas indústrias." - <strong>Andrew Ng</strong>
 
+<p align = "justify">
+No mundo atual é fato que a inteligência artificial vem atuando cada vez mais forte em diferentes áreas de aplicação. Mas como a inteligência artificial interagem com o mundo? Essa e outras questões serão abordadas por esse artigo, cuja finalidade consiste em introduzir o leitor um pouco mais sobre esse universo.
+</p>
+
+## Ambiente de Tarefas
+
+<p align = "justify">
+    Antes de nos aprofundarmos mais sobre como a AI interage com o mundo, é importante ter noção sobre o que seria um ambiente de tarefas (ou ambiente de aplicação). Ao pé da letra, um ambiente pode ser definido como um espaço físico ou contexto em que algo ocorre ou existe. Alguns exemplos de ambiente são:
+</p>
+
+<ul align = "justify">
+
+    <li>
+        <strong>Ambiente Físico</strong>: refere-se ao espaço ao nosso redor, incluindo os elementos naturais (como terra, água, ar, fauna e flora) e os elementos criados pelo ser humano (como edifícios, cidades e infraestrutura);
+    </li>
+
+    <li>
+        <strong>Ambiente Natural</strong>: refere-se ao mundo natural, abrangendo ecossistemas, climas, paisagens e a interação entre organismos e o meio;
+    </li>
+
+    <li>
+        <strong>Ambiente Digital</strong>: refere-se ao contexto online ou digital em que as interações e atividades ocorrem. Pode incluir a internet, redes sociais, plataformas online e softwares;
+    </li>
+
+    <li>
+        <strong>Ambiente de Negócios</strong>: refere-se ao cenário econômico e comercial em que as empresas operam, incluindo concorrência, regulamentação e fatores econômicos;
+    </li>
+
+    <li>
+        <strong>Ambiente Social</strong>: refere-se ao contexto das relações humanas e interações sociais, abrangendo aspectos culturais, econômicos, políticos e sociológicos;
+    </li>
+
+    <li>
+        <strong>Ambiente Virtual</strong>: refere-se à ambientes criados digitalmente, como ambientes de realidade virtual ou simulações computacionais;
+    </li>
+
+    <li>
+        <strong>Ambiente de Aprendizado</strong>: refere-se ao local e/ou contexto em que a educação e a aprendizagem ocorrem, como escolas, universidades e programas de treinamento.
+    </li>
+
+</ul>
+
+<p align = "justify">
+    Mas o que seria um ambiente para uma AI? Para uma inteligência artificial, o ambiente refere-se ao espaço no qual ela opera, coletando informações para tomar decisões e finalmente executar ações. Tal conceito é fundamental para o aprendizado de máquina, principalmente quando se usa o paradigma de <i>reinforcement learning</i> (aprendizado por reforço), pois é o cenário em que a IA realiza suas atividades (operação, aprendizado e tomada de decisões). Na prática, no contexto da inteligência artificial, podemos resumi os diferentes meios existentes em 3 principais:
+</p>
+
+<ul>
+
+    <li>
+        <strong>Ambiente Simulado</strong>: refere-se ambientes de jogos, simulações físicas ou ambientes digitais criados para fins de treinamento.
+    </li>
+
+    <li>
+        <strong>Ambiente Físico</strong>: refere-se à ambientes reais e seus elementos, os quais a inteligência artificial precisa perceber e responder.
+    </li>
+
+    <li>
+        <strong>Ambiente de Software</strong>: refere-se à ambientes puramente de software, como sistemas de recomendação em sites de comércio eletrônico, motores de busca na web ou sistemas de suporte à decisão em ambientes de negócios.
+    </li>
+
+</ul>
+
+## Agentes de Inteligência Artificial
+
+<p align = "justify">
+    Após o entendimento sobre o que seria um meio, é interessante entender o conceito de <strong>agente</strong>. Sendo assim, no contexto da inteligência artificial, um "agente" refere-se a uma entidade que é capaz de perceber seu ambiente, tomar decisões com base em sua percepção e executar ações para alcançar metas ou objetivos específicos. A <strong>Imagem 1</strong> a seguir apresenta uma arquitetura geral de um agente, assim como sua interação com o ambiente.
+</p>
+
+<figure>
+    <img src="/img/CanonicAgent.png" align = "center">
+        <figcaption align = "center"><strong>Imagem 1</strong>: estrutura canônica de um agente 
+            <br> 
+                Ref.: <a href = "https://www.academia.edu/41601226/Artificial_Intelligence_A_Modern_Approach"><i> Stuart Russel & Peter Norving - "Artificial Inteligence, a Modern Approach"</i></a>
+        </figcaption>
+</figure>
+
+<p align = "justify">    
+    Diante do exposto, é importante ressaltar que os agentes são uma parte fundamental do paradigma de aprendizado de máquina <strong>aprendizado por reforço</strong> e também são amplamente utilizados em sistemas de inteligência artificial autônomos. Diante disso, os agentes podem ser de diferentes tipos, variando desde agentes simples que executam tarefas específicas até agentes mais complexos e autônomos, como assistentes virtuais, carros autônomos, robôs industriais e muito mais. Confira a seguir alguns dos principais tipos de agentes de inteligência artificial.
+</p>
+
+<ul align = "justify">
+
+    <li>
+        <strong>Agentes de reflexo simples</strong>: é um tipo básico de agente que toma decisões com base apenas nas informações imediatas e atuais do ambiente (percepção atual), sem considerar o histórico de ações ou as consequências futuras. Ele age como um "reflexo" automático, respondendo diretamente à estímulos do meio. Entretanto, esse agente só funciona para <u>ambientes totalmente observável</u>. A <strong>Imagem 2</strong> a seguir apresenta um esquemático sobre como esse agente interage com o meio, assim como sua estrutura.
+
+            <figure>
+                <img src="/img/SimpleReflexAgent.png" align = "center">
+                    <figcaption align = "center"><strong>Imagem 2</strong>: estrutura de um agente de reflexo simples 
+                        <br> 
+                        Ref.: <a href = "https://www.academia.edu/41601226/Artificial_Intelligence_A_Modern_Approach"><i> Stuart Russel & Peter Norving - "Artificial Inteligence, a Modern Approach"</i></a>
+                    </figcaption>
+            </figure>
+
+    <br>
+
+    </li>
+
+    <li>
+        <strong>Agentes de reflexo baseado em modelo</strong>: consiste em um tipo de agente que toma decisões com base nas informações atuais do meio, mas também leva em consideração um modelo interno do ambiente (ou estado interno) que mantém um <u>histórico de percepções</u> o qual permite a previsão das consequências de determinadas ações antes de tomá-las <strong>(Imagem 3)</strong>. Essa capacidade de planejamento ajuda o agente a tomar decisões mais informadas, antecipando os resultados de suas ações, tornando esse agente mais adequado para tarefas que envolvem um grau de previsão e planejamento. Diante do exposto, para o correto funcionamento do sistema, esse agente também considera outros dois modelos: um <strong>modelo transitório</strong> o qual descreve como o ambiente muda com a ação do agente e um <strong>modelo sensorial</strong>, que descreve o funcionamento e limitação dos sensores.
+
+            <figure>
+                <img src="/img/ReflexModelAgent.png" align = "center">
+                    <figcaption align = "center"><strong>Imagem 3</strong>: estrutura de um agentes de reflexo baseado em modelo
+                        <br> 
+                        Ref.: <a href = "https://www.academia.edu/41601226/Artificial_Intelligence_A_Modern_Approach"><i> Stuart Russel & Peter Norving - "Artificial Inteligence, a Modern Approach"</i></a>
+                    </figcaption>
+            </figure>
+
+    <br>
+
+    </li>
+
+    <li>
+        <strong>Agentes baseados em objetivos</strong>: refere-se á tipo de agente que toma decisões e executa ações com base em metas ou objetivos específicos que deseja alcançar <strong>(imagem 4)</strong>. Ele avalia seu ambiente e escolhe ações que o aproximam de seus objetivos. Esse tipo de agente é orientado à metas e frequentemente incorpora um processo de planejamento para determinar a melhor sequência de ações a serem tomadas. É amplamente utilizado em sistemas de IA voltados para tarefas complexas que envolvem a busca ativa por soluções ou a otimização de resultados.
+
+            <figure>
+                <img src="/img/ObjectiveAgent.png" align = "center">
+                    <figcaption align = "center"><strong>Imagem 4</strong>: estrutura de um agente baseados em objetivos
+                        <br> 
+                        Ref.: <a href = "https://www.academia.edu/41601226/Artificial_Intelligence_A_Modern_Approach"><i> Stuart Russel & Peter Norving - "Artificial Inteligence, a Modern Approach"</i></a>
+                    </figcaption>
+            </figure>
+
+    <br>
+
+    </li>
+
+    <li>
+        <strong>Agentes utilitários</strong>: é um tipo de agente que toma decisões com base na maximização de uma função de utilidade <strong>(Imagem 5)</strong>. Essa função atribui valores às diferentes situações, permitindo ao agente escolher a ação que maximiza seu valor esperado. Diante disso, o agente considera não apenas seus objetivos, mas também a preferência por resultados específicos, resolvendo o problema de <u>conflito de objetivos</u> e melhorando a performance do agente. Essa abordagem é frequentemente usada em tarefas onde não há uma única meta fixa, mas sim uma avaliação contínua das consequências das ações em termos de "utilidade" ou "valor" esperado. 
+    
+            <figure>
+                <img src="/img/UtilitaryAgent.png" align = "center">
+                    <figcaption align = "center"><strong>Imagem 5</strong>: estrutura de um agente utilitário
+                        <br> 
+                        Ref.: <a href = "https://www.academia.edu/41601226/Artificial_Intelligence_A_Modern_Approach"><i> Stuart Russel & Peter Norving - "Artificial Inteligence, a Modern Approach"</i></a>
+                    </figcaption>
+            </figure>
+
+    <br>
+
+    </li>
+</ul>
+
+---
