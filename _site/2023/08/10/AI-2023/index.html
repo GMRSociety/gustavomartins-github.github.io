@@ -276,7 +276,7 @@
 No mundo atual é fato que a inteligência artificial vem atuando cada vez mais forte em diferentes áreas de aplicação. Mas como a inteligência artificial interagem com o mundo? Essa e outras questões serão abordadas por esse artigo, cuja finalidade consiste em introduzir o leitor um pouco mais sobre esse universo.
 </p>
 
-<h2 id="ambiente-de-tarefas">Ambiente de Tarefas</h2>
+<h2 id="ambiente-de-tarefas-environment">Ambiente de Tarefas (<i>Environment</i>)</h2>
 
 <p align="justify">
     Antes de nos aprofundarmos mais sobre como a AI interage com o mundo, é importante ter noção sobre o que seria um ambiente de tarefas (ou ambiente de aplicação). Ao pé da letra, um ambiente pode ser definido como um espaço físico ou contexto em que algo ocorre ou existe. Alguns exemplos de ambiente são:
@@ -414,6 +414,155 @@ No mundo atual é fato que a inteligência artificial vem atuando cada vez mais 
 
     </li>
 </ul>
+
+<h2 id="conceitos-fundamentais-agentes-de-ai">Conceitos Fundamentais (Agentes de AI)</h2>
+
+<p align="justify">   
+    Após o entendimento sobre os diferentes dipos de agentes de AI (tópico anterior), é importante entender alguns conceitos fundamentais relacionados à forma como eles interagem com o ambiente e toma decisões a fim de atingir seu objetivo específico. Diante disso, 3 conceitos se destacam: <u>Ação</u>, <u>Função</u> e <u>Programa</u>. Confira a seguir uma explicação com mais detalhes sobre cada deles (no contexto de agentes de AI).
+</p>
+
+<ul align="justify">
+
+    <li>
+        <strong>Ação de um agente</strong>: refere às escolhas ou decisões tomadas pelo agente para influenciar seu ambiente. Tais ações depende de sua programação interna e de toda a sequência de percepção observada até o momento, mas não de algo que ele não tenha percebido. 
+        <br />
+        <strong>Ex.:</strong> mover-se, coletar informações, ações específicas, etc;
+    </li>
+
+    <li>
+        <strong>Função agente</strong>: refere-se ao componente central do agente de IA que determina o comportamento do agente. Para isso, ela mapeia as percepções do agente (informações que ele obtém de seu ambiente) para as ações que o agente deve realizar;
+    </li>
+
+    <li>
+        <strong>Programa agente</strong>: é a implementação concreta da <u>função agente</u> em um sistema de inteligência artificial. Ele consiste em um conjunto de instruções (algoritmos) que guiam o comportamento do agente com base em suas percepções e no conhecimento acumulado. Sendo assim, tal programa pode ser escrito em uma linguagem de programação e pode envolver a aplicação de técnicas, a depender do tipo de agente de AI e seu objetivo, de aprendizado de máquina e lógica.
+    </li>
+
+</ul>
+
+<h2 id="racionalidade--agente-de-ai">Racionalidade &amp; Agente de AI</h2>
+
+<p align="justify">
+    O termo racionalidade, a pesar de ser tratado de maneira formal pela primeira vez na <strong>Filosofia</strong>, possui raízes em diversas áreas da ciência, cada uma abordando-a à sua maneira, como economia, psicologia, inteligência artificial, ciência cognitiva e até mesmo nas ciências sociais. É nesse contexto que a <strong>Teoria da Decisão</strong>, em meados de 1950, ganhou muita visibilidade, tendo como finalidade o estudo das escolhas de uma pessoa, organização e até mesmo agentes inteligentes (agentes de AI).
+</p>
+
+<p align="justify">
+    Em relação a teoria da decisão, alguns conceitos se fazem muito importantes, como o <strong>Consquencialismo</strong>, <strong>Performance</strong>, <strong>Agente Racional</strong> e <strong> Agente inteligente</strong>. Confira a seguir uma breve explicação sobre cada um deles.
+</p>
+
+<ul align="justify">
+
+    <li>
+        <strong>Consequencialismo</strong>: consiste em uma abordagem ética que avalia a moralidade das ações com base em suas consequências. Em termos de tomada de decisão, consiste na escolha de ações que maximizem suas boas consequências e que reduzam ao máximo suas más consequências (decisão ética ou moralmente correta); 
+    </li>
+
+    <li>
+        <strong>Performance</strong>: consiste em uma métrica ou critério que é usada para avaliar o sucesso ou qualidade das consequências de uma decisão - "os impactos da ação modificaram os estatus do ambiente adequadamente?". Essa métrica é inserida pelo própio programador, podendo ser explicita ou não. Além disso, nem sempre é fácil formular uma boa medida de performance.
+    </li>
+
+    <li>
+        <strong>Agente racional</strong>: consiste em um agente capaz de selecionar uma ação a qual espera-se que maximize a medida de desempenho (performance) considerando as informações disponíveis, os objetivos desejados e as restrições existentes.
+    </li>
+
+    <li>
+        <strong>Agente Inteligente</strong>: consiste em um agente capaz de perceber seu ambiente, tomar decisões e agir de maneira autônoma para alcançar objetivos específicos ou resolver problemas. Para isso, esse tipo de entidade envolve <strong>aprendizado de máquina</strong>, <strong>Aquisição de informações</strong> (geralmente por meio de sensores) e <strong>exploração</strong>.
+    </li>
+
+    <br />
+
+    <strong> Obs.</strong>: a racionalidade não é o mesmo que perfeição, pois ela busca maximizar a performance esperada, enquanto a perfeição consiste na maximização de fato da performance.
+</ul>
+
+<p align="justify">
+    Diante do exposto, é importante entender os fatores os quais influenciam a decisão sobre o que seria uma ação racional em um determinado momento. Nesse sentido, 4 pontos principais devem ser considerados:
+</p>
+
+<ul align="justify">
+
+    <li>
+        A medida de desempenho que define o critério de sucesso
+    </li>
+
+    <li>
+        O conhecimento prévio do agente sobre o ambiente;
+    </li>
+
+    <li>
+        As ações que o agente pode realizar;
+    </li>
+
+    <li>
+        A sequência de percepção do agente até o momento da decisão;
+    </li>
+
+</ul>
+
+<h2 id="representação-dos-estados">Representação dos Estados</h2>
+
+<p align="justify">
+    Outra informação de suma importância no contexto da inteligência artificial é a representação de seus estados e sua organização (mapeamento). Para isso, de início é importante entender que um estado consiste em uma descrição do ambiente em um determinado momento, isto é, sua situação, condições, configurações e características relevantes. Sendo assim, existem 3 principais representações de estados para AI (<strong>Imagem 6</strong>). São eles:
+</p>
+
+<ul align="justify">
+
+    <li>
+        <strong>Representação Atômica (Atomic)</strong>: nessa representação, o ambiente é dividido em estados atômicos, cada um representando uma característica específica do ambiente. Diante disso, cada estado é independente dos outros e desscreve uma característica <strong>única</strong> do meio. 
+        
+        <br />
+
+        <strong>Ex.:</strong> pesquisa, jogos, Modelos de Markov ocultos, Processos de decisão de Markov.
+    </li>
+
+    <br />
+
+    <li>
+        <strong>Representação Desagregada (Factored)</strong>: nessa abordagem, os estados são representados como uma combinação de variáveis independentes ou atributos. Cada variável representa uma característica do ambiente e pode ter seus próprios valores possíveis, permitindo uma descrição mais compacta e estruturada do ambiente
+    </li>
+
+    <li>
+        <strong>Representação Estruturada (Structured)</strong>: nessa abordagem, os estados são descritos em termos de relações e conexões entre diferentes elementos do ambiente. Isso envolve a representação das relações e dependências entre as variáveis do ambiente, tornando-a muito útil para modelar ambientes complexos com relações complexas entre seus elementos.
+    </li>
+
+</ul>
+
+<figure>
+    <img src="/img/StatesAI.png" align="center" />
+        <figcaption align="center"><strong>Imagem 6</strong>: principais representações de estados para AI 
+            <br /> 
+                Ref.: <a href="https://www.academia.edu/41601226/Artificial_Intelligence_A_Modern_Approach"><i>Stuart Russel &amp; Peter Norving - "Artificial Inteligence, a Modern Approach</i></a>
+        </figcaption>
+</figure>
+
+<h2 id="especificação-do-meio">Especificação do Meio</h2>
+
+<p align="justify">
+    Por fim, após o entendimento das nuâncias envolvendo agentes no campo da inteligência artificial, podemos unir o conceito de <strong>ambiente </strong> e <strong>agente</strong>. É nesse sentido que, ao projetar um agente, o primeiro passo deve ser sempre especificar o ambiente de tarefa da forma mais completa possível. Para isso, geralmente utiliza-se uma abordagem para definir e entender os sistemas inteligentes conhecida como <strong>descrição PEAS</strong>, um acrônimo para "<i><strong>P</strong>erformance, <strong>E</strong>nvironment, <strong>A</strong>ctuators, <strong>S</strong>ensors</i>". Sendo assim, cada termo desse acrônomo pode ser interpretado, respectivamente, por meio das seguintes perguntas:
+</p>
+
+<ul align="justify">
+
+    <li>
+        <strong>Performance</strong>: qual é a <strong>medida de performance</strong> desejada?
+    </li>
+        
+    <li>
+        <strong>Environment</strong>: com é o <strong>ambiente</strong> da tarefa?
+    </li>
+
+    <li>
+        <strong>Actuators</strong>: quais são os <strong>atuadores</strong> disponíveis para desempenhar ações?
+    </li>
+
+    <li>
+        <strong>Sensors</strong>: quais são os <strong>sensores</strong> disponíveis para explorar o ambiente
+    </li>
+
+</ul>
+
+<h2 id="conclusão">Conclusão</h2>
+
+<p align="justify"> 
+   De acordo com este artigo, espera-se que o leitor compreenda um pouco mais sobre o que seria um agente e um ambiente de tarefas no contexto da inteligência artificial. Para isso, foram apresentados conceitos, termos e terioas fundamentais para essa área de estudo cuja relevância aumenta cada vez mais na sociedade contemporânea.
+</p>
 
 <hr />
 

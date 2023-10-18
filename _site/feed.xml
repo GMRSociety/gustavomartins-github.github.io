@@ -5,8 +5,8 @@
     <description>这里是 @Hux黄玄 的个人博客，与你一起发现更大的世界 | 要做一个有 swag 的程序员</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 17 Oct 2023 15:03:32 -0300</pubDate>
-    <lastBuildDate>Tue, 17 Oct 2023 15:03:32 -0300</lastBuildDate>
+    <pubDate>Tue, 17 Oct 2023 21:56:30 -0300</pubDate>
+    <lastBuildDate>Tue, 17 Oct 2023 21:56:30 -0300</lastBuildDate>
     <generator>Jekyll v4.3.2</generator>
     
       <item>
@@ -19,7 +19,7 @@
 No mundo atual é fato que a inteligência artificial vem atuando cada vez mais forte em diferentes áreas de aplicação. Mas como a inteligência artificial interagem com o mundo? Essa e outras questões serão abordadas por esse artigo, cuja finalidade consiste em introduzir o leitor um pouco mais sobre esse universo.
 &lt;/p&gt;
 
-&lt;h2 id=&quot;ambiente-de-tarefas&quot;&gt;Ambiente de Tarefas&lt;/h2&gt;
+&lt;h2 id=&quot;ambiente-de-tarefas-environment&quot;&gt;Ambiente de Tarefas (&lt;i&gt;Environment&lt;/i&gt;)&lt;/h2&gt;
 
 &lt;p align=&quot;justify&quot;&gt;
     Antes de nos aprofundarmos mais sobre como a AI interage com o mundo, é importante ter noção sobre o que seria um ambiente de tarefas (ou ambiente de aplicação). Ao pé da letra, um ambiente pode ser definido como um espaço físico ou contexto em que algo ocorre ou existe. Alguns exemplos de ambiente são:
@@ -157,6 +157,155 @@ No mundo atual é fato que a inteligência artificial vem atuando cada vez mais 
 
     &lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h2 id=&quot;conceitos-fundamentais-agentes-de-ai&quot;&gt;Conceitos Fundamentais (Agentes de AI)&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;   
+    Após o entendimento sobre os diferentes dipos de agentes de AI (tópico anterior), é importante entender alguns conceitos fundamentais relacionados à forma como eles interagem com o ambiente e toma decisões a fim de atingir seu objetivo específico. Diante disso, 3 conceitos se destacam: &lt;u&gt;Ação&lt;/u&gt;, &lt;u&gt;Função&lt;/u&gt; e &lt;u&gt;Programa&lt;/u&gt;. Confira a seguir uma explicação com mais detalhes sobre cada deles (no contexto de agentes de AI).
+&lt;/p&gt;
+
+&lt;ul align=&quot;justify&quot;&gt;
+
+    &lt;li&gt;
+        &lt;strong&gt;Ação de um agente&lt;/strong&gt;: refere às escolhas ou decisões tomadas pelo agente para influenciar seu ambiente. Tais ações depende de sua programação interna e de toda a sequência de percepção observada até o momento, mas não de algo que ele não tenha percebido. 
+        &lt;br /&gt;
+        &lt;strong&gt;Ex.:&lt;/strong&gt; mover-se, coletar informações, ações específicas, etc;
+    &lt;/li&gt;
+
+    &lt;li&gt;
+        &lt;strong&gt;Função agente&lt;/strong&gt;: refere-se ao componente central do agente de IA que determina o comportamento do agente. Para isso, ela mapeia as percepções do agente (informações que ele obtém de seu ambiente) para as ações que o agente deve realizar;
+    &lt;/li&gt;
+
+    &lt;li&gt;
+        &lt;strong&gt;Programa agente&lt;/strong&gt;: é a implementação concreta da &lt;u&gt;função agente&lt;/u&gt; em um sistema de inteligência artificial. Ele consiste em um conjunto de instruções (algoritmos) que guiam o comportamento do agente com base em suas percepções e no conhecimento acumulado. Sendo assim, tal programa pode ser escrito em uma linguagem de programação e pode envolver a aplicação de técnicas, a depender do tipo de agente de AI e seu objetivo, de aprendizado de máquina e lógica.
+    &lt;/li&gt;
+
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;racionalidade--agente-de-ai&quot;&gt;Racionalidade &amp;amp; Agente de AI&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    O termo racionalidade, a pesar de ser tratado de maneira formal pela primeira vez na &lt;strong&gt;Filosofia&lt;/strong&gt;, possui raízes em diversas áreas da ciência, cada uma abordando-a à sua maneira, como economia, psicologia, inteligência artificial, ciência cognitiva e até mesmo nas ciências sociais. É nesse contexto que a &lt;strong&gt;Teoria da Decisão&lt;/strong&gt;, em meados de 1950, ganhou muita visibilidade, tendo como finalidade o estudo das escolhas de uma pessoa, organização e até mesmo agentes inteligentes (agentes de AI).
+&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    Em relação a teoria da decisão, alguns conceitos se fazem muito importantes, como o &lt;strong&gt;Consquencialismo&lt;/strong&gt;, &lt;strong&gt;Performance&lt;/strong&gt;, &lt;strong&gt;Agente Racional&lt;/strong&gt; e &lt;strong&gt; Agente inteligente&lt;/strong&gt;. Confira a seguir uma breve explicação sobre cada um deles.
+&lt;/p&gt;
+
+&lt;ul align=&quot;justify&quot;&gt;
+
+    &lt;li&gt;
+        &lt;strong&gt;Consequencialismo&lt;/strong&gt;: consiste em uma abordagem ética que avalia a moralidade das ações com base em suas consequências. Em termos de tomada de decisão, consiste na escolha de ações que maximizem suas boas consequências e que reduzam ao máximo suas más consequências (decisão ética ou moralmente correta); 
+    &lt;/li&gt;
+
+    &lt;li&gt;
+        &lt;strong&gt;Performance&lt;/strong&gt;: consiste em uma métrica ou critério que é usada para avaliar o sucesso ou qualidade das consequências de uma decisão - &quot;os impactos da ação modificaram os estatus do ambiente adequadamente?&quot;. Essa métrica é inserida pelo própio programador, podendo ser explicita ou não. Além disso, nem sempre é fácil formular uma boa medida de performance.
+    &lt;/li&gt;
+
+    &lt;li&gt;
+        &lt;strong&gt;Agente racional&lt;/strong&gt;: consiste em um agente capaz de selecionar uma ação a qual espera-se que maximize a medida de desempenho (performance) considerando as informações disponíveis, os objetivos desejados e as restrições existentes.
+    &lt;/li&gt;
+
+    &lt;li&gt;
+        &lt;strong&gt;Agente Inteligente&lt;/strong&gt;: consiste em um agente capaz de perceber seu ambiente, tomar decisões e agir de maneira autônoma para alcançar objetivos específicos ou resolver problemas. Para isso, esse tipo de entidade envolve &lt;strong&gt;aprendizado de máquina&lt;/strong&gt;, &lt;strong&gt;Aquisição de informações&lt;/strong&gt; (geralmente por meio de sensores) e &lt;strong&gt;exploração&lt;/strong&gt;.
+    &lt;/li&gt;
+
+    &lt;br /&gt;
+
+    &lt;strong&gt; Obs.&lt;/strong&gt;: a racionalidade não é o mesmo que perfeição, pois ela busca maximizar a performance esperada, enquanto a perfeição consiste na maximização de fato da performance.
+&lt;/ul&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    Diante do exposto, é importante entender os fatores os quais influenciam a decisão sobre o que seria uma ação racional em um determinado momento. Nesse sentido, 4 pontos principais devem ser considerados:
+&lt;/p&gt;
+
+&lt;ul align=&quot;justify&quot;&gt;
+
+    &lt;li&gt;
+        A medida de desempenho que define o critério de sucesso
+    &lt;/li&gt;
+
+    &lt;li&gt;
+        O conhecimento prévio do agente sobre o ambiente;
+    &lt;/li&gt;
+
+    &lt;li&gt;
+        As ações que o agente pode realizar;
+    &lt;/li&gt;
+
+    &lt;li&gt;
+        A sequência de percepção do agente até o momento da decisão;
+    &lt;/li&gt;
+
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;representação-dos-estados&quot;&gt;Representação dos Estados&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    Outra informação de suma importância no contexto da inteligência artificial é a representação de seus estados e sua organização (mapeamento). Para isso, de início é importante entender que um estado consiste em uma descrição do ambiente em um determinado momento, isto é, sua situação, condições, configurações e características relevantes. Sendo assim, existem 3 principais representações de estados para AI (&lt;strong&gt;Imagem 6&lt;/strong&gt;). São eles:
+&lt;/p&gt;
+
+&lt;ul align=&quot;justify&quot;&gt;
+
+    &lt;li&gt;
+        &lt;strong&gt;Representação Atômica (Atomic)&lt;/strong&gt;: nessa representação, o ambiente é dividido em estados atômicos, cada um representando uma característica específica do ambiente. Diante disso, cada estado é independente dos outros e desscreve uma característica &lt;strong&gt;única&lt;/strong&gt; do meio. 
+        
+        &lt;br /&gt;
+
+        &lt;strong&gt;Ex.:&lt;/strong&gt; pesquisa, jogos, Modelos de Markov ocultos, Processos de decisão de Markov.
+    &lt;/li&gt;
+
+    &lt;br /&gt;
+
+    &lt;li&gt;
+        &lt;strong&gt;Representação Desagregada (Factored)&lt;/strong&gt;: nessa abordagem, os estados são representados como uma combinação de variáveis independentes ou atributos. Cada variável representa uma característica do ambiente e pode ter seus próprios valores possíveis, permitindo uma descrição mais compacta e estruturada do ambiente
+    &lt;/li&gt;
+
+    &lt;li&gt;
+        &lt;strong&gt;Representação Estruturada (Structured)&lt;/strong&gt;: nessa abordagem, os estados são descritos em termos de relações e conexões entre diferentes elementos do ambiente. Isso envolve a representação das relações e dependências entre as variáveis do ambiente, tornando-a muito útil para modelar ambientes complexos com relações complexas entre seus elementos.
+    &lt;/li&gt;
+
+&lt;/ul&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;/img/StatesAI.png&quot; align=&quot;center&quot; /&gt;
+        &lt;figcaption align=&quot;center&quot;&gt;&lt;strong&gt;Imagem 6&lt;/strong&gt;: principais representações de estados para AI 
+            &lt;br /&gt; 
+                Ref.: &lt;a href=&quot;https://www.academia.edu/41601226/Artificial_Intelligence_A_Modern_Approach&quot;&gt;&lt;i&gt;Stuart Russel &amp;amp; Peter Norving - &quot;Artificial Inteligence, a Modern Approach&lt;/i&gt;&lt;/a&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;especificação-do-meio&quot;&gt;Especificação do Meio&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    Por fim, após o entendimento das nuâncias envolvendo agentes no campo da inteligência artificial, podemos unir o conceito de &lt;strong&gt;ambiente &lt;/strong&gt; e &lt;strong&gt;agente&lt;/strong&gt;. É nesse sentido que, ao projetar um agente, o primeiro passo deve ser sempre especificar o ambiente de tarefa da forma mais completa possível. Para isso, geralmente utiliza-se uma abordagem para definir e entender os sistemas inteligentes conhecida como &lt;strong&gt;descrição PEAS&lt;/strong&gt;, um acrônimo para &quot;&lt;i&gt;&lt;strong&gt;P&lt;/strong&gt;erformance, &lt;strong&gt;E&lt;/strong&gt;nvironment, &lt;strong&gt;A&lt;/strong&gt;ctuators, &lt;strong&gt;S&lt;/strong&gt;ensors&lt;/i&gt;&quot;. Sendo assim, cada termo desse acrônomo pode ser interpretado, respectivamente, por meio das seguintes perguntas:
+&lt;/p&gt;
+
+&lt;ul align=&quot;justify&quot;&gt;
+
+    &lt;li&gt;
+        &lt;strong&gt;Performance&lt;/strong&gt;: qual é a &lt;strong&gt;medida de performance&lt;/strong&gt; desejada?
+    &lt;/li&gt;
+        
+    &lt;li&gt;
+        &lt;strong&gt;Environment&lt;/strong&gt;: com é o &lt;strong&gt;ambiente&lt;/strong&gt; da tarefa?
+    &lt;/li&gt;
+
+    &lt;li&gt;
+        &lt;strong&gt;Actuators&lt;/strong&gt;: quais são os &lt;strong&gt;atuadores&lt;/strong&gt; disponíveis para desempenhar ações?
+    &lt;/li&gt;
+
+    &lt;li&gt;
+        &lt;strong&gt;Sensors&lt;/strong&gt;: quais são os &lt;strong&gt;sensores&lt;/strong&gt; disponíveis para explorar o ambiente
+    &lt;/li&gt;
+
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;conclusão&quot;&gt;Conclusão&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt; 
+   De acordo com este artigo, espera-se que o leitor compreenda um pouco mais sobre o que seria um agente e um ambiente de tarefas no contexto da inteligência artificial. Para isso, foram apresentados conceitos, termos e terioas fundamentais para essa área de estudo cuja relevância aumenta cada vez mais na sociedade contemporânea.
+&lt;/p&gt;
 
 &lt;hr /&gt;
 </description>
