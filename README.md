@@ -21,28 +21,28 @@ Esse repositório hospeda um projeto de Blog baseado na tecnologia Jekyll recome
 <ul align = "justify">
 
   <li>
-    <a href = "https://gustavomartins-github.github.io/"> HOME (Página Principal) </a>: página principal do site. Nesta página, encontra-se os conteúdos postados ordenados do mais recente ao mais antigo. Além disso, na dereita do site, há uma seção denominada <i>FEATURED TAGS</i>, a qual exibe as <i>TAGS</i> responsáveis por organizar os artigos de acordo com o tema em comum.
+    <a href = "https://gustavomartins-github.github.io/"> HOME (Página Principal) </a>: página principal do site. Nesta página, encontra-se os conteúdos postados ordenados do mais recente ao mais antigo (<strong>Imagem 2</strong>). Além disso, na dereita do site, há uma seção denominada <i>FEATURED TAGS</i>, a qual exibe as <i>TAGS</i> responsáveis por organizar os artigos de acordo com o tema em comum.
   </li>
 
 ![image](https://github.com/gustavomartins-github/gustavomartins-github.github.io/assets/72039007/f89aaaac-838c-45d4-85f8-9261701a8049)
-
+<h4 align="center"> <strong>Imagem 2</strong>: Página HOME</h4>
   <br>
   
   <li>
-    <a href = "https://gustavomartins-github.github.io/about/"> ABOUT (Meu portifólio) </a>: página responsável por apresentar um pouco sobre mim, isto é, meus projetos, conhecimentos, interesses, etc. Além disso, nela há um dropbox de seleção de idioma, havendo duas opções: Português Brasileiro (PT-BR) e Ingles (English).
+    <a href = "https://gustavomartins-github.github.io/about/"> ABOUT (Meu portifólio) </a>: página responsável por apresentar um pouco sobre mim , isto é, meus projetos, conhecimentos, interesses, etc (<strong>Imagem 3</strong>). Além disso, nela há um dropbox de seleção de idioma, havendo duas opções: Português Brasileiro (PT-BR) e Ingles (English).
   </li>
 
   ![image](https://github.com/gustavomartins-github/gustavomartins-github.github.io/assets/72039007/631e97b3-6578-4ce2-aecc-f83e4807bcff)
-
+<h4 align="center"> <strong>Imagem 3</strong>: Página ABOUT</h4>
 
   <br>
   
   <li>
-    <a href = "https://gustavomartins-github.github.io/archive/"> ARCHIVE (Histórico de Postagens) </a>: página responsável por organizar todas as postagens do blog de acordo com as tags e a data de publicação.
+    <a href = "https://gustavomartins-github.github.io/archive/"> ARCHIVE (Histórico de Postagens) </a>: página responsável por organizar todas as postagens do blog de acordo com as tags e a data de publicação. (<strong>Imagem 4</strong>)
   </li>
 
 ![image](https://github.com/gustavomartins-github/gustavomartins-github.github.io/assets/72039007/850c60d3-0877-424d-9d08-24767c18a814)
-
+<h4 align="center"> <strong>Imagem 4</strong>: Página ARCHIVE</h4>
 
 </ul>
 
