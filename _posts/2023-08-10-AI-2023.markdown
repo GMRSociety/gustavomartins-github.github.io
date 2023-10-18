@@ -277,7 +277,7 @@ No mundo atual é fato que a inteligência artificial vem atuando cada vez mais 
 ## Especificação do Meio
 
 <p align = "justify">
-    Por fim, após o entendimento das nuâncias envolvendo agentes no campo da inteligência artificial, podemos unir o conceito de <strong>ambiente </strong> e <strong>agente</strong>. É nesse sentido que, ao projetar um agente, o primeiro passo deve ser sempre especificar o ambiente de tarefa da forma mais completa possível. Para isso, geralmente utiliza-se uma abordagem para definir e entender os sistemas inteligentes conhecida como <strong>descrição PEAS</strong>, um acrônimo para "<i><strong>P</strong>erformance, <strong>E</strong>nvironment, <strong>A</strong>ctuators, <strong>S</strong>ensors</i>". Sendo assim, cada termo desse acrônomo pode ser interpretado, respectivamente, por meio das seguintes perguntas:
+    Após o entendimento das nuâncias envolvendo agentes no campo da inteligência artificial, podemos unir o conceito de <strong>ambiente </strong> e <strong>agente</strong>. É nesse sentido que, ao projetar um agente, o primeiro passo deve ser sempre especificar o ambiente de tarefa da forma mais completa possível. Para isso, geralmente utiliza-se uma abordagem para definir e entender os sistemas inteligentes conhecida como <strong>descrição PEAS</strong>, um acrônimo para "<i><strong>P</strong>erformance, <strong>E</strong>nvironment, <strong>A</strong>ctuators, <strong>S</strong>ensors</i>". Sendo assim, cada termo desse acrônomo pode ser interpretado, respectivamente, por meio das seguintes perguntas:
 </p>
 
 <ul align = "justify">
@@ -298,6 +298,42 @@ No mundo atual é fato que a inteligência artificial vem atuando cada vez mais 
         <strong>Sensors</strong>: quais são os <strong>sensores</strong> disponíveis para explorar o ambiente
     </li>
 
+</ul>
+
+<p align = "justify">
+    Por fim, é importante entender as <strong>propiedades</strong> do meio. Isso pode ser feito por meio da comparação de termos antagônicos, sendo tais termos características as quais diferentes meios podem vir a assumir. Algumas dessas características são:
+</p>
+
+<ul align = "justify">
+    
+    <li>
+        <u>Conhecido</u> vs. <u>Desconhecido</u>;
+    </li>
+        
+    <li>
+        <u>Discreto</u> vs. <u>Contínuo</u>;
+    </li>
+
+    <li>
+        <u>Estático</u> vs. <u>Dinâmico</u>;
+    </li>
+
+    <li>
+        <u>Determinístico</u> vs. <u>Não determinístico</u>;
+    </li>
+
+    <li>
+        <u>Episódico</u> vs. <u>Sequencial</u>;
+    </li>
+
+    <li>
+        <u>Agente único</u> vs. <u>Multiagente</u>;
+    </li>
+
+    <li>
+        <u>Totalmente observáve</u>l vs. <u>Parcialmente observável</u> vs. <u>Não observável</u>.
+    </li>
+    
 </ul>
 
 ## Conclusão

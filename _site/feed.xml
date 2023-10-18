@@ -5,8 +5,8 @@
     <description>这里是 @Hux黄玄 的个人博客，与你一起发现更大的世界 | 要做一个有 swag 的程序员</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 17 Oct 2023 21:56:30 -0300</pubDate>
-    <lastBuildDate>Tue, 17 Oct 2023 21:56:30 -0300</lastBuildDate>
+    <pubDate>Tue, 17 Oct 2023 22:07:10 -0300</pubDate>
+    <lastBuildDate>Tue, 17 Oct 2023 22:07:10 -0300</lastBuildDate>
     <generator>Jekyll v4.3.2</generator>
     
       <item>
@@ -278,7 +278,7 @@ No mundo atual é fato que a inteligência artificial vem atuando cada vez mais 
 &lt;h2 id=&quot;especificação-do-meio&quot;&gt;Especificação do Meio&lt;/h2&gt;
 
 &lt;p align=&quot;justify&quot;&gt;
-    Por fim, após o entendimento das nuâncias envolvendo agentes no campo da inteligência artificial, podemos unir o conceito de &lt;strong&gt;ambiente &lt;/strong&gt; e &lt;strong&gt;agente&lt;/strong&gt;. É nesse sentido que, ao projetar um agente, o primeiro passo deve ser sempre especificar o ambiente de tarefa da forma mais completa possível. Para isso, geralmente utiliza-se uma abordagem para definir e entender os sistemas inteligentes conhecida como &lt;strong&gt;descrição PEAS&lt;/strong&gt;, um acrônimo para &quot;&lt;i&gt;&lt;strong&gt;P&lt;/strong&gt;erformance, &lt;strong&gt;E&lt;/strong&gt;nvironment, &lt;strong&gt;A&lt;/strong&gt;ctuators, &lt;strong&gt;S&lt;/strong&gt;ensors&lt;/i&gt;&quot;. Sendo assim, cada termo desse acrônomo pode ser interpretado, respectivamente, por meio das seguintes perguntas:
+    Após o entendimento das nuâncias envolvendo agentes no campo da inteligência artificial, podemos unir o conceito de &lt;strong&gt;ambiente &lt;/strong&gt; e &lt;strong&gt;agente&lt;/strong&gt;. É nesse sentido que, ao projetar um agente, o primeiro passo deve ser sempre especificar o ambiente de tarefa da forma mais completa possível. Para isso, geralmente utiliza-se uma abordagem para definir e entender os sistemas inteligentes conhecida como &lt;strong&gt;descrição PEAS&lt;/strong&gt;, um acrônimo para &quot;&lt;i&gt;&lt;strong&gt;P&lt;/strong&gt;erformance, &lt;strong&gt;E&lt;/strong&gt;nvironment, &lt;strong&gt;A&lt;/strong&gt;ctuators, &lt;strong&gt;S&lt;/strong&gt;ensors&lt;/i&gt;&quot;. Sendo assim, cada termo desse acrônomo pode ser interpretado, respectivamente, por meio das seguintes perguntas:
 &lt;/p&gt;
 
 &lt;ul align=&quot;justify&quot;&gt;
@@ -299,6 +299,42 @@ No mundo atual é fato que a inteligência artificial vem atuando cada vez mais 
         &lt;strong&gt;Sensors&lt;/strong&gt;: quais são os &lt;strong&gt;sensores&lt;/strong&gt; disponíveis para explorar o ambiente
     &lt;/li&gt;
 
+&lt;/ul&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    Por fim, é importante entender as &lt;strong&gt;propiedades&lt;/strong&gt; do meio. Isso pode ser feito por meio da comparação de termos antagônicos, sendo tais termos características as quais diferentes meios podem vir a assumir. Algumas dessas características são:
+&lt;/p&gt;
+
+&lt;ul align=&quot;justify&quot;&gt;
+    
+    &lt;li&gt;
+        &lt;u&gt;Conhecido&lt;/u&gt; vs. &lt;u&gt;Desconhecido&lt;/u&gt;;
+    &lt;/li&gt;
+        
+    &lt;li&gt;
+        &lt;u&gt;Discreto&lt;/u&gt; vs. &lt;u&gt;Contínuo&lt;/u&gt;;
+    &lt;/li&gt;
+
+    &lt;li&gt;
+        &lt;u&gt;Estático&lt;/u&gt; vs. &lt;u&gt;Dinâmico&lt;/u&gt;;
+    &lt;/li&gt;
+
+    &lt;li&gt;
+        &lt;u&gt;Determinístico&lt;/u&gt; vs. &lt;u&gt;Não determinístico&lt;/u&gt;;
+    &lt;/li&gt;
+
+    &lt;li&gt;
+        &lt;u&gt;Episódico&lt;/u&gt; vs. &lt;u&gt;Sequencial&lt;/u&gt;;
+    &lt;/li&gt;
+
+    &lt;li&gt;
+        &lt;u&gt;Agente único&lt;/u&gt; vs. &lt;u&gt;Multiagente&lt;/u&gt;;
+    &lt;/li&gt;
+
+    &lt;li&gt;
+        &lt;u&gt;Totalmente observáve&lt;/u&gt;l vs. &lt;u&gt;Parcialmente observável&lt;/u&gt; vs. &lt;u&gt;Não observável&lt;/u&gt;.
+    &lt;/li&gt;
+    
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;conclusão&quot;&gt;Conclusão&lt;/h2&gt;
