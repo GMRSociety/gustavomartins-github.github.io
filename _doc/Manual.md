@@ -53,12 +53,12 @@ You can easily customize the blog by modifying `_config.yml`:
 
 ```yml
 # Site settings
-title: Hux Blog             # title of your website
-SEOTitle: Hux Blog          # check out docs for more detail
+title: GMR Blog             # title of your website
+SEOTitle: GMR Blog          # check out docs for more detail
 description: "Cool Blog"    # ...
 
 # SNS settings      
-github_username: huxpro     # modify this account to yours
+github_username: gustavomartins-github     # modify this account to yours
 weibo_username: huxpro      # the footer woule be auto-updated.
 
 # Build settings
