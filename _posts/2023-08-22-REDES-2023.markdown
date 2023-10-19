@@ -1,0 +1,13 @@
+---
+layout:     post
+title:      "Camada de Rede"
+subtitle:   " \"Qual é o caminho mais eficiente para transmissão?\""
+date:       2023-08-22 13:55:00
+author:     "Gustavo M.R."
+header-img: "img/BG-CamadaDeRede.jpg"
+catalog: true
+tags:
+    - Computer Networks
+---
+
+> (em desenvolvimento...)

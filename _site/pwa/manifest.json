@@ -1,13 +1,13 @@
 {
-  "name": "Hux Blog",
-  "short_name": "Hux Blog",
-  "description": "About an engineer & designer who loves web.",
+  "name": "GMR Blog",
+  "short_name": "GMR Blog",
+  "description": "For knowledge lovers",
   "icons": [{
-    "src": "icons/128.png",
+    "src": "icons/G-BG.png",
     "sizes": "128x128",
     "type": "image/png"
   }, {
-    "src": "icons/512.png",
+    "src": "icons/G-BG.png",
     "sizes": "512x512",
     "type": "image/png"
   }],
