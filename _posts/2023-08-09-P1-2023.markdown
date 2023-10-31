@@ -7,7 +7,7 @@ author:     "Gustavo M.R."
 header-img: "img/Mars-Perseverence-Rover1-scaled.jpg"
 catalog: true
 tags:
-    - AI
+    - Portifólio 1
 ---
 
 > “A sociedade está agora em um momento crucial onde deve determinar como implantar tecnologias baseadas em IA de maneiras que promovam, ao invés de dificultarem, valores democráticos como liberdade, igualdade e transparência” - <strong>Stanford University, AI100</strong>.

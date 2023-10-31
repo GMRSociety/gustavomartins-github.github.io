@@ -7,7 +7,7 @@ author:     "Gustavo M.R."
 header-img: "img/kasparov.jpg"
 catalog: true
 tags:
-    - AI
+    - Portifólio 1
 ---
 
 > “O homem, ao mesmo tempo que sonha com todas as suas forças em inventar uma máquina mais forte do que ele mesmo, não pode admitir a possibilidadede não ser o mestre de suas criaturas. Tanto quanto Deus. Poderia Deus ter sonhado em criar o homem superior ao criador e em enfrentá-lo num combate decisivo? É o que, contudo, fazemos com nossas criaturas cibernéticas, às quais oferecemos a oportunidade de nos derrotar.” - <strong>Baudrillard 1997, p. 134</strong>

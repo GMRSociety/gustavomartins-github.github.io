@@ -5,66 +5,209 @@
     <description>这里是 @Hux黄玄 的个人博客，与你一起发现更大的世界 | 要做一个有 swag 的程序员</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 19 Oct 2023 05:02:18 -0300</pubDate>
-    <lastBuildDate>Thu, 19 Oct 2023 05:02:18 -0300</lastBuildDate>
+    <pubDate>Tue, 31 Oct 2023 03:04:45 -0300</pubDate>
+    <lastBuildDate>Tue, 31 Oct 2023 03:04:45 -0300</lastBuildDate>
     <generator>Jekyll v4.3.2</generator>
     
       <item>
-        <title>Camada de Rede</title>
+        <title>Algoritmos de Busca em AI</title>
         <description>&lt;blockquote&gt;
-  &lt;p&gt;(em desenvolvimento…)&lt;/p&gt;
+  &lt;p&gt;“A introdução de abstrações adequadas é a nossa única ajuda mental para reduzir o apelo à enumeração, para organizar e dominar a complexidade. — &lt;strong&gt;Edsger Dijkstra&lt;/strong&gt;”&lt;/p&gt;
 &lt;/blockquote&gt;
+
+&lt;p&gt;Este artigo tem como finalidade realizar uma discussão sucinta sobre algoritmos de busca e suas aplicações (contextos de uso), assim como apresentar e discutir a implementação de alguns algoritmos de busca cega, informada e complexa.&lt;/p&gt;
+
+&lt;h2 id=&quot;discussão-sobre-algoritmos-de-busca-em-ia&quot;&gt;Discussão sobre algoritmos de busca em IA&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    Como visto no artigo &lt;a herf=&quot;https://gustavomartins-github.github.io/2023/10/25/P2/&quot;&gt;Solução de Problemas em Inteligência Artificial&lt;/a&gt;, os algoritmos de busca desempenham um papel fundamental na área da inteligência artificial, pois são fundamentais para resolver problemas, tomar decisões e encontrar soluções. Segundo o professor &lt;a herf=&quot;https://institucional.ufpel.edu.br/servidores/id/35487&quot;&gt;Ricardo Araujo&lt;/a&gt;, doutor em Ciência da Computação pela Universidade Federal do Rio Grande do Sul, em sua publicação &lt;a href=&quot;https://ricardomatsumura.medium.com/algoritmos-de-busca-para-intelig%C3%AAncia-artificial-7cb81172396c&quot;&gt;Algoritmos de Busca para Inteligência Artificial&lt;/a&gt;, pode-se dizer que, de maneira sucinta, um algoritmo de busca enumera possíveis soluções para um problema seguindo alguma sistemática que permita (e as vezes garanta) que uma solução desejada seja encontrada.
+&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    Outra informação extremamente relevante sobre este tema é o fenômeno conhecido como &lt;strong&gt;explosão do espaço de estados&lt;/strong&gt;. Esse fenômeno refere-se a um desafio que surge em problemas de busca ou otimização, especialmente no contexto da AI. Sendo assim, tal evento ocorre quando o número de estados ou combinações possíveis em um espaço de busca cresce exponencialmente à medida que se avança na exploração desse espaço. Um bom exemplo desse fenômeno é quando analisa-se jogos como Sudoku, Xadrez e &lt;a href=&quot;https://pt.wikipedia.org/wiki/Go&quot;&gt;Go&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    Diante do fenômeno acima, fica evidênte que para alguns problemas a busca cega é ineficiênte. É ai que entra a Busca Heurística (Busca Informada ou Busca Exaustiva com Informação), sendo uma heurística uma abordagem que fornece uma solução prática e aproximada quando a solução ideal é difícil ou impossível de se encontrar em tempo hábil. Segundo Ricardo, no contexto de buscas, uma heurística consiste em uma função que retorna, para um dado estado, o custo aproximado de chegar deste estado até uma solução.
+&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    Por outro lado, alguns problemas possuem complexidade tal que nem mesmo uma busca informada com heurísticas adequadas é capaz de resolver. É o caso de espaço de buscas complexos, como o problema do &lt;a href=&quot;https://pt.wikipedia.org/wiki/Problema_do_caixeiro-viajante&quot;&gt;Caixeiro Viajante&lt;/a&gt; que envolve encontrar o caminho mais curto que visita todas as cidades exatamente uma vez e retorna à cidade de origem. Sendo assim, em um cenário do com um grande número de cidades, o espaço de busca cresce exponencialmente à medida que você adiciona mais cidades.
+&lt;/p&gt;
+
+&lt;h2 id=&quot;outras-aplicações-de-algoritmos-de-busca&quot;&gt;Outras aplicações de algoritmos de busca&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    O uso de algoritmos de buscas vai além da inteligência artificial. Tais algoritmos são bastante úteis, e as vezes fundamentais, em diversos outros contextos, tais como sistemas de navegação, logística, roteamento de redes, jogos, bioinformática, dentre diversos outros. Confira a seguir, alguns exemplos de sistemas os quais utilizam esse tipo de algoritmo.
+&lt;/p&gt;
+
+&lt;ul align=&quot;justify&quot;&gt;
+
+    &lt;li&gt;
+    &lt;strong&gt;Google Maps, Moovit e Waze&lt;/strong&gt;: utiliza algoritmos de busca para fornecer informações de navegação e encontrar rotas entre locais 
+    &lt;/li&gt;
+
+    &lt;li&gt;
+    &lt;strong&gt;Projeto de um layout de circuito eletrônico em uma PCB&lt;/strong&gt;: otimização do Layout, economia de recursos, adaptação a restrições, etc.
+    &lt;/li&gt;
+
+    &lt;li&gt;
+    &lt;strong&gt;Rede Nacional de Pesquisa (RNP):&lt;/strong&gt; determinar as melhores rotas de rede, levando em consideração desempenho e segurança, para o tráfego de pesquisa e educação acadêmica no Brasíl.
+    &lt;/li&gt;
+
+&lt;/ul&gt;
+&lt;h2 id=&quot;algoritmos-de-busca-cega&quot;&gt;Algoritmos de Busca Cega&lt;/h2&gt;
+
+&lt;h2 id=&quot;algoritmos-de-busca-informada&quot;&gt;Algoritmos de Busca Informada&lt;/h2&gt;
+
+&lt;h2 id=&quot;algoritmos-de-busca-complexa&quot;&gt;Algoritmos de Busca Complexa&lt;/h2&gt;
+
+&lt;h2 id=&quot;um-pouco-mais-os-algoritmos-genéticos&quot;&gt;Um pouco mais os algoritmos genéticos&lt;/h2&gt;
 </description>
-        <pubDate>Tue, 22 Aug 2023 10:55:00 -0300</pubDate>
-        <link>http://localhost:4000/2023/08/22/REDES-2023/</link>
-        <guid isPermaLink="true">http://localhost:4000/2023/08/22/REDES-2023/</guid>
+        <pubDate>Fri, 27 Oct 2023 17:30:00 -0300</pubDate>
+        <link>http://localhost:4000/2023/10/27/P2/</link>
+        <guid isPermaLink="true">http://localhost:4000/2023/10/27/P2/</guid>
         
-        <category>Computer Networks</category>
+        <category>Portifólio 2</category>
         
         
       </item>
     
       <item>
-        <title>Camada de Enlace</title>
+        <title>Solução de Problemas em Inteligência Artificial</title>
         <description>&lt;blockquote&gt;
-  &lt;p&gt;(em desenvolvimento…)&lt;/p&gt;
+  &lt;p&gt;“A inteligência artificial pode descobrir soluções para problemas do passado, que mudarão a nossa forma de resolver os mesmos problemas no futuro. — &lt;strong&gt;Dawiny Bastos&lt;/strong&gt;”&lt;/p&gt;
 &lt;/blockquote&gt;
-</description>
-        <pubDate>Mon, 21 Aug 2023 10:55:00 -0300</pubDate>
-        <link>http://localhost:4000/2023/08/21/REDES-2023/</link>
-        <guid isPermaLink="true">http://localhost:4000/2023/08/21/REDES-2023/</guid>
-        
-        <category>Computer Networks</category>
-        
-        
-      </item>
+
+&lt;p align=&quot;justify&quot;&gt;
+A solução de problemas por meio de agentes de inteligência de artificial varia a depender da natureza do problema. Sendo assim, algumas etapas se fazem necessárias para chegar a uma solução satisfatória, assim como o conhecimento de algoritmos de computadores, como buscas, ordenação, complexidade, etc. Sendo assim, o presente artigo tem como finalidade investigar tal assunto de suma importância na era da tecnologia da informação.
+&lt;/p&gt;
+
+&lt;h2 id=&quot;agente-de-soluções-de-problemas&quot;&gt;Agente de Soluções de Problemas&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+Como dito no artigo &lt;a href=&quot;https://gustavomartins-github.github.io/2023/08/10/AI-2023/&quot;&gt;Agentes e ambientes&lt;/a&gt;, um agente refere-se a uma entidade capaz tomar decisões com base em sua percepção do ambiente, a fim de executar ações para alcançar metas ou objetivos específicos. Sendo assim, é de suma importância a formulação do problema e de tais objetivos, para que o agente possa elaborar os estados e ações necessárias para atingi-los.
+&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+Somado a isso, antes de tomar qualquer ação, o agente simula sequências de ações em seu modelo para encontrar uma solução, sendo tais ações geralmente orientadas por algoritmos de busca. Diante disso, existem diversos algoritmos disponíveis, sendo o problema a ser resolvido determinante para a escolha de um algoritmo em específico. A &lt;strong&gt;Imagem 1&lt;/strong&gt; a seguir contem uma sequência de etapas necessárias para um agente solucionar problemas. 
+&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;/img/AgenteDeSolução.png&quot; align=&quot;center&quot; /&gt;
+        &lt;figcaption align=&quot;center&quot;&gt;&lt;strong&gt;Imagem 1&lt;/strong&gt;: Etapas para solução de problemas por um agente
+            &lt;br /&gt; 
+                Ref.: autoria própria
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;problemas-malha-aberta-vs-malha-fechada&quot;&gt;Problemas: Malha Aberta VS Malha Fechada&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+Ao analisar a etapa de &lt;u&gt;formulação do problema&lt;/u&gt;, pode-se agrupar os diferentes problemas em dois tipos principais: &lt;strong&gt;malha aberta&lt;/strong&gt; e &lt;strong&gt;malha fechada&lt;/strong&gt;. O primeiro refere-se àqueles em que não há elementos de incerteza, isto é, tem-se conhecimento sobre todas as variáveis e condições, tornando previsível os resultados das ações (Determinístico). Por outro lado, problemas de malha fechada são aqueles onde os resultados podem variar devido a fatores de aleatoriedade, visto a presença de elementos de incerteza (Não Determinísticos). A &lt;strong&gt;Imagem 2&lt;/strong&gt; resume a diferença entre os dois tipos apresentados.
+&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;/img/MalhaAberta_VS_MalhaFechada.png&quot; align=&quot;center&quot; /&gt;
+        &lt;figcaption align=&quot;center&quot;&gt;&lt;strong&gt;Imagem 2&lt;/strong&gt;: Problemas de Malha Aberta Vs Malha Fechada
+            &lt;br /&gt; 
+                Ref.: autoria própria
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;algoritmos-de-busca&quot;&gt;Algoritmos de Busca&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+Agora sobre a etapa de Busca, primeiro é importante entender o que seria um &quot;algoritmo de busca&quot;. Na ciência da computação e na matemática, algoritmos de busca são aqueles utilizados para encontrar algo em específico dentro de   um conjunto de dados, a fim de resolver um determinado problema. Na prática, há diversas aplicações para tais algoritmos, como encontrar elementos dentro de determinadas estruturas de dados, navegação em mapas como o Google Maps e Moovit, otimização, etc.
+&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+Diante do exposto, podemos dividir os &lt;u&gt;algoritmos de busca tradicionais&lt;/u&gt; em dois grupos genéricos: algoritmos de &lt;u&gt;busca cega&lt;/u&gt; e algoritmos de &lt;u&gt;busca informada&lt;/u&gt;. Em resumo, a diferença fundamental entre os dois tipos consiste na utilização de informações específicas do problema durante a busca, sendo a busca informada mais eficaz para encontrar soluções em espaços de busca complexos devido ao fato de utilizar conhecimento, heurísticas e até mesmo medidas arbitrárias para orientar o processo, enquanto a busca cega utiliza abordagens mais genéricas. A &lt;strong&gt;Imagem 3&lt;/strong&gt; a seguir apresenta mais detalhes sobre a diferença entre os dois tipos apresentados.
+&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;/img/CegaVSGuiada.png&quot; align=&quot;center&quot; /&gt;
+        &lt;figcaption align=&quot;center&quot;&gt;&lt;strong&gt;Imagem 3&lt;/strong&gt;: Busca Cega VS Busca Guiada
+            &lt;br /&gt; 
+                Ref.: autoria própria
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    &lt;strong&gt;Obs.:&lt;/strong&gt; o artigo &lt;a herf=&quot;&quot;&gt;Algoritmos de Busca em AI&lt;/a&gt; apresenta alguns exemplos de algoritmos de busca utilizados em tecnologias de inteligência artificial.
+&lt;/p&gt;
+
+&lt;h2 id=&quot;funções-heurísticas&quot;&gt;Funções Heurísticas&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+Como mencionado no tópico anterior, as informações dentro de uma busca informada vêm por meio das &lt;strong&gt;Funções Heurísticas&lt;/strong&gt;. Sendo assim, tas funções são utilizadas por algoritmos de busca informada para &lt;u&gt;estimar&lt;/u&gt; o quão perto um estado ou ação está da solução almejada. Além disso, elas atribuem valores ou custos aos estados com base em conhecimento específico do problema, ajudando tais algoritmos à priorizada a exploração dos &lt;u&gt; estados promissores &lt;/u&gt;, tornando o processo de busca mais eficaz.
+&lt;/p&gt;
+
+&lt;h2 id=&quot;busca-em-ambientes-complexos&quot;&gt;Busca em Ambientes Complexos&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+Quando se fala sobre algoritmos de busca, geralmente preocupa-se em encontrar um caminho considerando um espaço de busca. Contudo, em determinados problemas, é mais interessante preocupar-se apenas com o estado final, e não com o caminho até ele. Sendo assim, pode-se entender buscas em ambientes complexos como uma procura por soluções ou informações em situações desafiadoras, onde múltiplos fatores, incertezas e interações complicam a tarefa.
+&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+Uma abordagem muito utilizada para busca nesse nível de complexidade é a &lt;strong&gt;Busca Local&lt;/strong&gt;. Essa classe de algoritmo opera proucurando, a partir de um estado inicial, os estados vizinhos, sem acompanhar os caminhos nem o conjunto de estados que já foram alcançados. Em outras palavras, esse tipo de algoritmo é não sistemático, pois podem nunca explorar uma parte do espaço de busca que, por sua vez, pode conter a solução. Por outro lado, esses algoritmos utilizam muita pouca memória e podem encontrar soluções razoáveis onde algoritmos sistemáticos não funcionam bem.
+&lt;/p&gt;
+
+&lt;h2 id=&quot;algoritmos-genéticos&quot;&gt;Algoritmos Genéticos&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+Algoritmos genéticos são uma classe de algoritmos de otimização inspirados no processo de seleção natural de Darwin. Eles são usados para resolver problemas de otimização e proucura, particularmente em cenários complexos ou quando não é possível encontrar soluções ótimas usando abordagens tradicionais. Tais algoritmos partem do pressuposto que há uma população de indivíduos (estados), onde os mais aptos (valor mais alto de uma função, por exemplo) produzem descendentes (novos estados) que povoam a próxima geração de estados por meio de um processo denominado &lt;strong&gt;recombinação&lt;/strong&gt;, o qual pode acabar gerando mutações (pequenas alterações ou perturbações aleatórias nas soluções candidatas). Tais algoritmos consideram as seguintes parâmetros:
+&lt;/p&gt;
+
+&lt;ul align=&quot;justify&quot;&gt;
+
+    &lt;li&gt; 
+    &lt;strong&gt;Tamanho da População Inicial&lt;/strong&gt;: número de exemplos/amostras de soluções candidatas no início.
+    &lt;/li&gt;
+
+    &lt;li&gt;
+    &lt;strong&gt;Número de Parentes&lt;/strong&gt;: refere-se ao número de soluções candidatas que serão selecionadas como pais para a reprodução em uma determinada geração. Em geral, considera-se o número de parentes como 2.
+    &lt;/li&gt;
     
-      <item>
-        <title>Camada Física</title>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;(em desenvolvimento…)&lt;/p&gt;
-&lt;/blockquote&gt;
+    &lt;li&gt; 
+    &lt;strong&gt;Representação de cada indivíduo&lt;/strong&gt;: cada indivíduo dentro da população é representada como uma solução candidata que será avaliada quanto à sua qualidade em relação ao objetivo do problema
+    &lt;/li&gt;  
+
+    &lt;li&gt; 
+    &lt;strong&gt;Seleção&lt;/strong&gt;: as soluções melhores avaliadas são selecionadas para reprodução. Tais soluções possuem maior probabilidade de serem escolhidas, mas não exclui a seleção de soluções menos promissoras
+    &lt;/li&gt;
+
+    &lt;li&gt; 
+    &lt;strong&gt;Procedimento de Recombinação (Cruzamento)&lt;/strong&gt;: os pares de soluções selecionadas são combinados para criar descendentes. Isso simula a troca de informações genéticas na reprodução, criando novas soluções por meio da mistura entre características de ambos os pais ou por meio de mutação.
+    &lt;/li&gt;
+
+    &lt;li&gt; 
+    &lt;strong&gt;Taxa de Mutação&lt;/strong&gt;: consiste em um parâmetro que controla a probabilidade de ocorrência de mutações nas soluções candidatas durante o processo de evolução. Essa mutação é aplicada de maneira aleatória em alguns descendentes, introduzindo variação genética na população.
+    &lt;/li&gt;
+
+    &lt;li&gt; 
+    &lt;strong&gt;Nova Geração&lt;/strong&gt;: refere à próxima população de soluções candidatas que será criada após a seleção, reprodução e &lt;u&gt;substituição&lt;/u&gt; das soluções da geração anterior.
+    &lt;/li&gt;
+
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;conclusão&quot;&gt;Conclusão&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+Diante do exposto, percebe-se que a solução de problemas por meio de agentes de inteligência artificial envolve diversos assuntos da ciência da computação e matemática, como buscas (cega, guiada ou complexa) e funções heurísticas. Não obstante, em relação às buscas, há um grande espectro de complexidade de problemas os quais demandam algoritmos específicos para solução, cada um deles apresentando vantagens e desvantagens que devem ser levadas em consideração para tomadas de decisão dentro de um projeto de inteligência artificial.
+&lt;/p&gt;
+
+&lt;h2 id=&quot;impressões-gerais-do-autor&quot;&gt;Impressões Gerais do Autor&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+&lt;a href=&quot;https://gustavomartins-github.github.io/about/&quot;&gt;Eu&lt;/a&gt;, como estudante de Engenharia de Software e amante de algoritmos de computadores, me vi muito interessado sobre o conteúdo abordado. Aprendi algumas utilidades novas para algoritmos de busca que aprendi no passado, assim como entrei em contato com novos algoritmos os quais expandem minhas ferramentas de solução de problemas, principalmente no contexto de tecnologias de inteligência artificial. Aprendi que a solução de problemas por meio de agentes envolve diversas áreas do conhecimento dentro do universo da computação, como algoritmos de busca e suas aplicações, que varia de acordo com o contexto. Por fim, vale ressaltar que fiquei bastante intrigado com o biomimetismo dos algoritmos genéticos, pois provam mais uma vez a grande capacidade humana de observar a natureza e imita-la para criação de tecnologias e solução de problemas.
+&lt;/p&gt;
 </description>
-        <pubDate>Sun, 20 Aug 2023 10:55:00 -0300</pubDate>
-        <link>http://localhost:4000/2023/08/20/REDES-2023/</link>
-        <guid isPermaLink="true">http://localhost:4000/2023/08/20/REDES-2023/</guid>
+        <pubDate>Wed, 25 Oct 2023 17:15:00 -0300</pubDate>
+        <link>http://localhost:4000/2023/10/25/P2/</link>
+        <guid isPermaLink="true">http://localhost:4000/2023/10/25/P2/</guid>
         
-        <category>Computer Networks</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Redes de Computadores</title>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;(em desenvolvimento…)&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
-        <pubDate>Sat, 19 Aug 2023 01:30:00 -0300</pubDate>
-        <link>http://localhost:4000/2023/08/19/REDES-2023/</link>
-        <guid isPermaLink="true">http://localhost:4000/2023/08/19/REDES-2023/</guid>
-        
-        <category>Computer Networks</category>
+        <category>Portifólio 2</category>
         
         
       </item>
@@ -406,10 +549,10 @@ No mundo atual é fato que a inteligência artificial vem atuando cada vez mais 
 &lt;hr /&gt;
 </description>
         <pubDate>Thu, 10 Aug 2023 10:55:00 -0300</pubDate>
-        <link>http://localhost:4000/2023/08/10/AI-2023/</link>
-        <guid isPermaLink="true">http://localhost:4000/2023/08/10/AI-2023/</guid>
+        <link>http://localhost:4000/2023/08/10/P1-2023/</link>
+        <guid isPermaLink="true">http://localhost:4000/2023/08/10/P1-2023/</guid>
         
-        <category>AI</category>
+        <category>Portifólio 1</category>
         
         
       </item>
@@ -547,10 +690,10 @@ No mundo atual é fato que a inteligência artificial vem atuando cada vez mais 
 &lt;hr /&gt;
 </description>
         <pubDate>Wed, 09 Aug 2023 20:00:00 -0300</pubDate>
-        <link>http://localhost:4000/2023/08/09/AI-2023/</link>
-        <guid isPermaLink="true">http://localhost:4000/2023/08/09/AI-2023/</guid>
+        <link>http://localhost:4000/2023/08/09/P1-2023/</link>
+        <guid isPermaLink="true">http://localhost:4000/2023/08/09/P1-2023/</guid>
         
-        <category>AI</category>
+        <category>Portifólio 1</category>
         
         
       </item>
@@ -703,10 +846,10 @@ No mundo atual é fato que a inteligência artificial vem atuando cada vez mais 
 &lt;hr /&gt;
 </description>
         <pubDate>Tue, 08 Aug 2023 19:30:00 -0300</pubDate>
-        <link>http://localhost:4000/2023/08/08/AI-2023/</link>
-        <guid isPermaLink="true">http://localhost:4000/2023/08/08/AI-2023/</guid>
+        <link>http://localhost:4000/2023/08/08/P1-2023/</link>
+        <guid isPermaLink="true">http://localhost:4000/2023/08/08/P1-2023/</guid>
         
-        <category>AI</category>
+        <category>Portifólio 1</category>
         
         
       </item>
@@ -994,10 +1137,10 @@ Os principais fundamentos da inteligência artificial podem ser abordados a part
 &lt;hr /&gt;
 </description>
         <pubDate>Mon, 07 Aug 2023 09:30:00 -0300</pubDate>
-        <link>http://localhost:4000/2023/08/07/AI-2023/</link>
-        <guid isPermaLink="true">http://localhost:4000/2023/08/07/AI-2023/</guid>
+        <link>http://localhost:4000/2023/08/07/P1-2023/</link>
+        <guid isPermaLink="true">http://localhost:4000/2023/08/07/P1-2023/</guid>
         
-        <category>AI</category>
+        <category>Portifólio 1</category>
         
         
       </item>

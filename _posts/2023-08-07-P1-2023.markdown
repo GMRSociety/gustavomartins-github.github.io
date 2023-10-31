@@ -7,7 +7,7 @@ author:     "Gustavo M.R."
 header-img: "img/BG-AI.jpg"
 catalog: true
 tags:
-    - AI
+    - Portifólio 1
 ---
 
 > “Um computador mereceria ser chamado de inteligente se pudesse enganar um humano fazendo-o acreditar que era humano.” - ***Alan Turing***

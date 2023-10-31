@@ -12,28 +12,28 @@
 
     <!-- Open Graph -->
     <meta property="og:title"
-        content="Camada de Rede - GMR Blog | GMR Blog">
+        content="Algoritmos de Busca em AI - GMR Blog | GMR Blog">
     
     <meta property="og:type" content="article">
     <meta property="og:description" content="
-  (em desenvolvimento…)
+  “A introdução de abstrações adequadas é a nossa única ajuda mental para reduzir o apelo à enumeração, para organizar e dominar a complexidade. — Edsger Dijkstra”
 
 ">
     
-    <meta property="article:published_time" content=" 2023-08-22T10:55:00Z">
+    <meta property="article:published_time" content=" 2023-10-27T17:30:00Z">
     
     
     <meta property="article:author" content="Gustavo M.R.">
     
     
-    <meta property="article:tag" content="Computer Networks">
+    <meta property="article:tag" content="Portifólio 2">
     
     
     <meta property="og:image" content="http://localhost:4000https://github.com/gustavomartins-github.png">
-    <meta property="og:url" content="http://localhost:4000/2023/08/22/REDES-2023/">
+    <meta property="og:url" content="http://localhost:4000/2023/10/27/P2/">
     <meta property="og:site_name" content="GMR Blog | GMR Blog">
 
-    <title>Camada de Rede - GMR Blog | GMR Blog</title>
+    <title>Algoritmos de Busca em AI - GMR Blog | GMR Blog</title>
 
     <!-- Web App Manifest -->
     <link rel="manifest" href="/pwa/manifest.json">
@@ -42,7 +42,7 @@
     <link rel="shortcut icon" href="/img/favicon.ico">
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="http://localhost:4000/2023/08/22/REDES-2023/">
+    <link rel="canonical" href="http://localhost:4000/2023/10/27/P2/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href=" /css/bootstrap.min.css">
@@ -208,7 +208,7 @@
 
     <!-- Image to hack wechat -->
 <!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
-<!-- <img src="/img/BG-CamadaDeRede.jpg" width="0" height="0"> -->
+<!-- <img src="/img/BG-Graph.webp" width="0" height="0"> -->
 
 <!-- Post Header -->
 
@@ -217,7 +217,7 @@
 <style type="text/css">
     header.intro-header{
         position: relative;
-        background-image: url('/img/BG-CamadaDeRede.jpg');
+        background-image: url('/img/BG-Graph.webp');
         background: ;
     }
 
@@ -237,13 +237,13 @@
                 <div class="post-heading">
                     <div class="tags">
                         
-                        <a class="tag" href="/archive/?tag=Computer+Networks" title="Computer Networks">Computer Networks</a>
+                        <a class="tag" href="/archive/?tag=Portif%C3%B3lio+2" title="Portifólio 2">Portifólio 2</a>
                         
                     </div>
-                    <h1>Camada de Rede</h1>
+                    <h1>Algoritmos de Busca em AI</h1>
                     
-                    <h2 class="subheading"> "Qual é o caminho mais eficiente para transmissão?"</h2>
-                    <span class="meta">Posted by Gustavo M.R. on August 22, 2023</span>
+                    <h2 class="subheading"> "Busca Cega, Informada e Complexa"</h2>
+                    <span class="meta">Posted by Gustavo M.R. on October 27, 2023</span>
                 </div>
             </div>
         </div>
@@ -271,17 +271,66 @@
                 
 
 				<blockquote>
-  <p>(em desenvolvimento…)</p>
+  <p>“A introdução de abstrações adequadas é a nossa única ajuda mental para reduzir o apelo à enumeração, para organizar e dominar a complexidade. — <strong>Edsger Dijkstra</strong>”</p>
 </blockquote>
+
+<p>Este artigo tem como finalidade realizar uma discussão sucinta sobre algoritmos de busca e suas aplicações (contextos de uso), assim como apresentar e discutir a implementação de alguns algoritmos de busca cega, informada e complexa.</p>
+
+<h2 id="discussão-sobre-algoritmos-de-busca-em-ia">Discussão sobre algoritmos de busca em IA</h2>
+
+<p align="justify">
+    Como visto no artigo <a herf="https://gustavomartins-github.github.io/2023/10/25/P2/">Solução de Problemas em Inteligência Artificial</a>, os algoritmos de busca desempenham um papel fundamental na área da inteligência artificial, pois são fundamentais para resolver problemas, tomar decisões e encontrar soluções. Segundo o professor <a herf="https://institucional.ufpel.edu.br/servidores/id/35487">Ricardo Araujo</a>, doutor em Ciência da Computação pela Universidade Federal do Rio Grande do Sul, em sua publicação <a href="https://ricardomatsumura.medium.com/algoritmos-de-busca-para-intelig%C3%AAncia-artificial-7cb81172396c">Algoritmos de Busca para Inteligência Artificial</a>, pode-se dizer que, de maneira sucinta, um algoritmo de busca enumera possíveis soluções para um problema seguindo alguma sistemática que permita (e as vezes garanta) que uma solução desejada seja encontrada.
+</p>
+
+<p align="justify">
+    Outra informação extremamente relevante sobre este tema é o fenômeno conhecido como <strong>explosão do espaço de estados</strong>. Esse fenômeno refere-se a um desafio que surge em problemas de busca ou otimização, especialmente no contexto da AI. Sendo assim, tal evento ocorre quando o número de estados ou combinações possíveis em um espaço de busca cresce exponencialmente à medida que se avança na exploração desse espaço. Um bom exemplo desse fenômeno é quando analisa-se jogos como Sudoku, Xadrez e <a href="https://pt.wikipedia.org/wiki/Go">Go</a>.
+</p>
+
+<p align="justify">
+    Diante do fenômeno acima, fica evidênte que para alguns problemas a busca cega é ineficiênte. É ai que entra a Busca Heurística (Busca Informada ou Busca Exaustiva com Informação), sendo uma heurística uma abordagem que fornece uma solução prática e aproximada quando a solução ideal é difícil ou impossível de se encontrar em tempo hábil. Segundo Ricardo, no contexto de buscas, uma heurística consiste em uma função que retorna, para um dado estado, o custo aproximado de chegar deste estado até uma solução.
+</p>
+
+<p align="justify">
+    Por outro lado, alguns problemas possuem complexidade tal que nem mesmo uma busca informada com heurísticas adequadas é capaz de resolver. É o caso de espaço de buscas complexos, como o problema do <a href="https://pt.wikipedia.org/wiki/Problema_do_caixeiro-viajante">Caixeiro Viajante</a> que envolve encontrar o caminho mais curto que visita todas as cidades exatamente uma vez e retorna à cidade de origem. Sendo assim, em um cenário do com um grande número de cidades, o espaço de busca cresce exponencialmente à medida que você adiciona mais cidades.
+</p>
+
+<h2 id="outras-aplicações-de-algoritmos-de-busca">Outras aplicações de algoritmos de busca</h2>
+
+<p align="justify">
+    O uso de algoritmos de buscas vai além da inteligência artificial. Tais algoritmos são bastante úteis, e as vezes fundamentais, em diversos outros contextos, tais como sistemas de navegação, logística, roteamento de redes, jogos, bioinformática, dentre diversos outros. Confira a seguir, alguns exemplos de sistemas os quais utilizam esse tipo de algoritmo.
+</p>
+
+<ul align="justify">
+
+    <li>
+    <strong>Google Maps, Moovit e Waze</strong>: utiliza algoritmos de busca para fornecer informações de navegação e encontrar rotas entre locais 
+    </li>
+
+    <li>
+    <strong>Projeto de um layout de circuito eletrônico em uma PCB</strong>: otimização do Layout, economia de recursos, adaptação a restrições, etc.
+    </li>
+
+    <li>
+    <strong>Rede Nacional de Pesquisa (RNP):</strong> determinar as melhores rotas de rede, levando em consideração desempenho e segurança, para o tráfego de pesquisa e educação acadêmica no Brasíl.
+    </li>
+
+</ul>
+<h2 id="algoritmos-de-busca-cega">Algoritmos de Busca Cega</h2>
+
+<h2 id="algoritmos-de-busca-informada">Algoritmos de Busca Informada</h2>
+
+<h2 id="algoritmos-de-busca-complexa">Algoritmos de Busca Complexa</h2>
+
+<h2 id="um-pouco-mais-os-algoritmos-genéticos">Um pouco mais os algoritmos genéticos</h2>
 
 
                 <hr style="visibility: hidden;">
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2023/08/21/REDES-2023/" data-toggle="tooltip" data-placement="top" title="Camada de Enlace">
+                        <a href="/2023/10/25/P2/" data-toggle="tooltip" data-placement="top" title="Solução de Problemas em Inteligência Artificial">
                         Previous<br>
-                        <span>Camada de Enlace</span>
+                        <span>Solução de Problemas em Inteligência Artificial</span>
                         </a>
                     </li>
                     
@@ -339,15 +388,15 @@
         
         
         
-                <a data-sort="0004" 
-                    href="/archive/?tag=AI"
-                    title="AI"
-                    rel="4">AI</a>
+                <a data-sort="0002" 
+                    href="/archive/?tag=Portif%C3%B3lio+1"
+                    title="Portifólio 1"
+                    rel="4">Portifólio 1</a>
         
                 <a data-sort="0004" 
-                    href="/archive/?tag=Computer+Networks"
-                    title="Computer Networks"
-                    rel="4">Computer Networks</a>
+                    href="/archive/?tag=Portif%C3%B3lio+2"
+                    title="Portifólio 2"
+                    rel="2">Portifólio 2</a>
     </div>
 </section>
 
@@ -386,8 +435,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "gmrblog";
-    var disqus_identifier = "/2023/08/22/REDES-2023";
-    var disqus_url = "http://localhost:4000/2023/08/22/REDES-2023/";
+    var disqus_identifier = "/2023/10/27/P2";
+    var disqus_url = "http://localhost:4000/2023/10/27/P2/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

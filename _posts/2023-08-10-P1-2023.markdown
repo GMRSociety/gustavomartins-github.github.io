@@ -7,7 +7,7 @@ author:     "Gustavo M.R."
 header-img: "img/BG-Agentes.jpg"
 catalog: true
 tags:
-    - AI
+    - Portifólio 1
 ---
 
 > "É difícil pensar em uma grande indústria que não será transformada pela inteligência artificial. Isso inclui saúde, educação, meios de transporte, verejo, comunicações e agricultura. Existem caminhos surpreendentemente claros para a IA fazer uma grande diferença em todas essas indústrias." - <strong>Andrew Ng</strong>
