@@ -316,7 +316,7 @@
 
 </ul>
 
-<h2 id="discussão-algoritmos-genéticos">Discussão algoritmos genéticos</h2>
+<h2 id="discussão-sobre-algoritmos-genéticos">Discussão sobre algoritmos genéticos</h2>
 
 <p align="justify">
     Segundo o primeiro artigo publicado no GMR Blog <a href="https://gustavomartins-github.github.io/2023/08/07/AI-2023/">O que é uma AI?</a>, a inteligência artificial é uma área interdisciplinar que envolve ciência da computação, biologia, psicologia, etc. Diante disso, com enfase às contribuições da biologia, o biomimetismo torna-se um forte aliado à produção de sistemas inteligêntes que imitam aspectos do comportamento humano, tais como aprendizado, percepção, raciocínio, evolução e adaptação. A <strong>Imagem 1</strong> a seguir compara algumas tecnologias e suas respectivas inspirações na natureza.
@@ -362,64 +362,864 @@
     Como já sabemos, a busca cega consiste em uma abordagem na qual o agente explora um espaço de estados (ou espaço de soluções) sem ter informações detalhadas sobre a estrutura desse espaço ou a proximidade da solução desejada. Sendo assim, confira a seguir uma breve discussão e implementação sobre quatro diferentes algoritmos de busca não informada.
 </p>
 
-<ul align="justify">
-
-    <li> 
-    <strong>Best-First Search</strong>:
-    </li>
-
-    <li> 
-    <strong>Breadth-first search</strong>:
-    </li>
-
-    <li> 
-    <strong>Uniform Cost Search</strong>:
-    </li>
-
-    <li> 
-    <strong>Depth-first search</strong>:
-    </li>
-
+<ul>
+  <li>
+    <p align="justify"><strong>Breadth-first search (BFS)</strong>: também conhecido como "Busca em Largura", esse algoritmo parte de um nó inicial e verifíca todos os elementos do próximo nível e, caso a resposta esteja no nível atual, o objetivo foi alcançado, caso contrário, procura-se no próximo nível e assim por diante. Se a resposta não estiver em nenhum dos níveis do grafo, é uma solução impossível. Essa estratégia utiliza uma <i>queue (FIFO - Frist-in First-out)</i> e um <u>vetor de visitados</u> como estrutura de dados auxiliares para se guiar entre os nós de um nível que ainda não foi visitado e, geralmente, é utilizada quando o problema em questão é muito pequeno e a complexidade do espaço não é considerada, além de ser bastante aplicado em buscas envolvendo <u>árvores binárias</u>. 
+<br /><br /><strong>Vantagens</strong>: retorna o caminho mais curto dentre as possibilidades de solução e nunca ficará preso em nós indesejados 
+<br /><strong>Desvantagens</strong>: alto gasto de memória e tempo a medida em que o grafo aumenta de tamanho </p>
+  </li>
 </ul>
 
+<p align="center"> <strong>EXEMPLO</strong></p>
+<p align="justify"> <strong>Grafo:</strong></p>
+<figure>
+    <img src="/img/Graph01.png" align="center" />
+        <figcaption align="center"><strong>Imagem 1</strong>: grafo a ser explorado pelo algoritmo Breadth-first search
+            <br /> 
+                Ref.: <a href="https://www.analyticsvidhya.com/blog/2021/10/an-introduction-to-problem-solving-using-search-algorithms-for-beginners/">Analytics Vidhya</a>
+        </figcaption>
+</figure>
+<p align="justify"> <strong>Implementação da solução em <u>python</u>:</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+</pre></td><td class="rouge-code"><pre><span class="sh">"""</span><span class="s">
+# Ref.: https://www.analyticsvidhya.com/blog/2021/10/an-introduction-to-problem-solving-using-search-algorithms-for-beginners/
+</span><span class="sh">"""</span>
+
+<span class="n">graph</span> <span class="o">=</span> <span class="p">{</span>
+ <span class="sh">'</span><span class="s">A</span><span class="sh">'</span> <span class="p">:</span> <span class="p">[</span><span class="sh">'</span><span class="s">B</span><span class="sh">'</span><span class="p">,</span><span class="sh">'</span><span class="s">C</span><span class="sh">'</span><span class="p">],</span>
+ <span class="sh">'</span><span class="s">B</span><span class="sh">'</span> <span class="p">:</span> <span class="p">[</span><span class="sh">'</span><span class="s">D</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">E</span><span class="sh">'</span><span class="p">],</span>
+ <span class="sh">'</span><span class="s">C</span><span class="sh">'</span> <span class="p">:</span> <span class="p">[</span><span class="sh">'</span><span class="s">F</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">G</span><span class="sh">'</span><span class="p">],</span>
+ <span class="sh">'</span><span class="s">D</span><span class="sh">'</span> <span class="p">:</span> <span class="p">[],</span>
+ <span class="sh">'</span><span class="s">E</span><span class="sh">'</span> <span class="p">:</span> <span class="p">[],</span>
+ <span class="sh">'</span><span class="s">F</span><span class="sh">'</span> <span class="p">:</span> <span class="p">[],</span>
+ <span class="sh">'</span><span class="s">G</span><span class="sh">'</span> <span class="p">:</span> <span class="p">[]</span>
+<span class="p">}</span>
+
+<span class="n">visited</span> <span class="o">=</span> <span class="p">[]</span> 
+<span class="n">queue</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">goal</span> <span class="o">=</span> <span class="sh">'</span><span class="s">F</span><span class="sh">'</span>
+
+<span class="k">def</span> <span class="nf">bfs</span><span class="p">(</span><span class="n">visited</span><span class="p">,</span> <span class="n">graph</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+    <span class="n">visited</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+    <span class="n">queue</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+    <span class="k">while</span> <span class="n">queue</span><span class="p">:</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="nf">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> 
+        <span class="nf">print </span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="sh">"</span><span class="se">\n</span><span class="sh">"</span><span class="p">)</span> 
+        <span class="k">for</span> <span class="n">neighbour</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="n">s</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="n">neighbour</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+                <span class="n">visited</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">neighbour</span><span class="p">)</span>
+                <span class="n">queue</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">neighbour</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">goal</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+                    <span class="k">break</span>
+<span class="nf">bfs</span><span class="p">(</span><span class="n">visited</span><span class="p">,</span> <span class="n">graph</span><span class="p">,</span> <span class="sh">'</span><span class="s">A</span><span class="sh">'</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p align="justify"> <strong>Depth-first search (DFS)</strong>: este algoritmo parte do estado inicial e explora cada caminho até sua maior profundidade antes de passar para o próximo caminho (por isso o nome "Busca em Profundidade"). Sendo assim, quando o algorimo encontra um vértice que não possui mais adjacência, ele <u>retrocede</u> para explorar outras opções, sendo este processo denominado <i><strong>backtracking</strong></i>.
+<br /><br /><strong>Vantagens</strong>: demanda menos uso de memória e tempo em comparação a busca em largura.<br /><strong>Desvantagens</strong>: nem sempre garante uma solução e pode ficar preso em um loop infinito a medida em que se aprofunda em um grafo grande</p>
+  </li>
+</ul>
+
+<p align="center"> <strong>EXEMPLO</strong></p>
+<p align="justify"> <strong>Grafo:</strong></p>
+<figure>
+    <img src="/img/Graph01.png" align="center" />
+        <figcaption align="center"><strong>Imagem 2</strong>: grafo a ser explorado pelo algoritmo de busca em profundidade.
+            <br /> 
+                Ref.: <a href="https://www.analyticsvidhya.com/blog/2021/10/an-introduction-to-problem-solving-using-search-algorithms-for-beginners/">Analytics Vidhya</a>
+        </figcaption>
+</figure>
+
+<p align="justify"> <strong>Implementação da solução em <u>python</u>:</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+</pre></td><td class="rouge-code"><pre><span class="sh">"""</span><span class="s">
+REF: https://www.analyticsvidhya.com/blog/2021/10/an-introduction-to-problem-solving-using-search-algorithms-for-beginners/
+</span><span class="sh">"""</span>
+<span class="n">graph</span> <span class="o">=</span> <span class="p">{</span>
+ <span class="sh">'</span><span class="s">A</span><span class="sh">'</span> <span class="p">:</span> <span class="p">[</span><span class="sh">'</span><span class="s">B</span><span class="sh">'</span><span class="p">,</span><span class="sh">'</span><span class="s">C</span><span class="sh">'</span><span class="p">],</span>
+ <span class="sh">'</span><span class="s">B</span><span class="sh">'</span> <span class="p">:</span> <span class="p">[</span><span class="sh">'</span><span class="s">D</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">E</span><span class="sh">'</span><span class="p">],</span>
+ <span class="sh">'</span><span class="s">C</span><span class="sh">'</span> <span class="p">:</span> <span class="p">[</span><span class="sh">'</span><span class="s">F</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">G</span><span class="sh">'</span><span class="p">],</span>
+ <span class="sh">'</span><span class="s">D</span><span class="sh">'</span> <span class="p">:</span> <span class="p">[],</span>
+ <span class="sh">'</span><span class="s">E</span><span class="sh">'</span> <span class="p">:</span> <span class="p">[],</span>
+ <span class="sh">'</span><span class="s">F</span><span class="sh">'</span> <span class="p">:</span> <span class="p">[],</span>
+ <span class="sh">'</span><span class="s">G</span><span class="sh">'</span> <span class="p">:</span> <span class="p">[]</span>
+<span class="p">}</span>
+<span class="n">goal</span> <span class="o">=</span> <span class="sh">'</span><span class="s">F</span><span class="sh">'</span>
+<span class="n">visited</span> <span class="o">=</span> <span class="nf">set</span><span class="p">()</span> 
+<span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">visited</span><span class="p">,</span> <span class="n">graph</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">node</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+        <span class="nf">print </span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+        <span class="n">visited</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">neighbour</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="n">node</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="n">goal</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+                <span class="k">break</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nf">dfs</span><span class="p">(</span><span class="n">visited</span><span class="p">,</span> <span class="n">graph</span><span class="p">,</span> <span class="n">neighbour</span><span class="p">)</span>
+<span class="nf">dfs</span><span class="p">(</span><span class="n">visited</span><span class="p">,</span> <span class="n">graph</span><span class="p">,</span> <span class="sh">'</span><span class="s">A</span><span class="sh">'</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p><br /></p>
+
+<ul>
+  <li><strong>Uniform Cost Search (UCS)</strong>: esse algoritmo pesquisa o gráfo dando prioridade máxima ao menor custo <u>acomulado</u> dentre os caminhos possíveis e, para isso, essa pesquisa uniforme de custos geralmente é implementada usando uma fila de prioridade. Sendo assilsm, é especialmente útil para encontrar o caminho mais curto em um grafo ponderado, isto é, os arcos (arestas) têm custos associados. Ele garante que a busca encontre o caminho de menor custo (quando possível), tornando-o ideal para problemas em que a otimização do custo é importante, como roteamento de mapas ou planejamento de caminhos em sistemas de navegação.
+<br /><br /><strong>Vantagens</strong>: é considerada um entre os melhor algoritmo de busca para um grafo ponderado ou grafo com custos e, casa exista, encontra o menor caminho possível de um vértice à outro.
+<br /><strong>Desvantagens</strong>: não considera quantos passos são necessários para alcançar o caminho mais baixo. Isso também pode resultar em um loop infinito. &lt;/p&gt;</li>
+</ul>
+
+<p align="center"> <strong>EXEMPLO</strong></p>
+<p align="justify"> <strong>Grafo:</strong></p>
+<figure>
+    <img src="/img/Graph03.png" align="center" />
+        <figcaption align="center"><strong>Imagem 3</strong>: grafo a ser explorado pelo algoritmo Uniform Cost Search
+            <br /> 
+                Ref.: <a href="https://www.analyticsvidhya.com/blog/2021/10/an-introduction-to-problem-solving-using-search-algorithms-for-beginners/">Analytics Vidhya</a>
+        </figcaption>
+</figure>
+<p align="justify"> <strong>Implementação da solução em <u>python</u>:</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+</pre></td><td class="rouge-code"><pre><span class="sh">"""</span><span class="s">
+REF: https://www.analyticsvidhya.com/blog/2021/10/an-introduction-to-problem-solving-using-search-algorithms-for-beginners/
+</span><span class="sh">"""</span>
+<span class="n">graph</span><span class="o">=</span><span class="p">[[</span><span class="sh">'</span><span class="s">S</span><span class="sh">'</span><span class="p">,</span><span class="sh">'</span><span class="s">A</span><span class="sh">'</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span>
+       <span class="p">[</span><span class="sh">'</span><span class="s">S</span><span class="sh">'</span><span class="p">,</span><span class="sh">'</span><span class="s">B</span><span class="sh">'</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span>
+       <span class="p">[</span><span class="sh">'</span><span class="s">S</span><span class="sh">'</span><span class="p">,</span><span class="sh">'</span><span class="s">C</span><span class="sh">'</span><span class="p">,</span><span class="mi">10</span><span class="p">],</span>
+       <span class="p">[</span><span class="sh">'</span><span class="s">A</span><span class="sh">'</span><span class="p">,</span><span class="sh">'</span><span class="s">E</span><span class="sh">'</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span>
+       <span class="p">[</span><span class="sh">'</span><span class="s">B</span><span class="sh">'</span><span class="p">,</span><span class="sh">'</span><span class="s">E</span><span class="sh">'</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span>
+       <span class="p">[</span><span class="sh">'</span><span class="s">B</span><span class="sh">'</span><span class="p">,</span><span class="sh">'</span><span class="s">D</span><span class="sh">'</span><span class="p">,</span><span class="mi">7</span><span class="p">],</span>
+       <span class="p">[</span><span class="sh">'</span><span class="s">C</span><span class="sh">'</span><span class="p">,</span><span class="sh">'</span><span class="s">D</span><span class="sh">'</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span>
+       <span class="p">[</span><span class="sh">'</span><span class="s">E</span><span class="sh">'</span><span class="p">,</span><span class="sh">'</span><span class="s">F</span><span class="sh">'</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span>
+       <span class="p">[</span><span class="sh">'</span><span class="s">D</span><span class="sh">'</span><span class="p">,</span><span class="sh">'</span><span class="s">F</span><span class="sh">'</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span>
+       <span class="p">[</span><span class="sh">'</span><span class="s">F</span><span class="sh">'</span><span class="p">,</span><span class="sh">'</span><span class="s">G</span><span class="sh">'</span><span class="p">,</span><span class="mi">1</span><span class="p">]]</span>
+<span class="n">temp</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">temp1</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">:</span>
+  <span class="n">temp</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+  <span class="n">temp1</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">nodes</span> <span class="o">=</span> <span class="nf">set</span><span class="p">(</span><span class="n">temp</span><span class="p">).</span><span class="nf">union</span><span class="p">(</span><span class="nf">set</span><span class="p">(</span><span class="n">temp1</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">UCS</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">costs</span><span class="p">,</span> <span class="nb">open</span><span class="p">,</span> <span class="n">closed</span><span class="p">,</span> <span class="n">cur_node</span><span class="p">):</span>
+  <span class="k">if</span> <span class="n">cur_node</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">:</span>
+    <span class="nb">open</span><span class="p">.</span><span class="nf">remove</span><span class="p">(</span><span class="n">cur_node</span><span class="p">)</span>
+  <span class="n">closed</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="n">cur_node</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">:</span>
+    <span class="nf">if</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">cur_node</span> <span class="ow">and</span> <span class="n">costs</span><span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="o">+</span><span class="n">i</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">costs</span><span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">]]):</span>
+      <span class="nb">open</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+      <span class="n">costs</span><span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="n">costs</span><span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="o">+</span><span class="n">i</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+      <span class="n">path</span><span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="n">path</span><span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">+</span> <span class="sh">'</span><span class="s"> -&gt; </span><span class="sh">'</span> <span class="o">+</span> <span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+  <span class="n">costs</span><span class="p">[</span><span class="n">cur_node</span><span class="p">]</span> <span class="o">=</span> <span class="mi">999999</span>
+  <span class="n">small</span> <span class="o">=</span> <span class="nf">min</span><span class="p">(</span><span class="n">costs</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">costs</span><span class="p">.</span><span class="n">get</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">small</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">closed</span><span class="p">:</span>
+    <span class="nc">UCS</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">costs</span><span class="p">,</span> <span class="nb">open</span><span class="p">,</span><span class="n">closed</span><span class="p">,</span> <span class="n">small</span><span class="p">)</span>
+<span class="n">costs</span> <span class="o">=</span> <span class="nf">dict</span><span class="p">()</span>
+<span class="n">temp_cost</span> <span class="o">=</span> <span class="nf">dict</span><span class="p">()</span>
+<span class="n">path</span> <span class="o">=</span> <span class="nf">dict</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
+  <span class="n">costs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">999999</span>
+  <span class="n">path</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="sh">'</span><span class="s"> </span><span class="sh">'</span>
+<span class="nb">open</span> <span class="o">=</span> <span class="nf">set</span><span class="p">()</span>
+<span class="n">closed</span> <span class="o">=</span> <span class="nf">set</span><span class="p">()</span>
+<span class="n">start_node</span> <span class="o">=</span> <span class="nf">input</span><span class="p">(</span><span class="sh">"</span><span class="s">Enter the Start State: </span><span class="sh">"</span><span class="p">)</span>
+<span class="nb">open</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="n">start_node</span><span class="p">)</span>
+<span class="n">path</span><span class="p">[</span><span class="n">start_node</span><span class="p">]</span> <span class="o">=</span> <span class="n">start_node</span>
+<span class="n">costs</span><span class="p">[</span><span class="n">start_node</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="nc">UCS</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">costs</span><span class="p">,</span> <span class="nb">open</span><span class="p">,</span> <span class="n">closed</span><span class="p">,</span> <span class="n">start_node</span><span class="p">)</span>
+<span class="n">goal_node</span> <span class="o">=</span> <span class="nf">input</span><span class="p">(</span><span class="sh">"</span><span class="s">Enter the Goal State: </span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Path with least cost is: </span><span class="sh">"</span><span class="p">,</span><span class="n">path</span><span class="p">[</span><span class="n">goal_node</span><span class="p">])</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><br /></p>
+
 <h2 id="busca-informada">Busca Informada</h2>
+
 <p align="justify">
- a definir
+    Outro tipo de algoritmo de busca abordado anteriormente é a busca informada. Como mencionado, essas técnicas de busca utiliza informações heurísticas para orientar a exploração em direção a soluções mais promissoras em problemas. Confira a seguir uma breve discussão e implementação sobre três exemplos de algoritmos de busca informada.
 </p>
 
-<ul align="justify">
+<ul>
+  <li>
+    <p align="justify"><strong>Best-First Search</strong>: este algoritimo utiliza função de avaliação (heurística) para optar pelo nó mais promissor entre os nós disponíveis antes de mudar para o próximo. Para isso, utiliza-se duas <i>priority queue</i> como estrutura de dado auxiliar, uma denominada <u>ABERTA</u> outra <u>FECHADA</u>. A primeira monitora os nós imediatos disponíveis para atravessar no momento, enquanto a segunda monitora os nós que já estão sendo transferidos, os quais formarão a resposta final. Sendo a sim, a cada iteração, verifica-se se o nó selecionado é o nó objetivo e, caso não seja, explora-se os nós adjacentes. Para isso, é necessário calcular suas estimativas heurísticas e ranquea-las na fila de prioridade, de forma que o nó mais promissor seja explorado em sequência, e assim por diante.
+<br /><br /><strong>Vantagens</strong>: é ideal para os computadores avaliarem o caminho mais curto e apropriado através de um labirinto de possibilidades.
+<br /><strong>Desvantagens</strong>: demanda o cálculo de heurísticas, o que aumenta consideravelmente a compĺexidade computacional a medida em que o grafo aumenta. </p>
+  </li>
+</ul>
 
-    <li> 
-    <strong>Greedy best-first search</strong>:
-    </li>
+<p align="center"> <strong>EXEMPLO</strong></p>
+<p align="justify"> <strong>Grafo:</strong></p>
+<figure>
+    <img src="/img/Graph02.png" align="center" />
+        <figcaption align="center"><strong>Imagem 4</strong>: grafo a ser explorado pelo algoritimo de primeira melhor busca.
+            <br /> 
+                Ref.: <a href="https://www.geeksforgeeks.org/best-first-search-informed-search/">GeeksforGeeks</a>
+        </figcaption>
+</figure>
+<p align="justify"> <strong>Implementação da solução em <u>python</u>:</strong></p>
 
-    <li> 
-    <strong>A∗ search</strong>:
-    </li>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+</pre></td><td class="rouge-code"><pre><span class="sh">"""</span><span class="s">
+# REF: https://www.geeksforgeeks.org/best-first-search-informed-search/
+</span><span class="sh">"""</span>
 
+<span class="kn">from</span> <span class="n">queue</span> <span class="kn">import</span> <span class="n">PriorityQueue</span>
+<span class="n">v</span> <span class="o">=</span> <span class="mi">14</span>
+<span class="n">graph</span> <span class="o">=</span> <span class="p">[[]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">v</span><span class="p">)]</span>
+
+<span class="c1"># Function For Implementing Best First Search
+# Gives output path having lowest cost
+</span>
+
+<span class="k">def</span> <span class="nf">best_first_search</span><span class="p">(</span><span class="n">actual_Src</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+	<span class="n">visited</span> <span class="o">=</span> <span class="p">[</span><span class="bp">False</span><span class="p">]</span> <span class="o">*</span> <span class="n">n</span>
+	<span class="n">pq</span> <span class="o">=</span> <span class="nc">PriorityQueue</span><span class="p">()</span>
+	<span class="n">pq</span><span class="p">.</span><span class="nf">put</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="n">actual_Src</span><span class="p">))</span>
+	<span class="n">visited</span><span class="p">[</span><span class="n">actual_Src</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
+	
+	<span class="k">while</span> <span class="n">pq</span><span class="p">.</span><span class="nf">empty</span><span class="p">()</span> <span class="o">==</span> <span class="bp">False</span><span class="p">:</span>
+		<span class="n">u</span> <span class="o">=</span> <span class="n">pq</span><span class="p">.</span><span class="nf">get</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
+		<span class="c1"># Displaying the path having lowest cost
+</span>		<span class="nf">print</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="sh">"</span><span class="s"> </span><span class="sh">"</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">u</span> <span class="o">==</span> <span class="n">target</span><span class="p">:</span>
+			<span class="k">break</span>
+
+		<span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="n">u</span><span class="p">]:</span>
+			<span class="k">if</span> <span class="n">visited</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">==</span> <span class="bp">False</span><span class="p">:</span>
+				<span class="n">visited</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
+				<span class="n">pq</span><span class="p">.</span><span class="nf">put</span><span class="p">((</span><span class="n">c</span><span class="p">,</span> <span class="n">v</span><span class="p">))</span>
+	<span class="nf">print</span><span class="p">()</span>
+
+<span class="c1"># Function for adding edges to graph
+</span>
+
+<span class="k">def</span> <span class="nf">addedge</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cost</span><span class="p">):</span>
+	<span class="n">graph</span><span class="p">[</span><span class="n">x</span><span class="p">].</span><span class="nf">append</span><span class="p">((</span><span class="n">y</span><span class="p">,</span> <span class="n">cost</span><span class="p">))</span>
+	<span class="n">graph</span><span class="p">[</span><span class="n">y</span><span class="p">].</span><span class="nf">append</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">cost</span><span class="p">))</span>
+
+
+<span class="c1"># The nodes shown in above example(by alphabets) are
+# implemented using integers addedge(x,y,cost);
+</span><span class="nf">addedge</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nf">addedge</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="nf">addedge</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nf">addedge</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="nf">addedge</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="nf">addedge</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+<span class="nf">addedge</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">14</span><span class="p">)</span>
+<span class="nf">addedge</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="nf">addedge</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nf">addedge</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="nf">addedge</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nf">addedge</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="nf">addedge</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="n">source</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">target</span> <span class="o">=</span> <span class="mi">9</span>
+<span class="nf">best_first_search</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+
+<span class="c1"># This code is contributed by Jyotheeswar Ganne
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p align="justify"><strong> (GBeFS)</strong>: este algoritmo concentra-se em explorar nós que estão mais próximos do objetivo, com base em uma heurística que fornece uma estimativa do custo para atingir o objetivo. Contudo, ele não considera o custo total até o momento, apenas a proximidade ao objetivo. Logo, o Greedy Best-First Search escolhe o nó que parece ser o "melhor" com base na heurística, sem considerar o passado. Isso pode levar a soluções rápidas em alguns casos, mas não garante a solução ótima.
+<br /><br /><strong>Vantagens</strong>: sua implementação é relativamente simples, além de ser rápido, eficiênte e requisitar pouca memória.
+<br /><strong>Desvantagens</strong>: não garante uma solução ótima, pois pode negligenciar áreas do espaço de busca que podem conter soluções melhores </p>
+  </li>
+</ul>
+
+<p align="center"> <strong>EXEMPLO</strong></p>
+<p align="justify"> <strong>Grafo:</strong></p>
+<figure>
+    <img src="/img/Graph04.png" align="center" />
+        <figcaption align="center"><strong>Imagem 5</strong>: grafo a ser explorado pelo algoritimo GBeFS.
+            <br /> 
+                Ref.: <a href="https://python.algorithmexamples.com/web/graphs/greedy_best_first.html">AlgorithmExamples</a>
+        </figcaption>
+</figure>
+
+<p align="justify"> <strong>Implementação da solução em <u>python</u>:</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+</pre></td><td class="rouge-code"><pre><span class="sh">"""</span><span class="s">
+REF: https://python.algorithmexamples.com/web/graphs/greedy_best_first.html
+https://en.wikipedia.org/wiki/Best-first_search#Greedy_BFS
+Gráfico modelado em matriz de adjacência
+</span><span class="sh">"""</span>
+ 
+<span class="kn">from</span> <span class="n">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Tuple</span>
+ 
+<span class="n">grid</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>  <span class="c1"># 0 are free path whereas 1's are obstacles
+</span>    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+<span class="p">]</span>
+ 
+<span class="n">delta</span> <span class="o">=</span> <span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>  <span class="c1"># up, left, down, right
+</span> 
+ 
+<span class="k">class</span> <span class="nc">Node</span><span class="p">:</span>
+    <span class="sh">"""</span><span class="s">
+</span><span class="gp">    &gt;&gt;&gt;</span> <span class="n">k</span> <span class="o">=</span> <span class="nc">Node</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">k</span><span class="p">.</span><span class="nf">calculate_heuristic</span><span class="p">()</span>
+    <span class="mi">9</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">n</span> <span class="o">=</span> <span class="nc">Node</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">n</span><span class="p">.</span><span class="nf">calculate_heuristic</span><span class="p">()</span>
+    <span class="mi">2</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span><span class="p">,</span> <span class="n">n</span><span class="p">]</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">n</span> <span class="o">==</span> <span class="n">l</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="bp">False</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">l</span><span class="p">.</span><span class="nf">sort</span><span class="p">()</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">n</span> <span class="o">==</span> <span class="n">l</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="bp">True</span>
+    <span class="sh">"""</span>
+ 
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">pos_x</span><span class="p">,</span> <span class="n">pos_y</span><span class="p">,</span> <span class="n">goal_x</span><span class="p">,</span> <span class="n">goal_y</span><span class="p">,</span> <span class="n">g_cost</span><span class="p">,</span> <span class="n">parent</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">pos_x</span> <span class="o">=</span> <span class="n">pos_x</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">pos_y</span> <span class="o">=</span> <span class="n">pos_y</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">pos</span> <span class="o">=</span> <span class="p">(</span><span class="n">pos_y</span><span class="p">,</span> <span class="n">pos_x</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">goal_x</span> <span class="o">=</span> <span class="n">goal_x</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">goal_y</span> <span class="o">=</span> <span class="n">goal_y</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">g_cost</span> <span class="o">=</span> <span class="n">g_cost</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">parent</span> <span class="o">=</span> <span class="n">parent</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">f_cost</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">calculate_heuristic</span><span class="p">()</span>
+ 
+    <span class="k">def</span> <span class="nf">calculate_heuristic</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="sh">"""</span><span class="s">
+        The heuristic here is the Manhattan Distance
+        Could elaborate to offer more than one choice
+        </span><span class="sh">"""</span>
+        <span class="n">dy</span> <span class="o">=</span> <span class="nf">abs</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">pos_x</span> <span class="o">-</span> <span class="n">self</span><span class="p">.</span><span class="n">goal_x</span><span class="p">)</span>
+        <span class="n">dx</span> <span class="o">=</span> <span class="nf">abs</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">pos_y</span> <span class="o">-</span> <span class="n">self</span><span class="p">.</span><span class="n">goal_y</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">dx</span> <span class="o">+</span> <span class="n">dy</span>
+ 
+    <span class="k">def</span> <span class="nf">__lt__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="n">f_cost</span> <span class="o">&lt;</span> <span class="n">other</span><span class="p">.</span><span class="n">f_cost</span>
+ 
+ 
+<span class="k">class</span> <span class="nc">GreedyBestFirst</span><span class="p">:</span>
+    <span class="sh">"""</span><span class="s">
+</span><span class="gp">    &gt;&gt;&gt;</span> <span class="n">gbf</span> <span class="o">=</span> <span class="nc">GreedyBestFirst</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">grid</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="nf">len</span><span class="p">(</span><span class="n">grid</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="n">x</span><span class="p">.</span><span class="n">pos</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">gbf</span><span class="p">.</span><span class="nf">get_successors</span><span class="p">(</span><span class="n">gbf</span><span class="p">.</span><span class="n">start</span><span class="p">)]</span>
+    <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="n">gbf</span><span class="p">.</span><span class="n">start</span><span class="p">.</span><span class="n">pos_y</span> <span class="o">+</span> <span class="n">delta</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">gbf</span><span class="p">.</span><span class="n">start</span><span class="p">.</span><span class="n">pos_x</span> <span class="o">+</span> <span class="n">delta</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+    <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="n">gbf</span><span class="p">.</span><span class="n">start</span><span class="p">.</span><span class="n">pos_y</span> <span class="o">+</span> <span class="n">delta</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">gbf</span><span class="p">.</span><span class="n">start</span><span class="p">.</span><span class="n">pos_x</span> <span class="o">+</span> <span class="n">delta</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+    <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">gbf</span><span class="p">.</span><span class="nf">retrace_path</span><span class="p">(</span><span class="n">gbf</span><span class="p">.</span><span class="n">start</span><span class="p">)</span>
+    <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)]</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">gbf</span><span class="p">.</span><span class="nf">search</span><span class="p">()</span>  <span class="c1"># doctest: +NORMALIZE_WHITESPACE
+</span>    <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+     <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">)]</span>
+    <span class="sh">"""</span>
+ 
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">goal</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">start</span> <span class="o">=</span> <span class="nc">Node</span><span class="p">(</span><span class="n">start</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">start</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">goal</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">goal</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">target</span> <span class="o">=</span> <span class="nc">Node</span><span class="p">(</span><span class="n">goal</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">goal</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">goal</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">goal</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">99999</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+ 
+        <span class="n">self</span><span class="p">.</span><span class="n">open_nodes</span> <span class="o">=</span> <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">start</span><span class="p">]</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">closed_nodes</span> <span class="o">=</span> <span class="p">[]</span>
+ 
+        <span class="n">self</span><span class="p">.</span><span class="n">reached</span> <span class="o">=</span> <span class="bp">False</span>
+ 
+    <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">]]:</span>
+        <span class="sh">"""</span><span class="s">
+        Search for the path,
+        if a path is not found, only the starting position is returned
+        </span><span class="sh">"""</span>
+        <span class="k">while</span> <span class="n">self</span><span class="p">.</span><span class="n">open_nodes</span><span class="p">:</span>
+            <span class="c1"># Open Nodes are sorted using __lt__
+</span>            <span class="n">self</span><span class="p">.</span><span class="n">open_nodes</span><span class="p">.</span><span class="nf">sort</span><span class="p">()</span>
+            <span class="n">current_node</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">open_nodes</span><span class="p">.</span><span class="nf">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+ 
+            <span class="k">if</span> <span class="n">current_node</span><span class="p">.</span><span class="n">pos</span> <span class="o">==</span> <span class="n">self</span><span class="p">.</span><span class="n">target</span><span class="p">.</span><span class="n">pos</span><span class="p">:</span>
+                <span class="n">self</span><span class="p">.</span><span class="n">reached</span> <span class="o">=</span> <span class="bp">True</span>
+                <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="nf">retrace_path</span><span class="p">(</span><span class="n">current_node</span><span class="p">)</span>
+ 
+            <span class="n">self</span><span class="p">.</span><span class="n">closed_nodes</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">current_node</span><span class="p">)</span>
+            <span class="n">successors</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">get_successors</span><span class="p">(</span><span class="n">current_node</span><span class="p">)</span>
+ 
+            <span class="k">for</span> <span class="n">child_node</span> <span class="ow">in</span> <span class="n">successors</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">child_node</span> <span class="ow">in</span> <span class="n">self</span><span class="p">.</span><span class="n">closed_nodes</span><span class="p">:</span>
+                    <span class="k">continue</span>
+ 
+                <span class="k">if</span> <span class="n">child_node</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">self</span><span class="p">.</span><span class="n">open_nodes</span><span class="p">:</span>
+                    <span class="n">self</span><span class="p">.</span><span class="n">open_nodes</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">child_node</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="c1"># retrieve the best current path
+</span>                    <span class="n">better_node</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">open_nodes</span><span class="p">.</span><span class="nf">pop</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">open_nodes</span><span class="p">.</span><span class="nf">index</span><span class="p">(</span><span class="n">child_node</span><span class="p">))</span>
+ 
+                    <span class="k">if</span> <span class="n">child_node</span><span class="p">.</span><span class="n">g_cost</span> <span class="o">&lt;</span> <span class="n">better_node</span><span class="p">.</span><span class="n">g_cost</span><span class="p">:</span>
+                        <span class="n">self</span><span class="p">.</span><span class="n">open_nodes</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">child_node</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">self</span><span class="p">.</span><span class="n">open_nodes</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">better_node</span><span class="p">)</span>
+ 
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">reached</span><span class="p">):</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">start</span><span class="p">.</span><span class="n">pos</span><span class="p">]</span>
+ 
+    <span class="k">def</span> <span class="nf">get_successors</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">parent</span><span class="p">:</span> <span class="n">Node</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Node</span><span class="p">]:</span>
+        <span class="sh">"""</span><span class="s">
+        Returns a list of successors (both in the grid and free spaces)
+        </span><span class="sh">"""</span>
+        <span class="n">successors</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">action</span> <span class="ow">in</span> <span class="n">delta</span><span class="p">:</span>
+            <span class="n">pos_x</span> <span class="o">=</span> <span class="n">parent</span><span class="p">.</span><span class="n">pos_x</span> <span class="o">+</span> <span class="n">action</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">pos_y</span> <span class="o">=</span> <span class="n">parent</span><span class="p">.</span><span class="n">pos_y</span> <span class="o">+</span> <span class="n">action</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+ 
+            <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">pos_x</span> <span class="o">&lt;=</span> <span class="nf">len</span><span class="p">(</span><span class="n">grid</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">-</span> <span class="mi">1</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">pos_y</span> <span class="o">&lt;=</span> <span class="nf">len</span><span class="p">(</span><span class="n">grid</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="k">continue</span>
+ 
+            <span class="k">if</span> <span class="n">grid</span><span class="p">[</span><span class="n">pos_y</span><span class="p">][</span><span class="n">pos_x</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">continue</span>
+ 
+            <span class="n">successors</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span>
+                <span class="nc">Node</span><span class="p">(</span>
+                    <span class="n">pos_x</span><span class="p">,</span>
+                    <span class="n">pos_y</span><span class="p">,</span>
+                    <span class="n">self</span><span class="p">.</span><span class="n">target</span><span class="p">.</span><span class="n">pos_y</span><span class="p">,</span>
+                    <span class="n">self</span><span class="p">.</span><span class="n">target</span><span class="p">.</span><span class="n">pos_x</span><span class="p">,</span>
+                    <span class="n">parent</span><span class="p">.</span><span class="n">g_cost</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span>
+                    <span class="n">parent</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">successors</span>
+ 
+    <span class="k">def</span> <span class="nf">retrace_path</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">node</span><span class="p">:</span> <span class="n">Node</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">]]:</span>
+        <span class="sh">"""</span><span class="s">
+        Retrace the path from parents to parents until start node
+        </span><span class="sh">"""</span>
+        <span class="n">current_node</span> <span class="o">=</span> <span class="n">node</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">while</span> <span class="n">current_node</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">path</span><span class="p">.</span><span class="nf">append</span><span class="p">((</span><span class="n">current_node</span><span class="p">.</span><span class="n">pos_y</span><span class="p">,</span> <span class="n">current_node</span><span class="p">.</span><span class="n">pos_x</span><span class="p">))</span>
+            <span class="n">current_node</span> <span class="o">=</span> <span class="n">current_node</span><span class="p">.</span><span class="n">parent</span>
+        <span class="n">path</span><span class="p">.</span><span class="nf">reverse</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">path</span>
+ 
+ 
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="sh">"</span><span class="s">__main__</span><span class="sh">"</span><span class="p">:</span>
+    <span class="n">init</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">goal</span> <span class="o">=</span> <span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">grid</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="nf">len</span><span class="p">(</span><span class="n">grid</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">grid</span><span class="p">:</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span>
+ 
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">------</span><span class="sh">"</span><span class="p">)</span>
+ 
+    <span class="n">greedy_bf</span> <span class="o">=</span> <span class="nc">GreedyBestFirst</span><span class="p">(</span><span class="n">init</span><span class="p">,</span> <span class="n">goal</span><span class="p">)</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="n">greedy_bf</span><span class="p">.</span><span class="nf">search</span><span class="p">()</span>
+ 
+    <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">path</span><span class="p">:</span>
+        <span class="n">grid</span><span class="p">[</span><span class="n">elem</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="n">elem</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">2</span>
+ 
+    <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">grid</span><span class="p">:</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p align="justify"><strong>A∗ search</strong>: este algoritmo busca o menor caminho entre dois vértices de um grafo usando valores de duas funções responsáveis por <u>estimar o melhor caminho em relação ao custo acumulado do caminho percorrido</u> e o <u>valor restante necessário até o destino</u>. Sendo assim, a soma desses dois valores estimam o caminho mais eficiente entre o destino e a origem. Por fim, é importante considerar que, quanto menor for este valor, menos custoso será o trajeto calculado.
+<br /><br /><strong>Vantagens</strong>: algoritmo muito eficiênte e garante uma solução ótima.
+<br /><strong>Desvantagens</strong>: usa muita memória e consideravelmente mais complexo que todos os outros algoritmos apresentados. O site <a href="https://www.geeksforgeeks.org/a-search-algorithm/">GeegsForGeeks</a> apresenta um exemplo de implementação. </p>
+  </li>
 </ul>
 
 <h2 id="busca-complexa">Busca Complexa</h2>
 
 <p align="justify">
- a definir
+    Alguns problemas, como otimização e planejamento, possuem um alto grau de dificuldade em encontrar soluções. Como dito no artigo anterior <a href="https://gustavomartins-github.github.io/2023/10/25/P2/">Solução de Problemas em Inteligência Artificial</a>, para estes problemas, as vezes é mais interessante preocupar-se apenas com o estado final, e não com o caminho até ele, sendo a <strong>Busca Local</strong> uma das principais abordagens utilizadas nessas situações.
 </p>
-
-<ul align="justify">
-
-    <li> 
-    <strong>Local Search</strong>:
-    </li>
-
-</ul>
-
-<h2 id="outros-algoritmos">Outros algoritmos</h2>
 
 <p align="justify">
- a definir
+    Esse abordagem começa com uma solução inicial e faz pequenas alterações nela para melhorar progressivamente a solução por meio da exploração de soluções próximas. Para isso, ao considerar um <u>espaço de estados</u>, isto é, conjunto de todas as possíveis soluções viáveis para o problema, deve-se verificar a elevação: uma melhora ou aumento no valor da função objetivo.
 </p>
 
-<h2 id="referências-bibliográficas">Referências Bibliográficas</h2>
+<p align="justify">
+    Mas o que seria a <u>Função Objetivo</u>? Também conhecida como <u>Função de Custo</u> ela rerpesenta uma quantificação do desempenho das soluções possíveis para o problema. A <strong>Imagem 6</strong> a seguir apresenta uma síntese desses conceitos em um plano cartesiano Função Objetivo X Espaço de Estado (contem os estados possíveis).
+</p>
+
+<figure>
+    <img src="/img/BuscaLocal.png" align="center" />
+        <figcaption align="center"><strong>Imagem 5</strong>: grafo a ser explorado pelo algoritimo GBeFS.
+            <br /> 
+                Ref.: material didático da disciplina de Inteligência Artificial da FGA (2023.2).
+        </figcaption>
+</figure>
+
+<p align="justify">
+    Diante do exposto, pode-se entender a busca local como um processo iterativo que vai continuamente de encontro à um valor cada vez maior de desempenho, sendo o fim do algoritmo determinado pelo encontro de um determinado pico, isto é, onde os valores vizinhos não possuem valor maior que o valor atual. 
+</p>
+
+<p align="justify">
+    Este processo de busca pela solução de maior desempenho segue duas premissas principais: se a elevação corresponde a função objetivo, a meta é encontrar o maior pico (Hill Climbing), agora se a elevação corresponder ao custo, a meta é encontrar o vale mais baixo (gradient descent). Mas será que isso garante o encontro do maior pico possível? A resposta é depende. É nesse contexto que algumas técnicas se fazem presente. São elas:
+</p>
+
+<ul>
+  <li><strong> Escalada estocástica (Stochastic hill climbing)</strong>: escolhe aleatoriamente os caminhos ascendentes;</li>
+  <li><strong> Escalada de primeira escolha (First-choice hill climbing)</strong>: Escolhe sucessores aleatoriamente até que um melhor seja escolhido;</li>
+  <li><strong> Escalada com reinicialização aleatória (Random-restart hill climbing)</strong>: executa diversos hill climbing iniciando em posições aleatórias;</li>
+  <li><strong> Recozimento simulado (Simulated annealing)</strong>: Uma versão de stochastic hill climbing onde alguns movimento descendentes são permitidos</li>
+  <li><strong> Busca de feixe local (Local beam Search)</strong>: O algoritmo acompanha k estados ao invés de apenas um;
+    <h2 id="referências-bibliográficas">Referências Bibliográficas</h2>
+  </li>
+</ul>
+
+<blockquote>
+  <p>BEST First Search: Informed Search. [S. l.], 21 fev. 2023. Disponível em: https://www.geeksforgeeks.org/best-first-search-informed-search/. Acesso em: 28 out. 2023.</p>
+</blockquote>
+
+<blockquote>
+  <p>A* Search Algorithm. [S. l.], 8 mar. 2023. Disponível em: https://www.geeksforgeeks.org/a-search-algorithm/. Acesso em: 29 out. 2023.</p>
+</blockquote>
+
+<blockquote>
+  <p>AN Introduction to Problem-Solving using Search Algorithms for Beginners. [S. l.]. Disponível em: https://www.analyticsvidhya.com/blog/2021/10/an-introduction-to-problem-solving-using-search-algorithms-for-beginners/. Acesso em: 28 out. 2023.</p>
+</blockquote>
+
+<blockquote>
+  <p>BEST First Search in Artificial Intelligence. [S. l.]. Disponível em: https://www.analyticsvidhya.com/blog/2023/09/best-first-search-in-artificial-intelligence/. Acesso em: 28 out. 2023.</p>
+</blockquote>
 
 <blockquote>
   <p>ENGENHARIA HÍBRIDA. Placas Eletrônicas (PCB/PCI): O que são e para que servem?. [S. l.], 17 out. 2023. Disponível em: https://www.engenhariahibrida.com.br/post/placas-eletronicas-o-que-sao-para-que-servem. Acesso em: 27 out. 2023.</p>
