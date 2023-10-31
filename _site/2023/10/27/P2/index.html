@@ -242,7 +242,7 @@
                     </div>
                     <h1>Algoritmos de Busca em AI</h1>
                     
-                    <h2 class="subheading"> "Busca Cega, Informada e Complexa"</h2>
+                    <h2 class="subheading"> "Discussões, Busca e Algoritmos Genéticos"</h2>
                     <span class="meta">Posted by Gustavo M.R. on October 27, 2023</span>
                 </div>
             </div>
@@ -279,7 +279,7 @@
 <h2 id="discussão-sobre-algoritmos-de-busca-em-ia">Discussão sobre algoritmos de busca em IA</h2>
 
 <p align="justify">
-    Como visto no artigo <a herf="https://gustavomartins-github.github.io/2023/10/25/P2/">Solução de Problemas em Inteligência Artificial</a>, os algoritmos de busca desempenham um papel fundamental na área da inteligência artificial, pois são fundamentais para resolver problemas, tomar decisões e encontrar soluções. Segundo o professor <a herf="https://institucional.ufpel.edu.br/servidores/id/35487">Ricardo Araujo</a>, doutor em Ciência da Computação pela Universidade Federal do Rio Grande do Sul, em sua publicação <a href="https://ricardomatsumura.medium.com/algoritmos-de-busca-para-intelig%C3%AAncia-artificial-7cb81172396c">Algoritmos de Busca para Inteligência Artificial</a>, pode-se dizer que, de maneira sucinta, um algoritmo de busca enumera possíveis soluções para um problema seguindo alguma sistemática que permita (e as vezes garanta) que uma solução desejada seja encontrada.
+    Como visto no artigo <a href="https://gustavomartins-github.github.io/2023/10/25/P2/">Solução de Problemas em Inteligência Artificial</a>, os algoritmos de busca desempenham um papel fundamental na área da inteligência artificial, pois são fundamentais para resolver problemas, tomar decisões e encontrar soluções. Segundo o professor <a href="https://institucional.ufpel.edu.br/servidores/id/35487">Ricardo Araujo</a>, doutor em Ciência da Computação pela Universidade Federal do Rio Grande do Sul, em sua publicação <a href="https://ricardomatsumura.medium.com/algoritmos-de-busca-para-intelig%C3%AAncia-artificial-7cb81172396c">Algoritmos de Busca para Inteligência Artificial</a>, pode-se dizer que, de maneira sucinta, um algoritmo de busca enumera possíveis soluções para um problema seguindo alguma sistemática que permita (e as vezes garanta) que uma solução desejada seja encontrada.
 </p>
 
 <p align="justify">
@@ -315,13 +315,131 @@
     </li>
 
 </ul>
-<h2 id="algoritmos-de-busca-cega">Algoritmos de Busca Cega</h2>
 
-<h2 id="algoritmos-de-busca-informada">Algoritmos de Busca Informada</h2>
+<h2 id="discussão-algoritmos-genéticos">Discussão algoritmos genéticos</h2>
 
-<h2 id="algoritmos-de-busca-complexa">Algoritmos de Busca Complexa</h2>
+<p align="justify">
+    Segundo o primeiro artigo publicado no GMR Blog <a href="https://gustavomartins-github.github.io/2023/08/07/AI-2023/">O que é uma AI?</a>, a inteligência artificial é uma área interdisciplinar que envolve ciência da computação, biologia, psicologia, etc. Diante disso, com enfase às contribuições da biologia, o biomimetismo torna-se um forte aliado à produção de sistemas inteligêntes que imitam aspectos do comportamento humano, tais como aprendizado, percepção, raciocínio, evolução e adaptação. A <strong>Imagem 1</strong> a seguir compara algumas tecnologias e suas respectivas inspirações na natureza.
+</p>
 
-<h2 id="um-pouco-mais-os-algoritmos-genéticos">Um pouco mais os algoritmos genéticos</h2>
+<figure>
+    <img src="/img/Biomimetismo.png" align="center" />
+        <figcaption align="center"><strong>Imagem 1</strong>: Técnicas e suas respectivas inspirações (biomimetismo)
+            <br /> 
+                Ref.: adaptado de <a href="https://www.inf.ufsc.br/~mauro.roisenberg/ine5377/Cursos-ICA/CE-intro_apost.pdf">ALGORITMOS GENÉTICOS: PRINCÍPIOS E APLICAÇÕES</a>, página 1
+        </figcaption>
+</figure>
+
+<p align="justify">
+    Conforme evidenciado a cima, os <strong>Algoritmos Genéticos</strong> consistem em uma adaptação do princípio Darwiniano de seleção natural, onde o mais adaptado ao meio é capaz de sobreviver e deixar descendentes férteis. Contudo, para entender como tal princípio é aplicado à computação, é necessário fazer algumas analogias. A <strong>Imagem 2</strong> a seguir apresenta uma comparação entre os elementos da natureza e suas respectivas representação no contexto dos Algoritmos Genéticos.
+</p>
+
+<figure>
+    <img src="/img/Biomimetismo2.png" align="center" />
+        <figcaption align="center"><strong>Imagem 2</strong>: Natureza e suas representações Computacionais (Algoritmos Genéticos)
+            <br /> 
+                Ref.: adaptado de <a href="https://www.inf.ufsc.br/~mauro.roisenberg/ine5377/Cursos-ICA/CE-intro_apost.pdf">ALGORITMOS GENÉTICOS: PRINCÍPIOS E APLICAÇÕES</a>, página 1
+        </figcaption>
+</figure>
+
+<h2 id="algoritmos-de-busca">Algoritmos de Busca</h2>
+
+<p align="justify">
+    A partir de agora, discutiremos alguns entre os principais algoritmos de proucura, considerando os diferentes tipos de busca abordados neste artigo: busca <u>cega</u>, <u>informada</u> e <u>complexa</u>. A <strong>Imagem 3</strong> abaixo apresenta os algoritmos a serem apresentados.
+</p>
+
+<figure>
+    <img src="/img/Algoritmos.png" align="center" />
+        <figcaption align="center"><strong>Imagem 3</strong>: algoritmos de busca cega, informada e complexa
+            <br /> 
+                Ref.: autoria própria
+        </figcaption>
+</figure>
+
+<h2 id="busca-cega">Busca Cega</h2>
+
+<p align="justify">
+    Como já sabemos, a busca cega consiste em uma abordagem na qual o agente explora um espaço de estados (ou espaço de soluções) sem ter informações detalhadas sobre a estrutura desse espaço ou a proximidade da solução desejada. Sendo assim, confira a seguir uma breve discussão e implementação sobre quatro diferentes algoritmos de busca não informada.
+</p>
+
+<ul align="justify">
+
+    <li> 
+    <strong>Best-First Search</strong>:
+    </li>
+
+    <li> 
+    <strong>Breadth-first search</strong>:
+    </li>
+
+    <li> 
+    <strong>Uniform Cost Search</strong>:
+    </li>
+
+    <li> 
+    <strong>Depth-first search</strong>:
+    </li>
+
+</ul>
+
+<h2 id="busca-informada">Busca Informada</h2>
+<p align="justify">
+ a definir
+</p>
+
+<ul align="justify">
+
+    <li> 
+    <strong>Greedy best-first search</strong>:
+    </li>
+
+    <li> 
+    <strong>A∗ search</strong>:
+    </li>
+
+</ul>
+
+<h2 id="busca-complexa">Busca Complexa</h2>
+
+<p align="justify">
+ a definir
+</p>
+
+<ul align="justify">
+
+    <li> 
+    <strong>Local Search</strong>:
+    </li>
+
+</ul>
+
+<h2 id="outros-algoritmos">Outros algoritmos</h2>
+
+<p align="justify">
+ a definir
+</p>
+
+<h2 id="referências-bibliográficas">Referências Bibliográficas</h2>
+
+<blockquote>
+  <p>ENGENHARIA HÍBRIDA. Placas Eletrônicas (PCB/PCI): O que são e para que servem?. [S. l.], 17 out. 2023. Disponível em: https://www.engenhariahibrida.com.br/post/placas-eletronicas-o-que-sao-para-que-servem. Acesso em: 27 out. 2023.</p>
+</blockquote>
+
+<blockquote>
+  <p>PROBLEMA do caixeiro-viajante. [S. l.], 19 jun. 2023. Disponível em: https://pt.wikipedia.org/wiki/Problema_do_caixeiro-viajante. Acesso em: 27 jan. 2023.</p>
+</blockquote>
+
+<blockquote>
+  <p>GO. [S. l.], 13 out. 2023. Disponível em: https://pt.wikipedia.org/wiki/Go. Acesso em: 27 out. 2023.</p>
+</blockquote>
+
+<blockquote>
+  <p>ALGORITMOS de Busca para Inteligência Artificial. [S. l.], 3 jul. 2020. Disponível em: https://ricardomatsumura.medium.com/algoritmos-de-busca-para-intelig%C3%AAncia-artificial-7cb81172396c. Acesso em: 26 out. 2023.</p>
+</blockquote>
+
+<blockquote>
+  <p>ALGORITMOS GENÉTICOS: PRINCÍPIOS E APLICAÇÕES. ICA: Laboratório de Inteligência Computacional Aplicada, [s. l.]. Disponível em: https://www.inf.ufsc.br/~mauro.roisenberg/ine5377/Cursos-ICA/CE-intro_apost.pdf. Acesso em: 25 out. 2023.</p>
+</blockquote>
 
 
                 <hr style="visibility: hidden;">
