@@ -16,7 +16,7 @@
     
     <meta property="og:type" content="article">
     <meta property="og:description" content="
-  “A introdução de abstrações adequadas é a nossa única ajuda mental para reduzir o apelo à enumeração, para organizar e dominar a complexidade. — Edsger Dijkstra”
+  “A introdução de abstrações adequadas é a nossa única ajuda mental para reduzir o apelo à enumeração, para organizar e dominar a complexidade.” — Edsger Dijkstra”
 
 ">
     
@@ -271,10 +271,14 @@
                 
 
 				<blockquote>
-  <p>“A introdução de abstrações adequadas é a nossa única ajuda mental para reduzir o apelo à enumeração, para organizar e dominar a complexidade. — <strong>Edsger Dijkstra</strong>”</p>
+  <p>“A introdução de abstrações adequadas é a nossa única ajuda mental para reduzir o apelo à enumeração, para organizar e dominar a complexidade.” — <strong>Edsger Dijkstra</strong>”</p>
 </blockquote>
 
-<p>Este artigo tem como finalidade realizar uma discussão sucinta sobre algoritmos de busca e suas aplicações (contextos de uso), assim como apresentar e discutir a implementação de alguns algoritmos de busca cega, informada e complexa.</p>
+<h2 id="introdução">Introdução</h2>
+
+<p align="justify">
+Este artigo tem como finalidade realizar uma discussão sucinta sobre algoritmos de busca e suas aplicações (contextos de uso), assim como apresentar e discutir a implementação de alguns algoritmos de busca cega, informada e complexa.
+</p>
 
 <h2 id="discussão-sobre-algoritmos-de-busca-em-ia">Discussão sobre algoritmos de busca em IA</h2>
 
@@ -374,7 +378,7 @@
 <p align="justify"> <strong>Grafo:</strong></p>
 <figure>
     <img src="/img/Graph01.png" align="center" />
-        <figcaption align="center"><strong>Imagem 1</strong>: grafo a ser explorado pelo algoritmo Breadth-first search
+        <figcaption align="center"><strong>Imagem 4</strong>: grafo a ser explorado pelo algoritmo Breadth-first search
             <br /> 
                 Ref.: <a href="https://www.analyticsvidhya.com/blog/2021/10/an-introduction-to-problem-solving-using-search-algorithms-for-beginners/">Analytics Vidhya</a>
         </figcaption>
@@ -458,7 +462,7 @@
 <p align="justify"> <strong>Grafo:</strong></p>
 <figure>
     <img src="/img/Graph01.png" align="center" />
-        <figcaption align="center"><strong>Imagem 2</strong>: grafo a ser explorado pelo algoritmo de busca em profundidade.
+        <figcaption align="center"><strong>Imagem 5</strong>: grafo a ser explorado pelo algoritmo de busca em profundidade.
             <br /> 
                 Ref.: <a href="https://www.analyticsvidhya.com/blog/2021/10/an-introduction-to-problem-solving-using-search-algorithms-for-beginners/">Analytics Vidhya</a>
         </figcaption>
@@ -527,7 +531,7 @@ REF: https://www.analyticsvidhya.com/blog/2021/10/an-introduction-to-problem-sol
 <p align="justify"> <strong>Grafo:</strong></p>
 <figure>
     <img src="/img/Graph03.png" align="center" />
-        <figcaption align="center"><strong>Imagem 3</strong>: grafo a ser explorado pelo algoritmo Uniform Cost Search
+        <figcaption align="center"><strong>Imagem 6</strong>: grafo a ser explorado pelo algoritmo Uniform Cost Search
             <br /> 
                 Ref.: <a href="https://www.analyticsvidhya.com/blog/2021/10/an-introduction-to-problem-solving-using-search-algorithms-for-beginners/">Analytics Vidhya</a>
         </figcaption>
@@ -650,7 +654,7 @@ REF: https://www.analyticsvidhya.com/blog/2021/10/an-introduction-to-problem-sol
 <p align="justify"> <strong>Grafo:</strong></p>
 <figure>
     <img src="/img/Graph02.png" align="center" />
-        <figcaption align="center"><strong>Imagem 4</strong>: grafo a ser explorado pelo algoritimo de primeira melhor busca.
+        <figcaption align="center"><strong>Imagem 7</strong>: grafo a ser explorado pelo algoritimo de primeira melhor busca.
             <br /> 
                 Ref.: <a href="https://www.geeksforgeeks.org/best-first-search-informed-search/">GeeksforGeeks</a>
         </figcaption>
@@ -793,7 +797,7 @@ REF: https://www.analyticsvidhya.com/blog/2021/10/an-introduction-to-problem-sol
 <p align="justify"> <strong>Grafo:</strong></p>
 <figure>
     <img src="/img/Graph04.png" align="center" />
-        <figcaption align="center"><strong>Imagem 5</strong>: grafo a ser explorado pelo algoritimo GBeFS.
+        <figcaption align="center"><strong>Imagem 8</strong>: grafo a ser explorado pelo algoritimo GBeFS.
             <br /> 
                 Ref.: <a href="https://python.algorithmexamples.com/web/graphs/greedy_best_first.html">AlgorithmExamples</a>
         </figcaption>
@@ -1161,7 +1165,7 @@ Gráfico modelado em matriz de adjacência
   <li>
     <p align="justify"><strong>A∗ search</strong>: este algoritmo busca o menor caminho entre dois vértices de um grafo usando valores de duas funções responsáveis por <u>estimar o melhor caminho em relação ao custo acumulado do caminho percorrido</u> e o <u>valor restante necessário até o destino</u>. Sendo assim, a soma desses dois valores estimam o caminho mais eficiente entre o destino e a origem. Por fim, é importante considerar que, quanto menor for este valor, menos custoso será o trajeto calculado.
 <br /><br /><strong>Vantagens</strong>: algoritmo muito eficiênte e garante uma solução ótima.
-<br /><strong>Desvantagens</strong>: usa muita memória e consideravelmente mais complexo que todos os outros algoritmos apresentados. O site <a href="https://www.geeksforgeeks.org/a-search-algorithm/">GeegsForGeeks</a> apresenta um exemplo de implementação. </p>
+<br /><strong>Desvantagens</strong>: usa muita memória e consideravelmente mais complexo que todos os outros algoritmos apresentados. O site <a href="https://www.geeksforgeeks.org/a-search-algorithm/">GeegsForGeeks</a> apresenta um bom exemplo de implementação. </p>
   </li>
 </ul>
 
@@ -1181,7 +1185,7 @@ Gráfico modelado em matriz de adjacência
 
 <figure>
     <img src="/img/BuscaLocal.png" align="center" />
-        <figcaption align="center"><strong>Imagem 5</strong>: grafo a ser explorado pelo algoritimo GBeFS.
+        <figcaption align="center"><strong>Imagem 9</strong>: plano cartesiano Função Objetivo Vs Spaço de Estados
             <br /> 
                 Ref.: material didático da disciplina de Inteligência Artificial da FGA (2023.2).
         </figcaption>
@@ -1200,10 +1204,519 @@ Gráfico modelado em matriz de adjacência
   <li><strong> Escalada de primeira escolha (First-choice hill climbing)</strong>: Escolhe sucessores aleatoriamente até que um melhor seja escolhido;</li>
   <li><strong> Escalada com reinicialização aleatória (Random-restart hill climbing)</strong>: executa diversos hill climbing iniciando em posições aleatórias;</li>
   <li><strong> Recozimento simulado (Simulated annealing)</strong>: Uma versão de stochastic hill climbing onde alguns movimento descendentes são permitidos</li>
-  <li><strong> Busca de feixe local (Local beam Search)</strong>: O algoritmo acompanha k estados ao invés de apenas um;
-    <h2 id="referências-bibliográficas">Referências Bibliográficas</h2>
+  <li><strong> Busca de feixe local (Local beam Search)</strong>: O algoritmo acompanha k estados ao invés de apenas um;</li>
+</ul>
+
+<h2 id="alguns-outros-algoritmos-de-busca">Alguns outros algoritmos de busca</h2>
+
+<p align="justify">
+    Além dos algoritmos apresentados até então, existem diversos outros algoritmos de busca cega, informada ou complexa, e o mesmo vale para os algoritmos genéticos. Sendo assim, este tópico apresentará alguns novos algoritmos, como o <strong>DLS (Depth-limited search)</strong>, que consiste em uma variante da DFS que limita a profundidade da exploração, o <strong> Jump Search</strong>, que consiste em um algoritmo de busca que separa as informações em blocos e proucura no bloco mais próximo da solução e, por fim, o algoritmo genético conhecido como 
+</p>
+
+<ul>
+  <li>
+    <p align="justify"><strong>DLS (Depth-limited search) - Busca Cega</strong>: funciona de maneira similar à DFS (Deph-Frist Search), com o acréscimo de uma restrição a qual limita ae onde poderá atravessar os nós, resolvendo eventuais problemas de caminho infinito da DFS.
+<br /><br /><strong>Vantagens</strong>: as mesmas da DFS, com adição de proteção à caminhos infinitos e economia de memória.
+<br /><strong>Desvantagens</strong>: assim como a DFS, nem sempre garantirá uma solução</p>
   </li>
 </ul>
+
+<p align="center"> <strong>EXEMPLO</strong></p>
+<p align="justify"> <strong>Grafo:</strong></p>
+<figure>
+    <img src="/img/Graph05.png" align="center" />
+        <figcaption align="center"><strong>Imagem 10</strong>: grafo a ser explorado pelo algoritimo DLS.
+            <br /> 
+                Ref.: <a href="https://www.analyticsvidhya.com/blog/2021/10/an-introduction-to-problem-solving-using-search-algorithms-for-beginners/">Analtytics Vidhya</a>
+        </figcaption>
+</figure>
+
+<p align="justify"> <strong>Implementação da solução em <u>python</u>:</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+</pre></td><td class="rouge-code"><pre><span class="sh">"""</span><span class="s">
+REF: https://www.analyticsvidhya.com/blog/2021/10/an-introduction-to-problem-solving-using-search-algorithms-for-beginners/ 
+</span><span class="sh">"""</span>
+
+<span class="n">graph</span> <span class="o">=</span> <span class="p">{</span>
+ <span class="sh">'</span><span class="s">A</span><span class="sh">'</span> <span class="p">:</span> <span class="p">[</span><span class="sh">'</span><span class="s">B</span><span class="sh">'</span><span class="p">,</span><span class="sh">'</span><span class="s">C</span><span class="sh">'</span><span class="p">],</span>
+ <span class="sh">'</span><span class="s">B</span><span class="sh">'</span> <span class="p">:</span> <span class="p">[</span><span class="sh">'</span><span class="s">D</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">E</span><span class="sh">'</span><span class="p">],</span>
+ <span class="sh">'</span><span class="s">C</span><span class="sh">'</span> <span class="p">:</span> <span class="p">[</span><span class="sh">'</span><span class="s">F</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">G</span><span class="sh">'</span><span class="p">],</span>
+ <span class="sh">'</span><span class="s">D</span><span class="sh">'</span> <span class="p">:</span> <span class="p">[],</span>
+ <span class="sh">'</span><span class="s">E</span><span class="sh">'</span> <span class="p">:</span> <span class="p">[],</span>
+ <span class="sh">'</span><span class="s">F</span><span class="sh">'</span> <span class="p">:</span> <span class="p">[],</span>
+ <span class="sh">'</span><span class="s">G</span><span class="sh">'</span> <span class="p">:</span> <span class="p">[]</span>
+<span class="p">}</span>
+<span class="k">def</span> <span class="nf">DLS</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="n">goal</span><span class="p">,</span><span class="n">path</span><span class="p">,</span><span class="n">level</span><span class="p">,</span><span class="n">maxD</span><span class="p">):</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">Level atual--&gt;</span><span class="sh">'</span><span class="p">,</span><span class="n">level</span><span class="p">)</span>
+    <span class="n">path</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">start</span> <span class="o">==</span> <span class="n">goal</span><span class="p">:</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Teste de meta bem-sucedido</span><span class="sh">"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">path</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">Falha no teste do nó de destino</span><span class="sh">'</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">level</span><span class="o">==</span><span class="n">maxD</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">False</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">Expandindo o nó atual</span><span class="sh">'</span><span class="p">,</span><span class="n">start</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="n">start</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="nc">DLS</span><span class="p">(</span><span class="n">child</span><span class="p">,</span><span class="n">goal</span><span class="p">,</span><span class="n">path</span><span class="p">,</span><span class="n">level</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">maxD</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">path</span>
+        <span class="n">path</span><span class="p">.</span><span class="nf">pop</span><span class="p">()</span>
+    <span class="k">return</span> <span class="bp">False</span>
+<span class="n">start</span> <span class="o">=</span> <span class="sh">'</span><span class="s">A</span><span class="sh">'</span>
+<span class="n">goal</span> <span class="o">=</span> <span class="nf">input</span><span class="p">(</span><span class="sh">'</span><span class="s">Insira o nó de destino: </span><span class="sh">'</span><span class="p">)</span>
+<span class="n">maxD</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="nf">input</span><span class="p">(</span><span class="sh">"</span><span class="s">Insira o limite máximo de profundidade: </span><span class="sh">"</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">()</span>
+<span class="n">path</span> <span class="o">=</span> <span class="nf">list</span><span class="p">()</span>
+<span class="n">res</span> <span class="o">=</span> <span class="nc">DLS</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="n">goal</span><span class="p">,</span><span class="n">path</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">maxD</span><span class="p">)</span>
+<span class="nf">if</span><span class="p">(</span><span class="n">res</span><span class="p">):</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Caminho para o nó de destino disponível</span><span class="sh">"</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Caminho</span><span class="sh">"</span><span class="p">,</span><span class="n">path</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Nenhum caminho disponível para o nó de destino em determinado limite de profundidade</span><span class="sh">"</span><span class="p">)</span>
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p align="justify"> <strong>Saída:</strong></p>
+<figure>
+    <img src="/img/Output1.png" align="center" />
+        <figcaption align="center"><strong>Imagem 11</strong>: solução da DLS para busca do nó A até o C.
+            <br /> 
+                Ref.: autoria própria
+        </figcaption>
+</figure>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p align="justify"><strong>Jump Search (Pesquisa de Blocos)- Busca Informada</strong>: funciona dividindo uma estrutura de dados (estática) em blocos de tamanho fixo e, em seguida, aplicando uma busca linear nos blocos até encontrar o bloco que provavelmente contém o valor desejado. Uma vez encontrado o bloco apropriado (mais próximo da solução), uma busca linear é realizada apenas nesse bloco, reduzindo o número de comparações necessárias. Contudo, para que isso seja possível, essa busca aproveita a informação de que a estrutura de dados está previamente ordenada, o que configura esse algoritmo como informado.
+<br /><br /><strong>Vantagens</strong>: bastante eficiênte em estruturas de dados estáticas e não querer memória memória adicional significativa.
+<br /><strong>Desvantagens</strong>: precisa da garantia de que a estrutura esteja ordenada e torna-se cada vez mais ineficaz a medida em que os dados não estejam uniformemente distribuidos</p>
+  </li>
+</ul>
+
+<p align="center"> <strong>EXEMPLO</strong></p>
+
+<p align="justify"> <strong>Objetivo</strong>: encontrar o índice do elemento 55 dentro da array <strong>arr</strong> = [ 0, 1, 1, 2, 3, 5, 8, 13, 21,34, 55, 89, 144, 233, 377, 610 ].</p>
+
+<p align="justify"> <strong>Implementação da solução em <u>python</u>:</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+</pre></td><td class="rouge-code"><pre><span class="sh">"""</span><span class="s">
+REF: https://www.geeksforgeeks.org/jump-search/
+</span><span class="sh">"""</span>
+<span class="c1"># Python3 code to implement Jump Search
+</span><span class="kn">import</span> <span class="n">math</span>
+ 
+<span class="k">def</span> <span class="nf">jumpSearch</span><span class="p">(</span> <span class="n">arr</span> <span class="p">,</span> <span class="n">x</span> <span class="p">,</span> <span class="n">n</span> <span class="p">):</span>
+     
+    <span class="c1"># Finding block size to be jumped
+</span>    <span class="n">step</span> <span class="o">=</span> <span class="n">math</span><span class="p">.</span><span class="nf">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+     
+    <span class="c1"># Finding the block where element is
+</span>    <span class="c1"># present (if it is present)
+</span>    <span class="n">prev</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">arr</span><span class="p">[</span><span class="nf">int</span><span class="p">(</span><span class="nf">min</span><span class="p">(</span><span class="n">step</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">:</span>
+        <span class="n">prev</span> <span class="o">=</span> <span class="n">step</span>
+        <span class="n">step</span> <span class="o">+=</span> <span class="n">math</span><span class="p">.</span><span class="nf">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">prev</span> <span class="o">&gt;=</span> <span class="n">n</span><span class="p">:</span>
+            <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+     
+    <span class="c1"># Doing a linear search for x in 
+</span>    <span class="c1"># block beginning with prev.
+</span>    <span class="k">while</span> <span class="n">arr</span><span class="p">[</span><span class="nf">int</span><span class="p">(</span><span class="n">prev</span><span class="p">)]</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">:</span>
+        <span class="n">prev</span> <span class="o">+=</span> <span class="mi">1</span>
+         
+        <span class="c1"># If we reached next block or end 
+</span>        <span class="c1"># of array, element is not present.
+</span>        <span class="k">if</span> <span class="n">prev</span> <span class="o">==</span> <span class="nf">min</span><span class="p">(</span><span class="n">step</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+            <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+     
+    <span class="c1"># If element is found
+</span>    <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="nf">int</span><span class="p">(</span><span class="n">prev</span><span class="p">)]</span> <span class="o">==</span> <span class="n">x</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">prev</span>
+     
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+ 
+<span class="c1"># Driver code to test function
+</span><span class="n">arr</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span>
+    <span class="mi">34</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="mi">144</span><span class="p">,</span> <span class="mi">233</span><span class="p">,</span> <span class="mi">377</span><span class="p">,</span> <span class="mi">610</span> <span class="p">]</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">55</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nf">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+ 
+<span class="c1"># Find the index of 'x' using Jump Search
+</span><span class="n">index</span> <span class="o">=</span> <span class="nf">jumpSearch</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+ 
+<span class="c1"># Print the index where 'x' is located
+</span><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Number</span><span class="sh">"</span> <span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="sh">"</span><span class="s">is at index</span><span class="sh">"</span> <span class="p">,</span><span class="sh">"</span><span class="s">%.0f</span><span class="sh">"</span><span class="o">%</span><span class="n">index</span><span class="p">)</span>
+ 
+<span class="c1"># This code is contributed by "Sharad_Bhardwaj".
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p align="justify"> <strong>Saída:</strong></p>
+<figure>
+    <img src="/img/Output2.png" align="center" />
+        <figcaption align="center"><strong>Imagem 12</strong>: solução da Jumper Search para encontrar o elemento 55 dentro da array "<strong>arr</strong>".
+            <br /> 
+                Ref.: autoria própria
+        </figcaption>
+</figure>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p align="justify"><strong>Algoritmo Genético para Otimização Contínua de Funções - Algoritmo Genético</strong>: uma classe de algoritmos de busca heurística que visam encontrar a melhor solução para um problema de otimização de funções. Como dito anteriormente, esses algoritmos são inspirados na teoria da evolução e na genética, onde os princípios de seleção natural são aplicados a soluções candidatas para encontrar a solução ótima ou aproximadamente ótima para um problema.
+<br /><br /><strong>Vantagens</strong>: exploração eficiente do espaço de busca em ambientes complexos e se adapta para múltiplos objetivos
+<br /><strong>Desvantagens</strong>: não garante solução ótima e possui uma configuração sensível, isto é, altamente dependente da escolha adequada dos parâmetros (tamanho da população, taxa de mutação, etc).</p>
+  </li>
+</ul>
+
+<p align="center"> <strong>EXEMPLO</strong></p>
+
+<p align="justify"> <strong>Objetivo</strong>: encontrar o valor mínimo da função <i>f(x) = x^2 + y^2</i>. (Vmin = f(0,0) = 0,0)</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+</pre></td><td class="rouge-code"><pre><span class="sh">"""</span><span class="s">
+# genetic algorithm search for continuous function optimization
+REF: https://machinelearningmastery.com/simple-genetic-algorithm-from-scratch-in-python/
+</span><span class="sh">"""</span>
+<span class="kn">from</span> <span class="n">numpy.random</span> <span class="kn">import</span> <span class="n">randint</span>
+<span class="kn">from</span> <span class="n">numpy.random</span> <span class="kn">import</span> <span class="n">rand</span>
+
+<span class="c1"># objective function
+</span><span class="k">def</span> <span class="nf">objective</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+	<span class="k">return</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mf">2.0</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mf">2.0</span>
+
+<span class="c1"># decode bitstring to numbers
+</span><span class="k">def</span> <span class="nf">decode</span><span class="p">(</span><span class="n">bounds</span><span class="p">,</span> <span class="n">n_bits</span><span class="p">,</span> <span class="n">bitstring</span><span class="p">):</span>
+	<span class="n">decoded</span> <span class="o">=</span> <span class="nf">list</span><span class="p">()</span>
+	<span class="n">largest</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="n">n_bits</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">bounds</span><span class="p">)):</span>
+		<span class="c1"># extract the substring
+</span>		<span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">n_bits</span><span class="p">,</span> <span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="n">n_bits</span><span class="p">)</span><span class="o">+</span><span class="n">n_bits</span>
+		<span class="n">substring</span> <span class="o">=</span> <span class="n">bitstring</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">]</span>
+		<span class="c1"># convert bitstring to a string of chars
+</span>		<span class="n">chars</span> <span class="o">=</span> <span class="sh">''</span><span class="p">.</span><span class="nf">join</span><span class="p">([</span><span class="nf">str</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">substring</span><span class="p">])</span>
+		<span class="c1"># convert string to integer
+</span>		<span class="n">integer</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="n">chars</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+		<span class="c1"># scale integer to desired range
+</span>		<span class="n">value</span> <span class="o">=</span> <span class="n">bounds</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="n">integer</span><span class="o">/</span><span class="n">largest</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">bounds</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">bounds</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+		<span class="c1"># store
+</span>		<span class="n">decoded</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">decoded</span>
+
+<span class="c1"># tournament selection
+</span><span class="k">def</span> <span class="nf">selection</span><span class="p">(</span><span class="n">pop</span><span class="p">,</span> <span class="n">scores</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+	<span class="c1"># first random selection
+</span>	<span class="n">selection_ix</span> <span class="o">=</span> <span class="nf">randint</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">pop</span><span class="p">))</span>
+	<span class="k">for</span> <span class="n">ix</span> <span class="ow">in</span> <span class="nf">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nf">len</span><span class="p">(</span><span class="n">pop</span><span class="p">),</span> <span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+		<span class="c1"># check if better (e.g. perform a tournament)
+</span>		<span class="k">if</span> <span class="n">scores</span><span class="p">[</span><span class="n">ix</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">scores</span><span class="p">[</span><span class="n">selection_ix</span><span class="p">]:</span>
+			<span class="n">selection_ix</span> <span class="o">=</span> <span class="n">ix</span>
+	<span class="k">return</span> <span class="n">pop</span><span class="p">[</span><span class="n">selection_ix</span><span class="p">]</span>
+
+<span class="c1"># crossover two parents to create two children
+</span><span class="k">def</span> <span class="nf">crossover</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">r_cross</span><span class="p">):</span>
+	<span class="c1"># children are copies of parents by default
+</span>	<span class="n">c1</span><span class="p">,</span> <span class="n">c2</span> <span class="o">=</span> <span class="n">p1</span><span class="p">.</span><span class="nf">copy</span><span class="p">(),</span> <span class="n">p2</span><span class="p">.</span><span class="nf">copy</span><span class="p">()</span>
+	<span class="c1"># check for recombination
+</span>	<span class="k">if</span> <span class="nf">rand</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">r_cross</span><span class="p">:</span>
+		<span class="c1"># select crossover point that is not on the end of the string
+</span>		<span class="n">pt</span> <span class="o">=</span> <span class="nf">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nf">len</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+		<span class="c1"># perform crossover
+</span>		<span class="n">c1</span> <span class="o">=</span> <span class="n">p1</span><span class="p">[:</span><span class="n">pt</span><span class="p">]</span> <span class="o">+</span> <span class="n">p2</span><span class="p">[</span><span class="n">pt</span><span class="p">:]</span>
+		<span class="n">c2</span> <span class="o">=</span> <span class="n">p2</span><span class="p">[:</span><span class="n">pt</span><span class="p">]</span> <span class="o">+</span> <span class="n">p1</span><span class="p">[</span><span class="n">pt</span><span class="p">:]</span>
+	<span class="k">return</span> <span class="p">[</span><span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">]</span>
+
+<span class="c1"># mutation operator
+</span><span class="k">def</span> <span class="nf">mutation</span><span class="p">(</span><span class="n">bitstring</span><span class="p">,</span> <span class="n">r_mut</span><span class="p">):</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">bitstring</span><span class="p">)):</span>
+		<span class="c1"># check for a mutation
+</span>		<span class="k">if</span> <span class="nf">rand</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">r_mut</span><span class="p">:</span>
+			<span class="c1"># flip the bit
+</span>			<span class="n">bitstring</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">bitstring</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+<span class="c1"># genetic algorithm
+</span><span class="k">def</span> <span class="nf">genetic_algorithm</span><span class="p">(</span><span class="n">objective</span><span class="p">,</span> <span class="n">bounds</span><span class="p">,</span> <span class="n">n_bits</span><span class="p">,</span> <span class="n">n_iter</span><span class="p">,</span> <span class="n">n_pop</span><span class="p">,</span> <span class="n">r_cross</span><span class="p">,</span> <span class="n">r_mut</span><span class="p">):</span>
+	<span class="c1"># initial population of random bitstring
+</span>	<span class="n">pop</span> <span class="o">=</span> <span class="p">[</span><span class="nf">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">n_bits</span><span class="o">*</span><span class="nf">len</span><span class="p">(</span><span class="n">bounds</span><span class="p">)).</span><span class="nf">tolist</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">n_pop</span><span class="p">)]</span>
+	<span class="c1"># keep track of best solution
+</span>	<span class="n">best</span><span class="p">,</span> <span class="n">best_eval</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nf">objective</span><span class="p">(</span><span class="nf">decode</span><span class="p">(</span><span class="n">bounds</span><span class="p">,</span> <span class="n">n_bits</span><span class="p">,</span> <span class="n">pop</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+	<span class="c1"># enumerate generations
+</span>	<span class="k">for</span> <span class="n">gen</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">n_iter</span><span class="p">):</span>
+		<span class="c1"># decode population
+</span>		<span class="n">decoded</span> <span class="o">=</span> <span class="p">[</span><span class="nf">decode</span><span class="p">(</span><span class="n">bounds</span><span class="p">,</span> <span class="n">n_bits</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pop</span><span class="p">]</span>
+		<span class="c1"># evaluate all candidates in the population
+</span>		<span class="n">scores</span> <span class="o">=</span> <span class="p">[</span><span class="nf">objective</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">decoded</span><span class="p">]</span>
+		<span class="c1"># check for new best solution
+</span>		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">n_pop</span><span class="p">):</span>
+			<span class="k">if</span> <span class="n">scores</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">best_eval</span><span class="p">:</span>
+				<span class="n">best</span><span class="p">,</span> <span class="n">best_eval</span> <span class="o">=</span> <span class="n">pop</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">scores</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+				<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">&gt;%d, new best f(%s) = %f</span><span class="sh">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">gen</span><span class="p">,</span>  <span class="n">decoded</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">scores</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+		<span class="c1"># select parents
+</span>		<span class="n">selected</span> <span class="o">=</span> <span class="p">[</span><span class="nf">selection</span><span class="p">(</span><span class="n">pop</span><span class="p">,</span> <span class="n">scores</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">n_pop</span><span class="p">)]</span>
+		<span class="c1"># create the next generation
+</span>		<span class="n">children</span> <span class="o">=</span> <span class="nf">list</span><span class="p">()</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_pop</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+			<span class="c1"># get selected parents in pairs
+</span>			<span class="n">p1</span><span class="p">,</span> <span class="n">p2</span> <span class="o">=</span> <span class="n">selected</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">selected</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+			<span class="c1"># crossover and mutation
+</span>			<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nf">crossover</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">r_cross</span><span class="p">):</span>
+				<span class="c1"># mutation
+</span>				<span class="nf">mutation</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">r_mut</span><span class="p">)</span>
+				<span class="c1"># store for next generation
+</span>				<span class="n">children</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+		<span class="c1"># replace population
+</span>		<span class="n">pop</span> <span class="o">=</span> <span class="n">children</span>
+	<span class="k">return</span> <span class="p">[</span><span class="n">best</span><span class="p">,</span> <span class="n">best_eval</span><span class="p">]</span>
+
+<span class="c1"># define range for input
+</span><span class="n">bounds</span> <span class="o">=</span> <span class="p">[[</span><span class="o">-</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">]]</span>
+<span class="c1"># define the total iterations
+</span><span class="n">n_iter</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="c1"># bits per variable
+</span><span class="n">n_bits</span> <span class="o">=</span> <span class="mi">16</span>
+<span class="c1"># define the population size
+</span><span class="n">n_pop</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="c1"># crossover rate
+</span><span class="n">r_cross</span> <span class="o">=</span> <span class="mf">0.9</span>
+<span class="c1"># mutation rate
+</span><span class="n">r_mut</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="nf">float</span><span class="p">(</span><span class="n">n_bits</span><span class="p">)</span> <span class="o">*</span> <span class="nf">len</span><span class="p">(</span><span class="n">bounds</span><span class="p">))</span>
+<span class="c1"># perform the genetic algorithm search
+</span><span class="n">best</span><span class="p">,</span> <span class="n">score</span> <span class="o">=</span> <span class="nf">genetic_algorithm</span><span class="p">(</span><span class="n">objective</span><span class="p">,</span> <span class="n">bounds</span><span class="p">,</span> <span class="n">n_bits</span><span class="p">,</span> <span class="n">n_iter</span><span class="p">,</span> <span class="n">n_pop</span><span class="p">,</span> <span class="n">r_cross</span><span class="p">,</span> <span class="n">r_mut</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">Done!</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">decoded</span> <span class="o">=</span> <span class="nf">decode</span><span class="p">(</span><span class="n">bounds</span><span class="p">,</span> <span class="n">n_bits</span><span class="p">,</span> <span class="n">best</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">f(%s) = %f</span><span class="sh">'</span> <span class="o">%</span> <span class="p">(</span><span class="n">decoded</span><span class="p">,</span> <span class="n">score</span><span class="p">))</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p align="justify"> <strong>Saída:</strong></p>
+<figure>
+    <img src="/img/Output3.png" align="center" />
+        <figcaption align="center"><strong>Imagem 13</strong>: solução do algoritmo genético para otimização da função <i>f(x) = x^2 + y^2</i>". 
+            <br /> 
+                Ref.: autoria própria
+        </figcaption>
+</figure>
+
+<h2 id="conclusão">Conclusão</h2>
+
+<p align="justify">
+    Diante do exposto, percebe-se os algoritmos de busca possuem uma ampla gama de aplicações, além de poderem ser divididos em grupos de classificação, como algoritmos de busca cega, informada e complexa, havendo vantagens e desvantagens para cada um deles. Não obstante, em problemas de alto nível de complexidade como otimização, algoritmos genéticos e algoritmos de busca local são ótimas opções, havendo diversas técnicas de implementação de cada um desses dois tipos de algoritmos, sendo elas escolhidas de acordo com o problema a ser resolvido. Logo, pode-se dizer que tais algoritmos são fundamentais para as tecnologias de inteligência artificial, impactando diretamente na solução de diversos problemas.
+</p>
+
+<h2 id="impressões-finais-do-autor">Impressões Finais do Autor</h2>
+
+<p align="justify">
+<a href="https://gustavomartins-github.github.io/about/">Eu</a>, como estudante de Engenharia de Software e amante de algoritmos de computadores, me vi muito interessado sobre o conteúdo abordado desde o início. Aprendi algumas utilidades novas para algoritmos de busca que aprendi no passado, assim como entrei em contato com novos algoritmos os quais expandem minhas ferramentas de solução de problemas, como o caso dos algoritmos genéticos. Aprendi que a solução de problemas por meio de agentes envolve diversas áreas do conhecimento dentro do universo da computação, como algoritmos de busca e suas aplicações, as quais variam de acordo com o contexto. Por fim, vale ressaltar que fiquei bastante intrigado com o biomimetismo dos algoritmos genéticos, pois provam mais uma vez a grande capacidade humana de observar a natureza e imita-la para criação de tecnologias e soluções de problemas.
+</p>
+
+<h2 id="referências-bibliográficas">Referências Bibliográficas</h2>
+
+<blockquote>
+  <p>ALGORITMO genético simples do zero em Python. [S. l.], 12 out. 2021. Disponível em: https://machinelearningmastery.com/simple-genetic-algorithm-from-scratch-in-python/. Acesso em: 29 out. 2023.</p>
+</blockquote>
+
+<blockquote>
+  <p>JUMP Search. [S. l.], 25 abr. 2023. Disponível em: https://www.geeksforgeeks.org/jump-search/. Acesso em: 28 out. 2023.</p>
+</blockquote>
 
 <blockquote>
   <p>BEST First Search: Informed Search. [S. l.], 21 fev. 2023. Disponível em: https://www.geeksforgeeks.org/best-first-search-informed-search/. Acesso em: 28 out. 2023.</p>
