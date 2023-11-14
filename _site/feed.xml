@@ -5,8 +5,8 @@
     <description>这里是 @Hux黄玄 的个人博客，与你一起发现更大的世界 | 要做一个有 swag 的程序员</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 14 Nov 2023 10:50:53 -0300</pubDate>
-    <lastBuildDate>Tue, 14 Nov 2023 10:50:53 -0300</lastBuildDate>
+    <pubDate>Tue, 14 Nov 2023 14:42:28 -0300</pubDate>
+    <lastBuildDate>Tue, 14 Nov 2023 14:42:28 -0300</lastBuildDate>
     <generator>Jekyll v4.3.2</generator>
     
       <item>
@@ -18,16 +18,260 @@
 &lt;h2 id=&quot;impressões-iniciais&quot;&gt;Impressões Iniciais&lt;/h2&gt;
 
 &lt;p algin=&quot;justify&quot;&gt;
-    
+    Os Algoritmos de Problemas de Satisfação de Condições (CSPs) desempenham um papel crucial na resolução de desafios computacionais que envolvem a alocação eficiente de valores a variáveis sob condições específicas. Estes algoritmos exploram estratégias avançadas para encontrar soluções coerentes em cenários complexos, como otimização de recursos, design de circuitos e agendamento de tarefas. O uso de algoritmos de satisfação de condições é particularmente relevante em situações onde é necessário modelar e resolver problemas que demandam a consideração de diversas restrições simultâneas. A estrutura de problemas de CSPs, por sua vez, envolve a definição clara de variáveis, domínios, e condições, estabelecendo a base para a aplicação desses algoritmos. Compreender esses conceitos é fundamental para abordar eficientemente questões práticas e complexas em diversas áreas, contribuindo para avanços significativos na solução de problemas computacionais.
 &lt;/p&gt;
 
 &lt;h2 id=&quot;algoritmos&quot;&gt;Algoritmos&lt;/h2&gt;
 
 &lt;p align=&quot;justify&quot;&gt;
+    Existem diversos algoritmos de CSPs. Diante disso, o algoritmo AC-3 (Arc-Consistency 3) representa uma abordagem fundamental na resolução de Problemas de Satisfação de Condições (CSPs), especialmente quando se trata de garantir consistência entre variáveis. Além disso, o AC-3 desempenha um papel significativo na simplificação do espaço de busca, contribuindo para a eficácia na resolução de CSPs e representando uma ferramenta valiosa na caixa de ferramentas da inteligência artificial e da computação aplicada.
+&lt;/p&gt;
 
+&lt;p align=&quot;justify&quot;&gt;
+    Desenvolvido para lidar com restrições binárias, o AC-3 foca na redução dos domínios das variáveis, removendo valores que não são mais consistentes com as restrições estabelecidas. Essa técnica de propagação de consistência de arco tem aplicações amplas em áreas como otimização, planejamento e design, onde a eficiência na busca por soluções coerentes é crucial. Confira a seguir uma implementação desse algoritmo escrita na linguagem &lt;a href=&quot;https://www.python.org/downloads/&quot;&gt;python&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;
+    REF: https://medium.com/swlh/how-to-solve-constraint-satisfaction-problems-csps-with-ac-3-algorithm-in-python-f7a9be538cfe
+
+    Implementação do algoritmo AC-3 (Arc Consistency 3) genérico para resolver CSPs (Constraint Satisfaction Problems).
+
+    Esse algoritmo consiste nas seguintes etapas:
+
+    1. Transforme todas as condições em condições de arco (binárias)
+    2. Inicialize a fila com todos os arcos
+    3. Repita até a fila estar vazia:
+        3.1 Pegue o primeiro arco (x,y) da fila
+        3.2 Faça x arco consistente com y (Remova valores no domínio de x para os quais não existe valor possível no domínio de y)
+        3.3 Se o domínio de x mudou, acrescente todos os arcos da forma (k,x) a fila (k é um nó adjacente a x)
+&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# criando domínios
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dominios&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+    &lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+    &lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# criando restrições
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;restricoes&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# criando arcos
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arcos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Criando a função rever: responsável por remover valores no domínio de x para os quais não existe valor possível no domínio de y
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;rever&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# Variável que indica se o domínio de x foi alterado
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;revisado&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;# Para cada valor no domínio de x
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vx&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dominios&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;# Se não existe um valor vy no domínio de y para o qual a restrição (x,y) é satisfeita
+&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;restricoes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vy&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dominios&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]):&lt;/span&gt;
+
+            &lt;span class=&quot;c1&quot;&gt;# Remova vx do domínio de x
+&lt;/span&gt;            &lt;span class=&quot;n&quot;&gt;dominios&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;remove&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+            &lt;span class=&quot;c1&quot;&gt;# Marque que o domínio de x foi alterado
+&lt;/span&gt;            &lt;span class=&quot;n&quot;&gt;revisado&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;# Retorne True se o domínio de x foi alterado
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;revisado&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Criando a função AC-3: responsável por atualizar os domínios de forma que cada variável seja consistente em arco.
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;ac3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;# Adicionando todos os arcos à fila
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;fila&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arcos&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;# Enquanto a fila não estiver vazia
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fila&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;# Pegando o primeiro arco da fila
+&lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fila&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;pop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;# Faça o arco x consistente com y (Remova valores no domínio de x para os quais não existe valor possível no domínio de y)
+&lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;revisado&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;rever&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;# Se o domínio de x mudou
+&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;revisado&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;# Acrescente todos os arcos da forma (k,x) a fila
+&lt;/span&gt;            &lt;span class=&quot;n&quot;&gt;vizinhos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arco&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arco&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arcos&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arco&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;fila&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;extend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vizinhos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# extend() adiciona os elementos de uma lista (vizinhos) ao final da lista (fila)
+&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Função de teste
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;teste&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Antes da execução do algoritmo AC-3:&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Domínios:&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dominios&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Restrições:&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;restricoes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Arcos:&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arcos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;nf&quot;&gt;ac3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Depois da execução do algoritmo AC-3:&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Domínios:&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dominios&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Restrições:&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;restricoes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Arcos:&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arcos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Observe que os domínios foram atualizados de forma que cada variável seja consistente em arco.&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Inicializando o programa
+&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;teste&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    Além do AC-3, a &lt;strong&gt;Pesquisa Backtracking&lt;/strong&gt; é um algoritmo comumente empregado na resolução de Problemas de Satisfação de Condições (CSPs). Este método utiliza uma abordagem de busca em profundidade (DFS), explorando sucessivamente as opções de atribuição de valores às variáveis e retrocedendo quando uma solução parcial se mostra inconsistente com as condições do problema.
+&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+O backtracking é eficaz na otimização do processo de busca, evitando ramos que levariam a soluções inválidas, o que é particularmente útil em cenários onde o espaço de busca é extenso. Essa estratégia de pesquisa é crucial em CSPs, permitindo encontrar soluções coerentes de maneira eficiente, economizando recursos computacionais ao evitar iterações desnecessárias. Confira um exemplo de implementação do algoritmo DFS no artigo &lt;a href=&quot;https://gustavomartins-github.github.io/2023/10/27/P2-2023/&quot;&gt;Algoritmos de Busca em AI&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    Não satisfeito, essa pesquisa pode ser melhorada usando heurísticas independentes de domínio que tiram vantagem da representação fatorada dos CSPs, sendo a ordenação de variáveis uma estratégia para determinar a sequência em que as variáveis são consideradas para atribuição de valores, buscando otimizar o processo de busca e tornar a resolução mais eficiente. Sendo assim, os principais tipos de ordenação de variáveis, no contexto da Pesquisa Backtracking em CSPs são:
+&lt;/p&gt;
+
+&lt;ul align=&quot;justify&quot;&gt;
+    &lt;li&gt;&lt;strong&gt;Ordenação Estática:&lt;/strong&gt; consiste em uma ordem fixa pré-definida para atribuir valores às variáveis. A ordem é determinada antes do início da resolução do problema e permanece constante ao longo do processo.&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Ordenação aleatória:&lt;/strong&gt; atribui valores às variáveis de forma aleatória. A ordem varia a cada execução do algoritmo. Embora seja simples, essa abordagem pode não ser tão eficiente quanto estratégias mais direcionadas.&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Minimum-Remaining-Values (MRV):&lt;/strong&gt; prioriza as variáveis que têm o menor número de valores restantes em seu domínio. Isso visa explorar primeiro as variáveis mais restritas, na esperança de reduzir rapidamente o espaço de busca.&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Heurística de Grau:&lt;/strong&gt; ordena as variáveis com base na quantidade de restrições associadas a cada uma. Variáveis com maior grau (maior número de restrições) são consideradas primeiro, visando abordar áreas mais complexas do espaço de busca.&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Ordenação de valor:&lt;/strong&gt; Foca na ordem em que os valores são atribuídos a uma variável específica. Essa estratégia busca otimizar a eficiência da busca considerando os valores mais promissores primeiro, muitas vezes começando com os menos restritivos (least-constraining-value), isto é, o valor que exclui o menor número de escolhas para as variáveis ​​vizinhas no grafo. &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    Outra estratégia interessante é a &quot;intercalação entre pesquisa e inferência para CSPs&quot;, a qual combina a Pesquisa Backtracking com o &quot;Forward checking&quot;, uma técnica de inferência que, após cada atribuição de valor, verifica antecipadamente se essa atribuição não viola as restrições, reduzindo os domínios das variáveis afetadas. Sendo assim, a pesquisa avança explorando as possíveis soluções, enquanto a inferência do &quot;Forward checking&quot; reduz dinamicamente o espaço de busca, eliminando opções inválidas. Essa integração busca otimizar a eficiência, evitando retrocessos desnecessários e focando nas áreas mais promissoras do espaço de busca durante a resolução de CSPs.
+&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    Não satisfeito, outra técnica, conhecida como Maintaining Arc Consistency (Manter Consistência de Arcos - MAC), se faz importânte no contexto atual. Nessa técnica, após uma variável receber um valor, um procedimento denominado &lt;u&gt;0INFERENCE&lt;/u&gt; é acionado, utilizando o algoritmo &lt;u&gt;AC-3&lt;/u&gt;. A ênfase é dada à abordagem específica de começar com os arcos conectados a variáveis não atribuídas vizinhas à variável recém-atribuída. Essa estratégia visa manter a consistência entre arcos mesmo após atribuições, utilizando inferência para ajustar dinamicamente os domínios das variáveis não atribuídas e otimizar a busca por soluções válidas e eficientes em CSPs.
+&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    Por fim, em CSPs, a busca local (algoritmo também tratado no artigo &lt;a href=&quot;https://gustavomartins-github.github.io/2023/10/27/P2-2023/&quot;&gt;Algoritmos de Busca em AI&lt;/a&gt;) é frequentemente aplicada como uma heurística para encontrar soluções mais eficientes. Ela explora um espaço de soluções próximas à solução atual, fazendo pequenas modificações para avaliar se há uma melhoria na satisfação das condições do problema. Essa estratégia pode ser particularmente útil quando se trata de refinamento de soluções, ajustando atribuições de variáveis para otimizar a consistência global, sendo extremamente valiosa para resolver CSPs de maneira mais rápida e eficiente, especialmente em cenários onde a busca completa pode ser computacionalmente custosa.
 &lt;/p&gt;
 
 &lt;h2 id=&quot;estrutura-de-problemas&quot;&gt;Estrutura de Problemas&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    Uma estratégia muito utlizada em diverças áreas da ciência é lidar com problemas complexos por meio da divisão em subproblemas. Essa abordagem está alinhada com a Estrutura de Problemas em CSPs, onde as variáveis e restrições podem ser modularizadas, permitindo a resolução de subproblemas de maneira eficiente. É nesse contexto que a determinação da independência através da identificação de componentes conectados no grafo é relevante para a Estrutura de Problemas em CSPs. Isso se deve ao fato de as variáveis independentes poderem ser tratadas separadamente, simplificando a resolução. A estrutura do problema é expressa no grafo de restrições, onde a análise de componentes conectados ajuda a entender as relações entre variáveis e a estratégia de resolução.
+&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    Por outro lado, subproblemas completamente independentes são raros, tornando outras estruturas também muito úteis para facilitar soluções. Um bom exemplo é a utilização de uma estrutura em árvore para resolver CSPs. Tal estrutura envolve a construção de uma árvore de busca, onde cada nó representa uma atribuição de valor a uma variável. Não satisfeito, existe uma técnica denominada Direcional Arc Consistency (DAC), a qual guia a expansão da árvore, focando na consistência de arcos em uma direção específica. Isso significa que, ao explorar a árvore, a DAC prioriza verificar e ajustar a consistência dos arcos relevantes, otimizando a eficiência na busca por soluções coerentes. Essa abordagem direcionada permite reduzir o espaço de busca de forma mais eficaz, contribuindo para a resolução eficiente de CSPs. Portanto, para resolver CSPs em árvore, é necessário realizar os seguintes passos:
+&lt;/p&gt;
+
+&lt;ul align=&quot;justify&quot;&gt;
+
+    &lt;li&gt;&lt;strong&gt;1 -&lt;/strong&gt; escolhe-se uma variável como a raiz &lt;/li&gt;
+    &lt;br /&gt;
+    &lt;li&gt;&lt;strong&gt;2 -&lt;/strong&gt; realiza-se uma classificação topológica, isto é, uma ordenação da árvore de forma que cada variável aparece após seu genitor na árvore
+    &lt;br /&gt;
+    &lt;br /&gt;
+    &lt;strong&gt;Obs.:&lt;/strong&gt; Quando temos um grafo arco-consistente em um Problema de Satisfação de Condições (CSP), podemos escolher valores para as variáveis de maneira direta. Isso ocorre porque, dado que cada aresta entre um pai e seu filho é arco-consistente, a escolha de um valor para o pai garante a existência de um valor válido para o filho. Isso simplifica a busca por soluções, pois a consistência entre variáveis conectadas já foi estabelecida no grafo.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    Em suma, duas técnicas de suma importância se fazem presente na estruturação de DSPs: &lt;u&gt;Condicionamento de Corte&lt;/u&gt; e &lt;u&gt;Decomposição em Árvore&lt;/u&gt;. A primeira refere-se à técnica de reduzir o espaço de busca eliminando opções inválidas com base em decisões já tomadas. Ao condicionar (restringir) as possibilidades para variáveis específicas, o espaço de busca é cortado, simplificando a resolução do CSP. Já a segunda, envolve a representação do CSP por meio de uma árvore, onde cada nó representa uma variável a ser atribuída. A decomposição em árvore facilita a estruturação do problema, permitindo uma abordagem mais eficiente para a resolução, especialmente quando combinada com técnicas como o condicionamento de corte. Cada nível na árvore representa uma variável a ser atribuída, simplificando a busca por soluções coerentes
+&lt;/p&gt;
 
 &lt;h2 id=&quot;outros-algoritmos-de-satisfação-de-condições&quot;&gt;Outros Algoritmos de Satisfação de Condições&lt;/h2&gt;
 
