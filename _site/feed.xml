@@ -5,9 +5,201 @@
     <description>这里是 @Hux黄玄 的个人博客，与你一起发现更大的世界 | 要做一个有 swag 的程序员</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 31 Oct 2023 21:48:41 -0300</pubDate>
-    <lastBuildDate>Tue, 31 Oct 2023 21:48:41 -0300</lastBuildDate>
+    <pubDate>Tue, 14 Nov 2023 10:50:53 -0300</pubDate>
+    <lastBuildDate>Tue, 14 Nov 2023 10:50:53 -0300</lastBuildDate>
     <generator>Jekyll v4.3.2</generator>
+    
+      <item>
+        <title>Um pouco mais sobre CSPs</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;“Algumas pessoas chamam isso de inteligência artificial, quando a realidade é que essa tecnologia irá nos melhorar. Então, em vez de inteligência artificial, acredito que aumentaremos nossa inteligência” — &lt;strong&gt;Ginni Rometty&lt;/strong&gt;”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;impressões-iniciais&quot;&gt;Impressões Iniciais&lt;/h2&gt;
+
+&lt;p algin=&quot;justify&quot;&gt;
+    
+&lt;/p&gt;
+
+&lt;h2 id=&quot;algoritmos&quot;&gt;Algoritmos&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+
+&lt;/p&gt;
+
+&lt;h2 id=&quot;estrutura-de-problemas&quot;&gt;Estrutura de Problemas&lt;/h2&gt;
+
+&lt;h2 id=&quot;outros-algoritmos-de-satisfação-de-condições&quot;&gt;Outros Algoritmos de Satisfação de Condições&lt;/h2&gt;
+
+&lt;h2 id=&quot;expansão-do-uso-de-algoritmos-de-satisfação-de-condições&quot;&gt;Expansão do uso de algoritmos de satisfação de condições&lt;/h2&gt;
+
+&lt;h2 id=&quot;exemplos-práticos&quot;&gt;Exemplos Práticos&lt;/h2&gt;
+
+&lt;h2 id=&quot;conclusão&quot;&gt;Conclusão&lt;/h2&gt;
+
+&lt;h2 id=&quot;referências&quot;&gt;Referências&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;ref 1&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;ref 2&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Sat, 11 Nov 2023 18:00:00 -0300</pubDate>
+        <link>http://localhost:4000/2023/11/11/P3-2023/</link>
+        <guid isPermaLink="true">http://localhost:4000/2023/11/11/P3-2023/</guid>
+        
+        <category>Portifólio 3</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>CSPs</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;“Para n⁠ão ser substituído por um robô, não seja um robô”. — &lt;strong&gt;Martha Gabriel&lt;/strong&gt;”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;impressões-iniciais&quot;&gt;Impressões Iniciais&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    Os Problemas de Satisfação de Condições (CSPs) constituem uma classe crucial de desafios computacionais que permeiam diversas disciplinas, desde inteligência artificial até otimização de recursos. Em sua essência, CSPs envolvem a alocação de valores a variáveis sob um conjunto específico de condições, refletindo cenários práticos onde decisões interdependentes precisam ser tomadas. Estes problemas apresentam aplicação em áreas como planejamento, design de circuitos, escalonamento de tarefas, entre outros. A resolução eficaz de CSPs exige a aplicação de estratégias avançadas, incluindo consistência local e global, além de métodos de busca heurística. Compreender os fundamentos dos CSPs é essencial para abordar questões complexas na era da computação, proporcionando insights valiosos para a resolução de problemas do mundo real.
+&lt;/p&gt;
+
+&lt;h2 id=&quot;representação-atômica-vs-fatorada&quot;&gt;Representação Atômica Vs Fatorada&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    De acordo com o artigo &lt;a href=&quot;https://gustavomartins-github.github.io/2023/08/10/P1-2023/&quot;&gt;Agentes e ambientes&lt;/a&gt;, um estado consiste em uma descrição do ambiente em um determinado momento e pode ser representado de três formas distintas: representação atômica, fatorada e estruturada. Contudo, os estados foram trabalhados como &quot;caixas pretas&quot;, isto é, ignorando o seu funcionamento interno.
+&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    Diante disso, a partir de agora serão tratados problemas cujos estados possuem uma série de variáveis, sendo sua solução dada quando cada variável tem um valor que satisfaz todas as condições dessas variáveis. Tais problemas são conhecidos como &lt;strong&gt;Problemas de Satisfação de Condições&lt;/strong&gt; (CSP, do inglês &quot;Constraint Satisfaction Problem&quot;), sendo a representação atômica e fatorada muito importantes para a modelagem eficiente de resoluções de CSP. Confira a seguir uma explicação mais detalhada sobre cada representação.
+&lt;/p&gt;
+
+&lt;ul align=&quot;justify&quot;&gt;
+    &lt;li&gt;&lt;strong&gt;Representação Atômica:&lt;/strong&gt; cada restrição é tratada como uma entidade única e não pode ser decomposta em partes menores. Essa abordagem é simples e direta, mas pode levar a uma representação mais extensa e complexa, especialmente em problemas com muitas variáveis e restrições.&lt;/li&gt;
+    &lt;br /&gt;
+    &lt;li&gt;&lt;strong&gt;Representação Fatorada:&lt;/strong&gt; as restrições são decompostas em partes menores, chamadas fatores, que podem ser combinados para formar a restrição completa, permitindo uma representação mais modular e eficiente, especialmente quando várias restrições compartilham variáveis em comum.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    Por fim, ambas as representações são utilizadas na modelagem de CSPs para expressar as restrições entre variáveis, sendo a escolha entre representação atômica e fatorada dependente da natureza específica do problema e das características das restrições, sendo que, em alguns casos, uma combinação de ambas as representações pode ser usada para aproveitar as vantagens de cada abordagem.
+&lt;/p&gt;
+
+&lt;h2 id=&quot;definindo-problemas-de-satisfação-de-condições&quot;&gt;Definindo Problemas de Satisfação de Condições&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    Os algoritmos de busca para Problemas de Satisfação de Condições (CSP) aproveitam a organização estruturada dos estados e aplicam heurísticas específicas do domínio para viabilizar a solução de problemas computacionais complexos. A principal ideia subjacente é a eliminação eficiente de extensas porções do espaço de busca, identificando combinações de variáveis e valores que violam as condições estabelecidas. Além disso, os CSPs oferecem uma vantagem adicional, já que as ações e o modelo de transição podem ser deduzidos diretamente da descrição do problema, simplificando a representação e resolução desses desafios.
+&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    Diante disso, um problema de satisfação de condições pode ser dividido em três partes:
+&lt;/p&gt;
+
+&lt;ul align=&quot;justify&quot;&gt;
+    &lt;li&gt;&lt;strong&gt;Conjunto de Variáveis:&lt;/strong&gt; refere-se às entidades sobre as quais as decisões devem ser tomadas&lt;/li&gt;
+    &lt;br /&gt;
+    &lt;li&gt;&lt;strong&gt;Conjunto de Domínios:&lt;/strong&gt; cada variável possui um conjunto de valores possíveis (domínio). Sendo assim, o conjunto de domínios armazena todos os domínios de todas as variáveis.&lt;/li&gt;
+    &lt;br /&gt;    
+    &lt;li&gt;&lt;strong&gt;Conjunto de Condições:&lt;/strong&gt; também conhecido como conjunto de restrições, estabelece as relações e limitações entre as variáveis, indicando quais combinações de valores são aceitáveis ou proibidas&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    Como mencionado, as CSPs envolvem a alocação de valores a variáveis de acordo com o domínio. Sendo assim, essa atribuição de valores pode possuir as seguintes características:
+&lt;/p&gt;
+
+&lt;ul align=&quot;justify&quot;&gt;
+    &lt;li&gt;&lt;strong&gt;Atribuição Consistente/Legal:&lt;/strong&gt; atribuição que não viola nenhuma condição&lt;/li&gt;&lt;br /&gt;
+
+    &lt;li&gt;&lt;strong&gt;Atribuição Completa:&lt;/strong&gt; ocorre quando todas as variáveis recebem um valor&lt;/li&gt;&lt;br /&gt;
+
+    &lt;li&gt;&lt;strong&gt;Atribuição Parcial:&lt;/strong&gt; é o oposto da atribuição completa, isto é, há a existência de variáveis sem atribuição de valor&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    Além disso, é importante mencionar que, em Problemas de Satisfação de Condições, uma solução é definida como uma atribuição completa e consistente de valores para todas as variáveis envolvidas no problema. Por outro lado, uma solução pode ser considerada &lt;strong&gt;parcial&lt;/strong&gt;, isto é, quando uma atribuição parcial, que é consistente até o momento, acaba deixando algumas variáveis sem atribuições.
+&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    Por fim, resolver CSPs é um desafio complexo, uma vez que o problema é, em geral, classificado como NP-completo. Isso implica que não existe um algoritmo eficiente conhecido para encontrar soluções ótimas em tempo polinomial, exigindo abordagens heurísticas e estratégias inteligentes para lidar com a complexidade inerente a esses problemas.
+&lt;/p&gt;
+
+&lt;h2 id=&quot;tipos-de-condições-e-propagação&quot;&gt;Tipos de Condições e Propagação&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    Em um CSPs, uma condição refere-se a uma restrição ou requisito que deve ser atendido pelas atribuições de valores às variáveis do problema. Essas condições expressam as relações e limitações entre as variáveis e determinam quais combinações de valores são aceitáveis ou proibidas. Tais condições podem ser divididas em diferentes tipos, tais como:
+&lt;/p&gt;
+
+&lt;ul align=&quot;justify&quot;&gt;
+    &lt;li&gt;&lt;strong&gt;Condição Unitária:&lt;/strong&gt; refere-se a uma restrição que envolve apenas uma variável. É uma condição que limita as opções de valores que uma variável específica pode assumir.&lt;/li&gt;&lt;br /&gt;
+    &lt;li&gt;&lt;strong&gt;Condição Binária:&lt;/strong&gt; envolve duas variáveis e estabelece uma restrição entre elas. Essas restrições ligam pares de variáveis, influenciando as possíveis combinações de valores que essas variáveis podem ter.&lt;/li&gt;&lt;br /&gt;
+    &lt;li&gt;&lt;strong&gt;Condição Ternária&lt;/strong&gt; refere-se a uma restrição que envolve três variáveis. Assim como as condições binárias, as condições ternárias estabelecem relações específicas entre três variáveis no contexto de um CSP. &lt;/li&gt;&lt;br /&gt;
+    &lt;li&gt;&lt;strong&gt;Condição Global:&lt;/strong&gt; refere-se a uma restrição que pode envolver mais de três variáveis. Uma condição global afeta um número significativo de variáveis e, frequentemente, está relacionada a padrões ou estruturas mais complexas dentro do problema.&lt;/li&gt;&lt;br /&gt;
+    &lt;li&gt;&lt;strong&gt;Condição de Preferência:&lt;/strong&gt; diferencia-se das restrições tradicionais, pois não impõe obrigações estritas, mas expressa preferências entre as atribuições de valores às variáveis. Em vez de ditar o que é proibido ou obrigatório, a condição de preferência indica quais atribuições são mais desejáveis em relação a outras, permitindo encontrar uma &lt;u&gt;solução preferida&lt;/u&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    Outra informação relevante é entender que, em algoritmos de espaço de estados atômicos, o avanço se dá apenas pela expansão dos nós sucessores, e que um algoritmo CSP pode escolher um valor para uma variável, assim como &lt;u&gt;propagar a condição/restrição&lt;/u&gt;. Essa técnica, com o objetivo de garantir uma &lt;u&gt;consistência local&lt;/u&gt;, consiste em reduzir o número de valores possíveis para uma variável, que por sua vez pode reduzir o número de valores possíveis para outra e assim sucessivamente.
+&lt;/p&gt;
+
+&lt;h2 id=&quot;consistência&quot;&gt;Consistência&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    O concentio de &lt;u&gt;consistência&lt;/u&gt;, no contexto das CSPs, refere-se à propriedade de que todas as atribuições de valores às variáveis no problema estejam em conformidade com as restrições impostas. Em outras palavras, uma atribuição é consistente se ela não viola nenhuma das condições ou restrições do CSP. Sendo assim, existem diferentes níveis de consistência em CSPs, e a propagação de condição é frequentemente usada para manter ou alcançar consistência durante o processo de busca por soluções. Alguns dos níveis de consistência comuns são:
+&lt;/p&gt;
+
+&lt;ul align=&quot;justify&quot;&gt;
+
+    &lt;li&gt;
+        &lt;strong&gt;Consistência de Nós:&lt;/strong&gt; uma variável é nó-consistente se todas as atribuições de valores possíveis respeitam as restrições locais impostas por essa variável (domínio). Um grafo é nó-consistente se todas as suas variáveis (nós) são consistentes.
+    &lt;/li&gt;
+    &lt;br /&gt;
+    &lt;li&gt;
+        &lt;strong&gt;Consistência de Arco:&lt;/strong&gt; uma variável é  arco-consistente quando todos os valores em seu domínio satisfazem as condições binárias associadas a outras variáveis, isto é, cada valor possível na variável respeita as restrições em relação a cada par de variáveis conectadas. Um grafo é arco-consistente se todas as suas variáveis são arco-consistentes entre si
+    &lt;/li&gt;
+    &lt;br /&gt;
+    &lt;li&gt;
+        &lt;strong&gt;Consistência de Trajeto:&lt;/strong&gt; emprega condições implícitas que podem ser deduzidas ao analisar triplas de variáveis. Sendo assim, um conjunto de duas variáveis é considerado trajeto-consistente com uma terceira variável se, para toda atribuição consistente com todas as condições da terceira variável, existe uma atribuição que satisfaça simultaneamente as condições das duas variáveis iniciais. Isso implica que as relações entre as variáveis são consistentes ao longo de trajetórias específicas de três variáveis. Por fim, essa consistência contribui para uma busca mais eficiente por soluções coerentes em CSPs, considerando relações mais complexas entre as variáveis.
+    &lt;/li&gt;
+    &lt;br /&gt;
+    &lt;li&gt;
+        &lt;strong&gt;Consistência K:&lt;/strong&gt; em CSPs, a introdução de formas mais robustas de consistência é realizada por meio da noção de consistência-k. Uma CSP é considerada k-consistente quando, para qualquer conjunto de k-1 variáveis e para qualquer atribuição consistente dessas variáveis, existe uma atribuição consistente para a k-ésima variável. Esse conceito busca garantir que as atribuições sejam coerentes em conjuntos de variáveis de tamanho k. Além disso, uma CSP é fortemente k-consistente se ela for k-consistente, (k-1)-consistente, (k-2)-consistente, até 1-consistente. Essa progressão de consistência reforçada visa otimizar a eficiência na busca por soluções coerentes, eliminando possíveis inconsistências em diferentes conjuntos de variáveis de maneira sistemática.
+    &lt;/li&gt;
+    &lt;br /&gt;
+    &lt;li&gt;
+        &lt;strong&gt;Condições Globais:&lt;/strong&gt; as condições globais referem-se a restrições ou condições que envolvem múltiplas variáveis simultaneamente. Ao contrário das condições locais, que se aplicam individualmente a cada variável, as condições globais impactam o relacionamento entre várias variáveis do problema. Além disso, as condições globais impactam a consistência, pois afetam a validade das atribuições de valores nas variáveis em um contexto mais amplo, contribuindo para a coerência global do problema.
+        &lt;br /&gt;
+        &lt;strong&gt;Obs.:&lt;/strong&gt; para casos onde existe um número grande de valores, geralmente se usa  propagação de limites, isto é, uma técnica usada para reduzir os domínios das variáveis.
+    &lt;/li&gt; 
+
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;conclusão&quot;&gt;Conclusão&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    Abordamos deste artigo o conceito de representações atômicas e estruturadas em Problemas de Satisfação de Condições (CSPs), onde variáveis e condições podem ser expressas de forma individual ou inter-relacionada. Definimos CSPs como problemas que envolvem atribuições de valores a variáveis, sujeitas a condições específicas. Exploramos diferentes tipos de condições em CSPs, incluindo condições unitárias, binárias, ternárias, globais e de preferência, cada uma definindo restrições entre variáveis de maneiras específicas. Além disso, discutimos a importância da consistência, tanto local quanto global, na busca eficiente por soluções coerentes, destacando a propagação de condição e a propagação de limites como técnicas relevantes. Esses conceitos são fundamentais para a compreensão e resolução eficaz de problemas complexos em CSPs.
+&lt;/p&gt;
+
+&lt;h2 id=&quot;referências&quot;&gt;Referências&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;INTELIGÊNCIA Artificial - Problemas de Satisfação de Restrições. [S. l.: s. n.], 27/10/2020. Disponível em: https://www.youtube.com/watch?v=4OM16rG9dtA. Acesso em: 10 nov. 2023.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;PROBLEMA da satisfação de restrições. [S. l.], 23 ago. 2023. Disponível em: https://pt.wikipedia.org/wiki/Problema_da_satisfa%C3%A7%C3%A3o_de_restri%C3%A7%C3%B5es. Acesso em: 10 nov. 2023.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Fri, 10 Nov 2023 16:00:00 -0300</pubDate>
+        <link>http://localhost:4000/2023/11/10/P3-2023/</link>
+        <guid isPermaLink="true">http://localhost:4000/2023/11/10/P3-2023/</guid>
+        
+        <category>Portifólio 3</category>
+        
+        
+      </item>
     
       <item>
         <title>Algoritmos de Busca em AI</title>
@@ -1496,8 +1688,8 @@ REF: https://machinelearningmastery.com/simple-genetic-algorithm-from-scratch-in
 &lt;/blockquote&gt;
 </description>
         <pubDate>Fri, 27 Oct 2023 17:30:00 -0300</pubDate>
-        <link>http://localhost:4000/2023/10/27/P2/</link>
-        <guid isPermaLink="true">http://localhost:4000/2023/10/27/P2/</guid>
+        <link>http://localhost:4000/2023/10/27/P2-2023/</link>
+        <guid isPermaLink="true">http://localhost:4000/2023/10/27/P2-2023/</guid>
         
         <category>Portifólio 2</category>
         
@@ -1637,8 +1829,8 @@ Diante do exposto, percebe-se que a solução de problemas por meio de agentes d
 &lt;/p&gt;
 </description>
         <pubDate>Wed, 25 Oct 2023 17:15:00 -0300</pubDate>
-        <link>http://localhost:4000/2023/10/25/P2/</link>
-        <guid isPermaLink="true">http://localhost:4000/2023/10/25/P2/</guid>
+        <link>http://localhost:4000/2023/10/25/P2-2023/</link>
+        <guid isPermaLink="true">http://localhost:4000/2023/10/25/P2-2023/</guid>
         
         <category>Portifólio 2</category>
         
