@@ -530,22 +530,234 @@ O backtracking é eficaz na otimização do processo de busca, evitando ramos qu
     Em suma, duas técnicas de suma importância se fazem presente na estruturação de DSPs: <u>Condicionamento de Corte</u> e <u>Decomposição em Árvore</u>. A primeira refere-se à técnica de reduzir o espaço de busca eliminando opções inválidas com base em decisões já tomadas. Ao condicionar (restringir) as possibilidades para variáveis específicas, o espaço de busca é cortado, simplificando a resolução do CSP. Já a segunda, envolve a representação do CSP por meio de uma árvore, onde cada nó representa uma variável a ser atribuída. A decomposição em árvore facilita a estruturação do problema, permitindo uma abordagem mais eficiente para a resolução, especialmente quando combinada com técnicas como o condicionamento de corte. Cada nível na árvore representa uma variável a ser atribuída, simplificando a busca por soluções coerentes
 </p>
 
-<h2 id="outros-algoritmos-de-satisfação-de-condições">Outros Algoritmos de Satisfação de Condições</h2>
+<h2 id="outros-algoritmos--exemplos-práticos">Outros Algoritmos &amp; Exemplos práticos</h2>
+
+<p align="justify">
+De acordo com o exposto nesse artigo, muitos CSPs podem ser resolvidos utilizando algoritmos de busca, especialmente variantes dos algoritmos de backtracking. Diante disso, essa seção apresentará um algoritmo extra, denominado <i>backjumping</i>, além de explica-lo utilizando um exemplo prático denominado <i>n-queens problem</i>.
+</p>
+
+<ul>
+  <li>
+    <p align="justify"><strong>Backjumping:</strong> este algoritmo consiste em uma evolução do backtracking, dando <u>saltos para traz</u> apenas em becos sem saída de folhas. Em outras palavras, quando você chega a um beco sem saída na árvore de pesquisa, ele nem sempre retorna ao nó pai (método Backtracking padrão), mas sim a um nó ancestral anterior na árvore de pesquisa. Ele executa apenas saltos máximos e seguros, saltando para trás o máximo possível sem impedir a solução (ou seja, perder quaisquer soluções possíveis).<br /><br /> A fins de exemplificação, considere o problema conhecido como "N-Queens", cujo objetivo consiste em organizar as n rainhas em um tabuleiro de xadrez N × N de modo que nenhuma delas possa atacar uma à outra por estar na mesma linha, coluna ou diagonal. Sendo assim, observe as <strong>Imagens 1 e 2</strong> a baixo.</p>
+  </li>
+</ul>
+<figure>
+    <img src="/img/n_queen.png" align="center" />
+        <figcaption align="center"><strong>Imagem 1</strong>: problema <i>n-queens</i> com N = 6
+            <br /> 
+                Ref.: <a href="https://iq.opengenus.org/backjumping/">Backjumping</a>
+        </figcaption>
+</figure>
+<figure>
+    <img src="/img/n_queen_solve.png" align="center" />
+        <figcaption align="center"><strong>Imagem 2</strong>: solução do problema <i>n-queens</i> 
+            <br /> 
+                Ref.: <a href="https://iq.opengenus.org/backjumping/">Backjumping</a>
+        </figcaption>
+</figure>
+<p align="justify">
+    Diante do exposto, para encontrar a solução a cima por meio do algoritmo backjumping, pode-se seguir as seguintes etapas:
+    <br /><br />
+    <strong>1 -</strong> Começamos a resolver na coluna mais à esquerda do tabuleiro.
+    <br /><br />
+    <strong>2 -</strong> Uma solução válida é obtida se todas as rainhas forem colocadas.
+    <br /><br />
+    <strong>3 -</strong> Coloque as rainhas uma após a outra em colunas.
+    <br /><br />
+    <strong>4 -</strong> Verificamos todas as linhas da coluna atual em busca de restrições antes de colocá-las.
+    <br /><br />
+    <strong>5 -</strong> Se não houver outra Rainha na mesma linha ou diagonal e, portanto, satisfazer as restrições, colocaremos essa Rainha naquele local e registraremos a linha e a coluna como parte da matriz solução.
+    <br /><br />
+    <strong>6 -</strong> Se tal coluna não existir, retornamos false e backjump.
+    <br /><br />
+</p>
+<p><strong>Implementação da solução em <u>python</u>:</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+</pre></td><td class="rouge-code"><pre><span class="sh">"""</span><span class="s">
+REF: https://iq.opengenus.org/backjumping/
+
+Obs.: baixar a biblioteca </span><span class="sh">"</span><span class="s">tabulate</span><span class="sh">"</span><span class="s"> para poder executar o código. 
+Para isso, execute um dos comandos a baixo no seu terminal.
+
+    1 - Terminal Windows: pip install tabulate
+
+    2 - Terminal Linux: pip3 install tabulate
+
+</span><span class="sh">"""</span>
+
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="n">string</span>
+<span class="kn">from</span> <span class="n">tabulate</span> <span class="kn">import</span> <span class="n">tabulate</span>
+
+<span class="k">class</span> <span class="nc">NQueenSolver</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">size_of_board</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">size_of_board</span>       
+        <span class="n">self</span><span class="p">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">num_of_places</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">num_of_backjumps</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">conflict_set</span> <span class="o">=</span> <span class="p">{</span><span class="n">new_list</span><span class="p">:</span> <span class="p">[]</span> <span class="k">for</span> <span class="n">new_list</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">size</span><span class="p">)}</span>
+
+    <span class="k">def</span> <span class="nf">place_queen</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">starting_row</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nf">len</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">==</span> <span class="n">self</span><span class="p">.</span><span class="n">size</span><span class="p">:</span>
+            <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Board size: </span><span class="si">{</span><span class="n">self</span><span class="p">.</span><span class="n">size</span><span class="si">}</span><span class="s"> x </span><span class="si">{</span><span class="n">self</span><span class="p">.</span><span class="n">size</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+            <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">self</span><span class="p">.</span><span class="n">num_of_places</span><span class="si">}</span><span class="s"> attempts were made to place the Queens which include </span><span class="si">{</span><span class="n">self</span><span class="p">.</span><span class="n">num_of_backjumps</span><span class="si">}</span><span class="s"> backjumps.</span><span class="sh">"</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="n">columns</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">starting_row</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">size</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">self</span><span class="p">.</span><span class="nf">is_safe</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">columns</span><span class="p">),</span> <span class="n">row</span><span class="p">)</span> <span class="ow">is</span> <span class="bp">True</span><span class="p">:</span>
+                    <span class="n">self</span><span class="p">.</span><span class="n">columns</span><span class="p">.</span><span class="nf">insert</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">columns</span><span class="p">),</span><span class="n">row</span><span class="p">)</span>
+                    <span class="n">self</span><span class="p">.</span><span class="n">num_of_places</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="nf">place_queen</span><span class="p">()</span>
+
+            <span class="n">max_jump</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">conflict_set</span><span class="p">[</span><span class="nf">len</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">columns</span><span class="p">)]</span>
+            <span class="n">max_jump</span> <span class="o">=</span> <span class="nf">set</span><span class="p">(</span><span class="n">max_jump</span><span class="p">)</span>
+            <span class="n">last_row</span> <span class="o">=</span> <span class="nf">max</span><span class="p">(</span><span class="n">max_jump</span><span class="p">)</span>
+            <span class="n">self</span><span class="p">.</span><span class="n">num_of_backjumps</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">last_row</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">size</span><span class="p">):</span>
+                <span class="n">self</span><span class="p">.</span><span class="n">conflict_set</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">previous_variable</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">columns</span><span class="p">[</span><span class="n">last_row</span><span class="p">]</span>
+            <span class="n">self</span><span class="p">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">columns</span><span class="p">[:</span><span class="n">last_row</span><span class="p">]</span>
+            <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="nf">place_queen</span><span class="p">(</span><span class="n">starting_row</span> <span class="o">=</span> <span class="n">previous_variable</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">is_safe</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">row</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">conflict_col</span><span class="p">,</span> <span class="n">conflict_row</span> <span class="ow">in</span> <span class="nf">enumerate</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">columns</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">row</span> <span class="o">==</span> <span class="n">conflict_row</span><span class="p">:</span>                
+                <span class="n">self</span><span class="p">.</span><span class="n">conflict_set</span><span class="p">[</span><span class="n">col</span><span class="p">].</span><span class="nf">append</span><span class="p">(</span><span class="n">conflict_col</span><span class="p">)</span>         
+                <span class="k">return</span> <span class="bp">False</span>
+            <span class="k">elif</span> <span class="nf">abs</span><span class="p">(</span><span class="n">conflict_row</span> <span class="o">-</span> <span class="n">row</span><span class="p">)</span> <span class="o">==</span> <span class="nf">abs</span><span class="p">(</span><span class="n">conflict_col</span> <span class="o">-</span> <span class="n">col</span><span class="p">):</span>
+                <span class="n">self</span><span class="p">.</span><span class="n">conflict_set</span><span class="p">[</span><span class="n">col</span><span class="p">].</span><span class="nf">append</span><span class="p">(</span><span class="n">conflict_col</span><span class="p">)</span>            
+                <span class="k">return</span> <span class="bp">False</span>
+        <span class="k">return</span> <span class="bp">True</span>
+
+<span class="n">size</span> <span class="o">=</span> <span class="nf">input</span><span class="p">(</span><span class="sh">"</span><span class="s">Enter the size of the board:</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
+<span class="n">queens</span> <span class="o">=</span> <span class="nc">NQueenSolver</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">queens</span><span class="p">.</span><span class="nf">place_queen</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">full</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span> <span class="sh">"</span><span class="s"> </span><span class="sh">"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">col_queen</span><span class="p">,</span> <span class="n">row_queen</span> <span class="ow">in</span> <span class="nf">enumerate</span><span class="p">(</span><span class="n">queens</span><span class="p">.</span><span class="n">columns</span><span class="p">):</span>
+    <span class="n">board</span><span class="p">[</span><span class="n">row_queen</span><span class="p">][</span><span class="n">col_queen</span><span class="p">]</span> <span class="o">=</span> <span class="sh">'</span><span class="s">Q</span><span class="sh">'</span>   
+<span class="n">headers</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">string</span><span class="p">.</span><span class="n">ascii_uppercase</span><span class="p">)</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">[:</span><span class="n">n</span><span class="p">]</span>
+<span class="n">table</span> <span class="o">=</span> <span class="nf">tabulate</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">headers</span><span class="p">,</span> <span class="n">showindex</span><span class="o">=</span><span class="nf">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="p">),</span> <span class="n">tablefmt</span><span class="o">=</span><span class="sh">"</span><span class="s">fancy_grid</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p><strong>Saída:</strong></p>
+<figure>
+    <img src="/img/Output_NQueen.png" align="center" />
+        <figcaption align="center"><strong>Imagem 3</strong>: Saída da solução apresentada sobre o problema <i>n-queens</i>
+            <br /> 
+                Ref.: <a href="https://iq.opengenus.org/backjumping/">Autoria Própria</a>
+        </figcaption>
+</figure>
 
 <h2 id="expansão-do-uso-de-algoritmos-de-satisfação-de-condições">Expansão do uso de algoritmos de satisfação de condições</h2>
+<p align="justify">
+    A expansão do uso de algoritmos de satisfação de condições é um fenômeno significativo no contexto atual, impulsionado pela crescente complexidade das operações computacionais e pela necessidade de lidar com grandes volumes de dados. Esses algoritmos desempenham um papel crucial em diversas outras áreas além da inteligência artificial, variando desde automação de processos industriais até a otimização de sistemas de recomendação online. Vamos explorar alguns pontos-chave dessa expansão:
+</p>
 
-<h2 id="exemplos-práticos">Exemplos Práticos</h2>
+<ul align="justify">
+
+    <li>
+    <strong>Automação e Eficiência Operacional:</strong> os algoritmos de satisfação de condições são amplamente adotados para automatizar tarefas rotineiras e processos complexos em diversas indústrias.
+    Essa automação contribui significativamente para melhorar a eficiência operacional, reduzindo erros humanos e acelerando a execução de tarefas.
+    </li>
+    <li>
+    <strong>Sistemas de Recomendação Personalizados:</strong> plataformas online, como serviços de streaming e comércio eletrônico, utilizam algoritmos de satisfação de condições para oferecer recomendações personalizadas aos usuários. Isso melhora a experiência do usuário, aumentando a relevância das sugestões e, consequentemente, acaba aumentando a satisfação do cliente.
+    </li>
+    <li>
+    <strong>Aplicações na Medicina e Ciências Biológicas:</strong> na área da saúde, esses algoritmos são utilizados para analisar dados médicos e diagnosticar condições, proporcionando uma abordagem mais precisa e personalizada para o tratamento de pacientes.
+    </li>
+    <li>
+    <strong>Desafios Éticos e de Privacidade:</strong> o aumento do uso desses algoritmos também levanta preocupações éticas e de privacidade, exigindo uma abordagem cuidadosa na coleta e manipulação de dados sensíveis.
+    </li>
+
+</ul>
 
 <h2 id="conclusão">Conclusão</h2>
+<p align="justify">
+    Diante do exposto, as CSPs (Problemas de Satisfação de Restrições) referem-se a problemas computacionais que envolvem encontrar soluções que atendam a um conjunto específico de condições ou restrições, sendo a representação atômica e fatorada as principais utilizadas para a modelagem eficiente de resoluções de CSPs. Não satisfeito, uma CSP possui características fundamentais, tais como condições, propagação e consistência, sendo elas extremamente úteis para realização de soluções eficiêntes e relevantes.
+    Por fim, os algoritmos de satisfação de condições (CSPs) têm desempenhado um papel transformador em diversas áreas, sendo essa expansão um reflexo de uma busca contínua por eficiência, personalização e automação em diversas áreas da sociedade moderna. Somado a isso, é crucial abordar os desafios éticos e de privacidade associados a essa expansão, de forma a proporcionar um equilíbrio adequado entre inovação e responsabilidade.
+</p>
 
 <h2 id="referências">Referências</h2>
 
 <blockquote>
-  <p>ref 1</p>
+  <p>BACKJUMPING. [S. l.]. Disponível em: https://iq.opengenus.org/backjumping/. Acesso em: 11 nov. 2023.</p>
 </blockquote>
 
 <blockquote>
-  <p>ref 2</p>
+  <p>HOW to Solve Constraint Satisfaction Problems (CSPs) Using AC-3 Algorithm in Python: AI Optimization Algorithm. [S. l.], 22 jan. 2021. Disponível em: https://medium.com/swlh/how-to-solve-constraint-satisfaction-problems-csps-with-ac-3-algorithm-in-python-f7a9be538cfe. Acesso em: 11 nov. 2023.</p>
 </blockquote>
 
 
