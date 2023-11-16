@@ -5,8 +5,8 @@
     <description>这里是 @Hux黄玄 的个人博客，与你一起发现更大的世界 | 要做一个有 swag 的程序员</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 16 Nov 2023 14:29:21 -0300</pubDate>
-    <lastBuildDate>Thu, 16 Nov 2023 14:29:21 -0300</lastBuildDate>
+    <pubDate>Thu, 16 Nov 2023 14:34:39 -0300</pubDate>
+    <lastBuildDate>Thu, 16 Nov 2023 14:34:39 -0300</lastBuildDate>
     <generator>Jekyll v4.3.2</generator>
     
       <item>
@@ -324,6 +324,16 @@ Os agentes lógicos têm uma ampla variedade de aplicações em diferentes conte
 &lt;p align=&quot;justify&quot;&gt;
     De acrodo com o exposto neste artigo, percebe-se que os agentes lógicos possuem um amplo domínio de aplicação, tais como sistemas especialistas, jogos, Big Data, etc. Por outro lado, a pesar de muito útil em divesos contextos, possui algumas limitações as quais devem ser ponderadas antes de utilizar tais ferramentas. Por fim, é possível inferir que, de acordo com sua ampla aplicabilidade e possíbilidade em lidar com problemas complexos, os agentes lógicos são extremamente impactantes para tecnologias de inteligência artificial, sendo este assunto de suma importância para a área.
 &lt;/p&gt;
+
+&lt;h2 id=&quot;referências&quot;&gt;Referências&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;SEMANTIC network. [S. l.], 7 nov. 2023. Disponível em: https://en.wikipedia.org/wiki/Semantic_network. Acesso em: 14 nov. 2023.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;SEMANTIC Similarity Networks: Mining knowledge from inter-connectedness of documents. [S. l.], 22 set. 2022. Disponível em: https://towardsdatascience.com/semantic-similarity-networks-9aca31082d8e. Acesso em: 14 nov. 2023.&lt;/p&gt;
+&lt;/blockquote&gt;
 </description>
         <pubDate>Tue, 14 Nov 2023 20:50:00 -0300</pubDate>
         <link>http://localhost:4000/2023/11/14/P4-2023/</link>
