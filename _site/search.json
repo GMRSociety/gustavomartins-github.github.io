@@ -1,6 +1,22 @@
 [
   
     {
+      "title"    : "Agentes Lógicos",
+      "subtitle" : " &quot;Algoritmos  e Aplicações&quot;",
+      "tags"     : "Portifólio 4",
+      "url"      : "/2023/11/14/P4-2023/",
+      "date"     : "2023-11-14 20:50:00 -0300"
+    } ,
+  
+    {
+      "title"    : "Agentes Baseados em Conhecimento e Lógica",
+      "subtitle" : " &quot;A Inteligência por trás da tomada de decisão&quot;",
+      "tags"     : "Portifólio 4",
+      "url"      : "/2023/11/13/P4-2023/",
+      "date"     : "2023-11-13 02:00:00 -0300"
+    } ,
+  
+    {
       "title"    : "Um pouco mais sobre CSPs",
       "subtitle" : " &quot;Algoritmos, aplicações, discussões e exemplos.&quot;",
       "tags"     : "Portifólio 3",

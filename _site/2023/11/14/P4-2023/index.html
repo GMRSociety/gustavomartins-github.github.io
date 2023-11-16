@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="这里是 @Hux黄玄 的个人博客，与你一起发现更大的世界 | 要做一个有 swag 的程序员">
+    <meta name="keywords" content="Artificial Inteligence, Gustavo M.R., Hux, 鬼栈, huxpro, @huxpro, 黄玄的博客, Hux Blog, 博客, 个人网站, 互联网, Web, JavaScript, React, React Native, 前端, 设计">
+    <meta name="theme-color" content="#000000">
+
+    <!-- Open Graph -->
+    <meta property="og:title"
+        content="Agentes Lógicos - GMR Blog | GMR Blog">
+    
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="
+  “Aprendizado automático nos permite construir soluções de software que superam o entendimento humano e mostram que a inteligência artificial pode inervar qualquer indústria” - Steve Jurvetson
+
+">
+    
+    <meta property="article:published_time" content=" 2023-11-14T20:50:00Z">
+    
+    
+    <meta property="article:author" content="Gustavo M.R.">
+    
+    
+    <meta property="article:tag" content="Portifólio 4">
+    
+    
+    <meta property="og:image" content="http://localhost:4000https://github.com/gustavomartins-github.png">
+    <meta property="og:url" content="http://localhost:4000/2023/11/14/P4-2023/">
+    <meta property="og:site_name" content="GMR Blog | GMR Blog">
+
+    <title>Agentes Lógicos - GMR Blog | GMR Blog</title>
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/pwa/manifest.json">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="http://localhost:4000/2023/11/14/P4-2023/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href=" /css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href=" /css/hux-blog.min.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+        type="text/css">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+
+    <!-- Google AdSense -->
+    <script data-ad-client="ca-pub-6487568398225121" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">GMR Blog</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div id="huxblog_navbar">
+                <div class="navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        
+                        
+                        
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                        
+                        
+                        <li>
+                            <a href="/archive/">Archive</a>
+                        </li>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <li class="search-icon">
+                            <a href="javascript:void(0)">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <script>
+        // Drop Bootstarp low-performance Navbar
+        // Use customize navbar with high-quality material design animation
+        // in high-perf jank-free CSS3 implementation
+        var $body = document.body;
+        var $toggle = document.querySelector('.navbar-toggle');
+        var $navbar = document.querySelector('#huxblog_navbar');
+        var $collapse = document.querySelector('.navbar-collapse');
+
+        var __HuxNav__ = {
+            close: function () {
+                $navbar.className = " ";
+                // wait until animation end.
+                setTimeout(function () {
+                    // prevent frequently toggle
+                    if ($navbar.className.indexOf('in') < 0) {
+                        $collapse.style.height = "0px"
+                    }
+                }, 400)
+            },
+            open: function () {
+                $collapse.style.height = "auto"
+                $navbar.className += " in";
+            }
+        }
+
+        // Bind Event
+        $toggle.addEventListener('click', function (e) {
+            if ($navbar.className.indexOf('in') > 0) {
+                __HuxNav__.close()
+            } else {
+                __HuxNav__.open()
+            }
+        })
+
+        /**
+         * Since Fastclick is used to delegate 'touchstart' globally
+         * to hack 300ms delay in iOS by performing a fake 'click',
+         * Using 'e.stopPropagation' to stop 'touchstart' event from 
+         * $toggle/$collapse will break global delegation.
+         * 
+         * Instead, we use a 'e.target' filter to prevent handler
+         * added to document close HuxNav.  
+         *
+         * Also, we use 'click' instead of 'touchstart' as compromise
+         */
+        document.addEventListener('click', function (e) {
+            if (e.target == $toggle) return;
+            if (e.target.className == 'icon-bar') return;
+            __HuxNav__.close();
+        })
+    </script>
+    <!-- Search -->
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="/img/BG-Agentes_Logicos.jpg" width="0" height="0"> -->
+
+<!-- Post Header -->
+
+
+
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background-image: url('/img/BG-Agentes_Logicos.jpg');
+        background: ;
+    }
+
+    
+</style>
+
+
+
+
+<header class="intro-header" >
+
+    <div class="header-mask"></div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/archive/?tag=Portif%C3%B3lio+4" title="Portifólio 4">Portifólio 4</a>
+                        
+                    </div>
+                    <h1>Agentes Lógicos</h1>
+                    
+                    <h2 class="subheading"> "Algoritmos  e Aplicações"</h2>
+                    <span class="meta">Posted by Gustavo M.R. on November 14, 2023</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+
+
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <!-- Multi-Lingual -->
+                
+
+				<blockquote>
+  <p>“Aprendizado automático nos permite construir soluções de software que superam o entendimento humano e mostram que a inteligência artificial pode inervar qualquer indústria” - <strong><i>Steve Jurvetson</i></strong></p>
+</blockquote>
+
+<h2 id="impressões-iniciais">Impressões Iniciais</h2>
+
+<p align="justify">
+Os algoritmos de agentes lógicos são ferramentas especialmente úteis para resolver problemas complexos em inteligência artificial. Somado a isso, tais algoritmos são utilizados em diversas tecnologias e domínios, tais como os Sistemas Especialistas e Big Data, evidenciando sua contribuir para o avanço da inteligência artificial em diversos domínios. Diante disso, o presente artigo tem como objetivo instruir o leitor um pouco mais sobre este universo.
+</p>
+
+<h2 id="algoritmos-de-agentes-lógicos-discussão-exemplo-prático-e-implementação">Algoritmos de Agentes Lógicos: discussão, exemplo prático e implementação</h2>
+<p align="justify">
+Os algoritmos de agentes lógicos desempenham um papel crucial na inteligência artificial, permitindo que os agentes ajam de maneira informada e lógica em ambientes complexos. Eles são fundamentais para a representação, inferência e tomada de decisões em contextos nos quais a lógica desempenha um papel central. Tais algoritmos são projetados para representar conhecimento de maneira formal. Isso pode envolver a utilização de lógica proposicional ou de primeira ordem para expressar informações sobre o mundo em que o agente opera. 
+<br /><br />
+Por sua vez, os algoritmos de inferência lógica são implementados para permitir que agentes derivem novas informações a partir do conhecimento existente. Isso é crucial para a capacidade do agente de tomar decisões informadas com base em raciocínio lógico. Além disso, vale ressaltar que a lógica é frequentemente utilizada na tomada de decisões, permitindo que os agentes avaliem condições, estabeleçam metas e escolham ações com base em uma análise lógica do ambiente. Diante do exposto, confira <strong>um exemplo prático</strong> de algoritmo de agente lógico conhecido como <i>Semantic Network</i>.
+</p>
+
+<p align="justify">
+<strong>Semantic network (Rede Semântica): </strong> Uma rede semântica é uma representação gráfica do conhecimento que utiliza nós e arestas para modelar relações semânticas entre conceitos. Cada nó representa um conceito, e as arestas indicam relações entre esses conceitos. Essas redes são usadas para capturar o significado e a interconexão de informações em um determinado domínio. Um bom exemplo é a <u>rede de similaridade semântica de artigos de PNL</u> (Programação Neurolinguística) desenvolvido pela engenheira eletrônica e de comunicação elétrica Anukriti Ranjan, cujo algoritmo pode ser visto a seguir. Por fim, a saída do código pode ser vista pela <strong>Imagem 1</strong> logo em seguida.
+<br /><br />
+<strong>Implementação da solução em <u>python</u>:</strong>
+</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+</pre></td><td class="rouge-code"><pre><span class="sh">"""</span><span class="s">
+REF: https://towardsdatascience.com/semantic-similarity-networks-9aca31082d8e
+
+Obs.: baixe as seguintes bibliotecas (pip3 para linux e pip para windows)
+
+1) sentence_transformers
+2) seaborn
+3) bokeh
+
+</span><span class="sh">"""</span>
+<span class="kn">from</span> <span class="n">sentence_transformers</span> <span class="kn">import</span> <span class="n">SentenceTransformer</span>
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">from</span> <span class="n">sklearn.metrics</span> <span class="kn">import</span> <span class="n">DistanceMetric</span>
+<span class="kn">from</span> <span class="n">sklearn.cluster</span> <span class="kn">import</span> <span class="n">AgglomerativeClustering</span>
+<span class="kn">import</span> <span class="n">seaborn</span> <span class="k">as</span> <span class="n">sns</span>
+<span class="kn">from</span> <span class="n">bokeh.palettes</span> <span class="kn">import</span> <span class="n">viridis</span>
+<span class="kn">import</span> <span class="n">networkx</span> <span class="k">as</span> <span class="n">nx</span>
+
+<span class="c1">#document embeddings
+</span><span class="n">embedder</span><span class="o">=</span><span class="nc">SentenceTransformer</span><span class="p">(</span><span class="sh">'</span><span class="s">allenai/specter</span><span class="sh">'</span><span class="p">)</span>
+
+<span class="n">corpus</span><span class="o">=</span><span class="n">df_nlp_filtered</span><span class="p">[</span><span class="sh">'</span><span class="s">papers</span><span class="sh">'</span><span class="p">].</span><span class="n">values</span><span class="p">.</span><span class="nf">tolist</span><span class="p">()</span>
+<span class="n">corpus_embeddings</span> <span class="o">=</span> <span class="n">embedder</span><span class="p">.</span><span class="nf">encode</span><span class="p">(</span><span class="n">corpus</span><span class="p">)</span>
+
+<span class="c1">#distance measures
+</span><span class="n">dist</span> <span class="o">=</span> <span class="n">DistanceMetric</span><span class="p">.</span><span class="nf">get_metric</span><span class="p">(</span><span class="sh">'</span><span class="s">euclidean</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">dist_scores</span><span class="o">=</span><span class="n">dist</span><span class="p">.</span><span class="nf">pairwise</span><span class="p">(</span><span class="n">corpus_embeddings</span><span class="p">)</span>
+<span class="n">all_scores</span><span class="o">=</span><span class="n">dist_scores</span><span class="p">[</span><span class="n">np</span><span class="p">.</span><span class="nf">triu_indices</span><span class="p">(</span><span class="n">dist_scores</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span><span class="p">)]</span>
+
+<span class="c1">#visualizing the distance measures
+</span><span class="n">sns</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="p">{</span><span class="sh">"</span><span class="s">figure.figsize</span><span class="sh">"</span><span class="p">:(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">)})</span> <span class="c1">#width=12, #height=8
+</span><span class="n">sns</span><span class="p">.</span><span class="nf">histplot</span><span class="p">(</span><span class="n">all_scores</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">100000</span><span class="p">)</span>
+
+<span class="c1">#clustering
+</span><span class="n">clustering</span> <span class="o">=</span> <span class="nc">AgglomerativeClustering</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span><span class="n">affinity</span><span class="o">=</span><span class="sh">'</span><span class="s">euclidean</span><span class="sh">'</span><span class="p">,</span><span class="n">distance_threshold</span><span class="o">=</span><span class="mi">25</span><span class="p">).</span><span class="nf">fit</span><span class="p">(</span><span class="n">corpus_embeddings</span><span class="p">)</span>
+<span class="n">clusters</span> <span class="o">=</span> <span class="n">clustering</span><span class="p">.</span><span class="n">labels_</span>
+
+<span class="c1">#np.unique(clusters).shape[0]
+#get the list of papers corresponding to each cluster
+</span><span class="n">idx_sort</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">argsort</span><span class="p">(</span><span class="n">clusters</span><span class="p">)</span>
+<span class="n">sorted_clusters</span> <span class="o">=</span> <span class="n">clusters</span><span class="p">[</span><span class="n">idx_sort</span><span class="p">]</span>
+
+<span class="c1"># returns the unique values, the index of the first occurrence of a value, and the count for each element
+</span><span class="n">vals</span><span class="p">,</span> <span class="n">idx_start</span><span class="p">,</span> <span class="n">count</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">unique</span><span class="p">(</span><span class="n">sorted_clusters</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">return_index</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="c1"># splits the indices into separate arrays
+</span><span class="n">clusters_split</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="n">idx_sort</span><span class="p">,</span> <span class="n">idx_start</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+
+<span class="c1">#create a dict which will be used as attribute for the network of nodes
+</span><span class="n">color_options_clust</span><span class="o">=</span><span class="nf">viridis</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">clusters_split</span><span class="p">))</span>
+
+<span class="n">cluster_num</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">node_title</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">color_clust</span><span class="o">=</span><span class="p">{}</span>
+<span class="c1">#Loop through each community in the network
+</span><span class="k">for</span> <span class="n">cluster_number</span><span class="p">,</span> <span class="n">cluster</span> <span class="ow">in</span> <span class="nf">enumerate</span><span class="p">(</span><span class="n">clusters_split</span><span class="p">):</span>
+    <span class="c1">#For each member of the community, add their community number and a distinct color
+</span>    <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">cluster</span><span class="p">:</span> 
+        <span class="k">if</span> <span class="n">node</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">cluster_num</span><span class="p">.</span><span class="nf">keys</span><span class="p">():</span>
+            <span class="n">cluster_num</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="n">cluster_number</span>
+            <span class="n">node_title</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_nlp_filtered</span><span class="p">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="sh">'</span><span class="s">title</span><span class="sh">'</span><span class="p">]</span>
+            <span class="n">color_clust</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="n">color_options_clust</span><span class="p">[</span><span class="n">cluster_number</span><span class="p">]</span>
+            
+<span class="c1">#get a threshold for edges
+</span><span class="n">avg_dist_score</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="nf">zeros</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">clusters_split</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">j</span><span class="p">,</span><span class="n">clust</span> <span class="ow">in</span> <span class="nf">enumerate</span><span class="p">(</span><span class="n">clusters_split</span><span class="p">):</span>
+    <span class="n">clust_dist_score</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">clust</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">node1</span><span class="o">=</span><span class="n">clust</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">node2</span><span class="o">=</span><span class="n">clust</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">clust_dist_score</span><span class="o">+=</span><span class="n">dist_scores</span><span class="p">[</span><span class="n">node1</span><span class="p">][</span><span class="n">node2</span><span class="p">]</span>
+    <span class="n">avg_dist_score</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">clust_dist_score</span><span class="o">/</span><span class="nf">len</span><span class="p">(</span><span class="n">clust</span><span class="p">)</span>
+    
+<span class="n">threshold_graph</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="nf">round</span><span class="p">(</span><span class="n">avg_dist_score</span><span class="p">.</span><span class="nf">mean</span><span class="p">()</span><span class="o">+</span><span class="mi">0</span><span class="o">*</span><span class="n">avg_dist_score</span><span class="p">.</span><span class="nf">std</span><span class="p">(),</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">dist_scores_graph</span><span class="o">=</span><span class="n">dist_scores</span><span class="p">.</span><span class="nf">copy</span><span class="p">()</span>
+<span class="n">dist_scores_graph</span><span class="p">[[</span><span class="n">dist_scores_graph</span> <span class="o">&lt;=</span> <span class="n">threshold_graph</span><span class="p">]]</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">dist_scores_graph</span><span class="p">[[</span><span class="n">dist_scores_graph</span> <span class="o">&gt;</span> <span class="n">threshold_graph</span><span class="p">]]</span><span class="o">=</span><span class="mi">0</span>
+
+<span class="c1">#create a network
+</span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="p">.</span><span class="nf">from_numpy_matrix</span><span class="p">(</span><span class="n">dist_scores_graph</span><span class="p">)</span>
+
+<span class="c1">#add attributes
+</span><span class="n">nx</span><span class="p">.</span><span class="nf">set_node_attributes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">cluster_num</span><span class="p">,</span> <span class="sh">'</span><span class="s">cluster_num</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">nx</span><span class="p">.</span><span class="nf">set_node_attributes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">node_title</span><span class="p">,</span> <span class="sh">'</span><span class="s">node_title</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">nx</span><span class="p">.</span><span class="nf">set_node_attributes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">color_clust</span><span class="p">,</span> <span class="sh">'</span><span class="s">color_clust</span><span class="sh">'</span><span class="p">)</span>
+
+<span class="n">degrees</span> <span class="o">=</span> <span class="nf">dict</span><span class="p">(</span><span class="n">nx</span><span class="p">.</span><span class="nf">degree</span><span class="p">(</span><span class="n">G</span><span class="p">))</span>
+<span class="n">nx</span><span class="p">.</span><span class="nf">set_node_attributes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="sh">'</span><span class="s">degree</span><span class="sh">'</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">degrees</span><span class="p">)</span>
+
+<span class="c1">#special functions for querying the network graph
+</span><span class="k">def</span> <span class="nf">make_node_dict_for_cluster</span><span class="p">(</span><span class="n">cluster_num</span><span class="p">,</span><span class="n">clusters_split</span><span class="p">,</span><span class="n">G</span><span class="p">):</span>
+    <span class="n">node_dict</span><span class="o">=</span><span class="p">{}</span>
+    <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">clusters_split</span><span class="p">[</span><span class="n">cluster_num</span><span class="p">]:</span>
+        <span class="n">node_dict</span><span class="p">[</span><span class="n">node</span><span class="p">]</span><span class="o">=</span><span class="p">{}</span>
+        <span class="n">neighbors</span><span class="o">=</span><span class="p">[</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">G</span><span class="p">.</span><span class="nf">neighbors</span><span class="p">(</span><span class="n">node</span><span class="p">)]</span>
+        <span class="n">neighbor_cluster</span><span class="o">=</span><span class="p">[</span><span class="n">G</span><span class="p">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="sh">'</span><span class="s">cluster_num</span><span class="sh">'</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">G</span><span class="p">.</span><span class="nf">neighbors</span><span class="p">(</span><span class="n">node</span><span class="p">)]</span>
+        <span class="n">node_dict</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="sh">'</span><span class="s">neighbors</span><span class="sh">'</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">(</span><span class="n">neighbors</span><span class="p">)</span>
+        <span class="n">node_dict</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="sh">'</span><span class="s">neighbor_cluster</span><span class="sh">'</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">(</span><span class="n">neighbor_cluster</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">node_dict</span>
+    
+ 
+<span class="k">def</span> <span class="nf">connections_with_cluster</span><span class="p">(</span><span class="n">node_dict</span><span class="p">,</span><span class="n">clust_num</span><span class="p">):</span>
+    <span class="n">nodes</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="n">node_dict</span><span class="p">.</span><span class="nf">keys</span><span class="p">())</span>
+    <span class="n">clust_array</span><span class="o">=</span><span class="n">node_dict</span><span class="p">[</span><span class="n">nodes</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="sh">'</span><span class="s">neighbor_cluster</span><span class="sh">'</span><span class="p">]</span>
+    <span class="n">node_array</span><span class="o">=</span><span class="n">node_dict</span><span class="p">[</span><span class="n">nodes</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="sh">'</span><span class="s">neighbors</span><span class="sh">'</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+        <span class="n">np</span><span class="p">.</span><span class="nf">hstack</span><span class="p">([</span><span class="n">clust_array</span><span class="p">,</span><span class="n">node_dict</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="sh">'</span><span class="s">neighbor_cluster</span><span class="sh">'</span><span class="p">]])</span>
+        <span class="n">np</span><span class="p">.</span><span class="nf">hstack</span><span class="p">([</span><span class="n">node_array</span><span class="p">,</span><span class="n">node_dict</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="sh">'</span><span class="s">neighbors</span><span class="sh">'</span><span class="p">]])</span>
+    <span class="k">return</span> <span class="n">np</span><span class="p">.</span><span class="nf">count_nonzero</span><span class="p">(</span><span class="n">clust_array</span> <span class="o">==</span> <span class="n">clust_num</span><span class="p">),</span><span class="n">np</span><span class="p">.</span><span class="nf">unique</span><span class="p">(</span><span class="n">node_array</span><span class="p">[</span><span class="n">clust_array</span> <span class="o">==</span> <span class="n">clust_num</span><span class="p">])</span>
+    
+<span class="c1">#node dictionary for cluster 3
+</span><span class="n">dict_node_3</span><span class="o">=</span><span class="nf">make_node_dict_for_cluster</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">clusters_split</span><span class="p">,</span><span class="n">G</span><span class="p">)</span>
+<span class="c1">#getting its relatedness with cluster 10
+</span><span class="nf">connections_with_cluster</span><span class="p">(</span><span class="n">dict_node_3</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+   
+   <span class="c1">#most central nodes of the network and least central 
+</span>   <span class="c1">#(not to be confused with importance)
+</span>   <span class="c1">#it gives information on intra network connectedness
+</span>   
+<span class="k">def</span> <span class="nf">get_most_central_nodes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">clust_num</span><span class="p">,</span><span class="n">top_k</span><span class="p">,</span><span class="n">bottom_k</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span><span class="n">clusters_split</span><span class="o">=</span><span class="n">clusters_split</span><span class="p">):</span>
+    <span class="n">G_new</span><span class="o">=</span><span class="n">G</span><span class="p">.</span><span class="nf">subgraph</span><span class="p">(</span><span class="n">clusters_split</span><span class="p">[</span><span class="n">clust_num</span><span class="p">])</span>
+    <span class="n">sorted_dict</span><span class="o">=</span><span class="nf">dict</span><span class="p">(</span><span class="nf">sorted</span><span class="p">(</span><span class="n">nx</span><span class="p">.</span><span class="nf">closeness_centrality</span><span class="p">(</span><span class="n">G_new</span><span class="p">).</span><span class="nf">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">bottom_k</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nf">list</span><span class="p">(</span><span class="n">sorted_dict</span><span class="p">.</span><span class="nf">keys</span><span class="p">())[</span><span class="o">-</span><span class="n">top_k</span><span class="p">:]</span>
+    <span class="k">return</span> <span class="nf">list</span><span class="p">(</span><span class="n">sorted_dict</span><span class="p">.</span><span class="nf">keys</span><span class="p">())[</span><span class="mi">0</span><span class="p">:</span><span class="n">top_k</span><span class="p">]</span> 
+<span class="nf">get_most_central_nodes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="n">clusters_split</span><span class="o">=</span><span class="n">clusters_split</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<figure>
+    <img src="/img/rede_semantica.webp" align="center" />
+        <figcaption align="center"><strong>Imagem 1</strong>: Saída do código a cima: uma rede de similaridade semântica de artigos de PNL <br />
+                Ref.: <a href="https://towardsdatascience.com/semantic-similarity-networks-9aca31082d8e">Redes de Similaridade Semântica: Mineração de conhecimento a partir da interconectividade de documentos</a>
+        </figcaption>
+</figure>
+<p><br /></p>
+<p align="justify">
+<strong>Obs.:</strong> Os agentes lógicos, embora sejam poderosos em certas aplicações, apresentam algumas limitações, tais como complexidade computacional,  dificuldade de manuseio de ambientes dinâmicos e problemas em compreender texto não estruturado.
+</p>
+
+<h2 id="expansão-do-uso-de-agentes-lógicos">Expansão do uso de agentes lógicos</h2>
+<p align="justify">
+Os agentes lógicos têm uma ampla variedade de aplicações em diferentes contextos devido a sua capacidade de representar conhecimento, realizar inferências e tomar decisões lógicas. Confira a seguir alguns exemplos de contextos de aplicação.
+</p>
+
+<ul align="justify">
+
+    <li><strong>Sistemas Especialistas:</strong> os agentes lógicos, devido a sua capacidade de representação do conhecimento por meio de regras lógicas,é particularmente útil em domínios específicos, como medicina e engenharia, onde a decisão baseada em lógica especializada é crucial. </li>
+
+    <li><strong>Jogos Inteligentes:</strong> agentes lógicos podem ser usados para criar NPCs (personagens não jogáveis) que simulem um jogador humano. Diante disso, esses personagens podem se adaptar ao ambiente do jogo e tomar decisões com base em regras pré-definidas. Jogos com <a href="https://starcraft2.blizzard.com/pt-br/">StarCraft II: Wings of Liberty</a>, <a href="https://www.leagueoflegends.com/pt-br/">League of Legends</a> e <a href="https://lichess.org/">Lichess</a> são ótimos exemplos de aplicação de jogos onlines com NPCs inteligentes.</li>
+
+    <li><strong>Big Data:</strong> atividades como análise de dados e mineração de conhecimento podem utilizar agentes lógicos para identificar padrões, tendências e relações lógicas em conjuntos de dados complexos. Isso é especialmente valioso em áreas como <strong>machine learning</strong> e análise preditiva.</li>
+
+    <li><strong>Sistemas de Navegação Autônoma:</strong> em sistemas autônomos, agentes lógicos desempenham um papel vital na navegação segura. Eles interpretam dados de sensores, tomam decisões lógicas sobre direção e evitam obstáculos com base em algoritmos de inferência. Alguns bons exemplos de sistemas de navegação autônoma são os robôs autônomos fornecidos pela empresa <a href="https://bostondynamics.com/">Dynamic Robots</a> e os carros autônomos de nível 2 fornecidos pela <a href="https://www.tesla.com/">Tesla</a>.</li>
+
+    <li><strong>Sistemas de Recomendação:</strong> em relação aos serviços de streaming e e-commerce, por exemplo, agentes lógicos podem analisar preferências passadas, comportamentos de compra e informações contextuais a fim de oferecer recomendações personalizadas para os usuários.</li>
+
+</ul>
+
+<h2 id="conclusões">Conclusões</h2>
+
+<p align="justify">
+    De acrodo com o exposto neste artigo, percebe-se que os agentes lógicos possuem um amplo domínio de aplicação, tais como sistemas especialistas, jogos, Big Data, etc. Por outro lado, a pesar de muito útil em divesos contextos, possui algumas limitações as quais devem ser ponderadas antes de utilizar tais ferramentas. Por fim, é possível inferir que, de acordo com sua ampla aplicabilidade e possíbilidade em lidar com problemas complexos, os agentes lógicos são extremamente impactantes para tecnologias de inteligência artificial, sendo este assunto de suma importância para a área.
+</p>
+
+
+                <hr style="visibility: hidden;">
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2023/11/13/P4-2023/" data-toggle="tooltip" data-placement="top" title="Agentes Baseados em Conhecimento e Lógica">
+                        Previous<br>
+                        <span>Agentes Baseados em Conhecimento e Lógica</span>
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+                <hr style="visibility: hidden;">
+
+                
+                <!-- disqus 评论框 start -->
+                <div class="comment">
+                    <div id="disqus_thread" class="disqus-thread"></div>
+                </div>
+                <!-- disqus 评论框 end -->
+                
+
+                
+            </div>  
+
+    <!-- Side Catalog Container -->
+        
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+        
+
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+
+<section>
+    
+        <hr class="hidden-sm hidden-xs">
+    
+    <h5><a href="/archive/">FEATURED TAGS</a></h5>
+    <div class="tags">
+        
+        
+        
+        
+        
+        
+                <a data-sort="0006" 
+                    href="/archive/?tag=Portif%C3%B3lio+1"
+                    title="Portifólio 1"
+                    rel="4">Portifólio 1</a>
+        
+                <a data-sort="0008" 
+                    href="/archive/?tag=Portif%C3%B3lio+2"
+                    title="Portifólio 2"
+                    rel="2">Portifólio 2</a>
+        
+                <a data-sort="0008" 
+                    href="/archive/?tag=Portif%C3%B3lio+3"
+                    title="Portifólio 3"
+                    rel="2">Portifólio 3</a>
+        
+                <a data-sort="0008" 
+                    href="/archive/?tag=Portif%C3%B3lio+4"
+                    title="Portifólio 4"
+                    rel="2">Portifólio 4</a>
+    </div>
+</section>
+
+
+                <!-- Friends Blog -->
+                
+<hr>
+<h5>FRIENDS</h5>
+<ul class="list-inline">
+  
+  <li><a href="https://github.com/oo7gabriel">Gabriel F. da Silva</a></li>
+  
+  <li><a href="https://github.com/Peedrooo">Pedro Vitor Augusto de Jesus</a></li>
+  
+  <li><a href="https://github.com/siqueira-dev">Siqueira</a></li>
+  
+  <li><a href="https://github.com/mateus-lm">Mateus Moreira</a></li>
+  
+  <li><a href="https://github.com/DelzironBraz">Delziron Braz</a></li>
+  
+</ul>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- add support for mathjax by voleking-->
+
+
+
+
+
+
+<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "gmrblog";
+    var disqus_identifier = "/2023/11/14/P4-2023";
+    var disqus_url = "http://localhost:4000/2023/11/14/P4-2023/";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus 公共JS代码 end -->
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'right',
+          // icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- SNS Link -->
+                
+
+
+<ul class="list-inline text-center">
+
+
+  
+  
+  <li>
+    <a href="https://twitter.com/lxgustxl">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+  </li>
+  
+  
+  
+  
+  <li>
+    <a target="_blank" href="https://www.facebook.com/lxgustxl">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a target="_blank" href="https://github.com/gustavomartins-github">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a target="_blank" href="https://www.linkedin.com/in/gustavo-martins-089a14201">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+  </li>
+  
+</ul>
+
+                <p class="copyright text-muted">
+                    Copyright &copy; GMR Blog 2023
+                    <br>
+                    Powered by <a href="http://huangxuan.me">Hux Blog</a> |
+                    <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="100px"
+                        height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=huxpro&repo=huxpro.github.io&type=star&count=true">
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<!-- Currently, only navbar scroll-down effect at desktop still depends on this -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js "></script>
+
+<!-- Simple Jekyll Search -->
+<script src="/js/simple-jekyll-search.min.js"></script>
+
+<!-- Service Worker -->
+
+<script src="/js/snackbar.js "></script>
+<script src="/js/sw-registration.js "></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+        var d = document, t = 'script',
+            o = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        o.src = u;
+        if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+        s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!--
+     Because of the native support for backtick-style fenced code blocks
+     right within the Markdown is landed in Github Pages,
+     From V1.6, There is no need for Highlight.js,
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/
+     - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+
+
+
+
+
+<!--fastClick.js -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function () {
+        var $nav = document.querySelector("nav");
+        if ($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-49627206-1';
+    var _gaDomain = 'huangxuan.me';
+
+    // Originial
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+
+
+<!-- Side Catalog -->
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        // interop with multilangual 
+        if ('' == 'true') {
+            _containerSelector = 'div.post-container.active'
+        } else {
+            _containerSelector = 'div.post-container'
+        }
+
+        // init
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        // clean
+        $(selector).html('')
+
+        // appending
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    /*
+     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+     * Fork by Hux to support padding
+     */
+    async("/js/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+<!-- Multi-Lingual -->
+
+
+<!-- Simple Jekyll Search -->
+<script>
+    // https://stackoverflow.com/questions/1912501/unescape-html-entities-in-javascript
+    function htmlDecode(input) {
+        var e = document.createElement('textarea');
+        e.innerHTML = input;
+        // handle case of empty input
+        return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+    }
+
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('search-results'),
+        json: '/search.json',
+        searchResultTemplate: '<div class="post-preview item"><a href="{url}"><h2 class="post-title">{title}</h2><h3 class="post-subtitle">{subtitle}</h3><hr></a></div>',
+        noResultsText: 'No results',
+        limit: 50,
+        fuzzy: false,
+        // a hack to get escaped subtitle unescaped. for some reason, 
+        // post.subtitle w/o escape filter nuke entire search.
+        templateMiddleware: function (prop, value, template) {
+            if (prop === 'subtitle' || prop === 'title') {
+                if (value.indexOf("code")) {
+                    return htmlDecode(value);
+                } else {
+                    return value;
+                }
+            }
+        }
+    });
+
+    $(document).ready(function () {
+        var $searchPage = $('.search-page');
+        var $searchOpen = $('.search-icon');
+        var $searchClose = $('.search-icon-close');
+        var $searchInput = $('#search-input');
+        var $body = $('body');
+
+        $searchOpen.on('click', function (e) {
+            e.preventDefault();
+            $searchPage.toggleClass('search-active');
+            var prevClasses = $body.attr('class') || '';
+            setTimeout(function () {
+                $body.addClass('no-scroll');
+            }, 400)
+
+            if ($searchPage.hasClass('search-active')) {
+                $searchClose.on('click', function (e) {
+                    e.preventDefault();
+                    $searchPage.removeClass('search-active');
+                    $body.attr('class', prevClasses);  // from closure 
+                });
+                $searchInput.focus();
+            }
+        });
+    });
+</script>
+
+
+<!-- Image to hack wechat -->
+<img src="/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

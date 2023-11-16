@@ -1,0 +1,149 @@
+<blockquote>
+  <p>“A imaginação é mais importante que o conhecimento. O conhecimento é limitado, enquanto a imaginação abraça o mundo inteiro, estimulando o progresso, e dando origem à evolução.” - <strong><i>Albert Einstein</i></strong></p>
+</blockquote>
+
+<h2 id="impressões-iniciais">Impressões Iniciais</h2>
+
+<p align="justify">
+No âmbito da inteligência artificial, a representação eficiente do conhecimento e o raciocínio lógico desempenham papéis essenciais. Ao estudar tais assuntos, emergem conceitos fundamentais que moldam a capacidade dos sistemas de IA em compreender e interagir com o mundo. Diante disso, o presente artigo possui o intúito de instruir o leitor um pouco mais sobre esse mundo, considerando aspectos como agentes baseados em conhecimento, lógica, inferência e, por fim, agentes baseados em lógica proposicional.
+</p>
+
+<h2 id="agente-baseado-em-conhecimento">Agente Baseado em Conhecimento</h2>
+
+<p align="justify">
+Na área de Inteligência Artificial (IA), os agentes baseados em conhecimento utilizam um processo de raciocínio, ponderando sobre representações internas para tomar decisões. No entanto, os agentes atuais têm conhecimento limitado e inflexível. Somado a isso, a lógica é adotada como uma classe geral de representações para respaldar esses agentes, sendo a base de conhecimento (KB) seu componente central. A KB é composta por um conjunto de sentenças que expressam afirmações sobre o mundo, chamadas axiomas quando aceitas sem derivação. Essas sentenças são formuladas em uma linguagem de representação de conhecimento. Operações cruciais, como TELL para adicionar e ASK para consultar a KB, permitem a evolução do conhecimento. 
+<br /><br />
+Não obstante, a inferência, que é a capacidade de derivar novas sentenças, é fundamental e segue o requisito de consistência. Adicionalmente, duas abordagens para construir a KB são destacadas: a declarativa, onde o projetista especifica sentenças uma a uma, e a procedural, que codifica comportamentos desejados diretamente como código de programa. Esses elementos essenciais constituem a base para o funcionamento eficaz dos agentes baseados em conhecimento em sistemas de IA.
+<br /><br />
+De acordo com o artigo <a href="https://gustavomartins-github.github.io/2023/08/08/P1-2023/">Bert Raphael</a> propôs ao mundo uma ideia conhecida como blocks world (problemas de micro-mundo), usado como caso de teste em pesquisas sobre sistemas de IA e lógica. Um bom exemplo de micromundo para ilustrar a aplicação de agentes baseados em conhecimento é o <i>Wumpus World</i>. Nele, há uma caverna a qual é composta por câmaras conectadas por passagens, onde um temível monstro, o Wumpus, reside em alguma parte. O agente, munido de apenas uma flecha, pode eliminar o Wumpus, mas deve ser cauteloso, pois algumas câmaras abrigam poços mortais. Além disso, há um tesouro escondido em alguma câmara. Os elementos fundamentais incluem atuadores, uma medida de performance, um ambiente com sensores e um agente único. 
+<br /><br />
+O Wumpus World é determinístico, discreto, estático e de agente único. Sua natureza sequencial implica que a recompensa é obtida após uma série de ações. No entanto, o ambiente é parcialmente observável, apresentando desafios adicionais ao agente. Este cenário proporciona uma base prática para compreender como agentes baseados em conhecimento operam em ambientes complexos, tomando decisões informadas para maximizar o desempenho em meio a incertezas. Confira a <strong>Imagem 1</strong> a seguir a qual carrega um exemplo de caverna no micro-mundo Wumpus World.
+</p>
+
+<figure>
+    <img src="/img/wumpus_world.png" align="center" />
+        <figcaption align="center"><strong>Imagem 1</strong>: Exemplo de caverna no micro-mundo <strong>Wumpus World</strong>
+            <br /> 
+                Ref.: <a href="https://www.geeksforgeeks.org/ai-the-wumpus-world-description/">Geeksforgeeks</a>
+        </figcaption>
+</figure>
+
+<h2 id="lógica">Lógica</h2>
+
+<p align="justify">
+A lógica abrange diversos elementos essenciais na análise linguística e raciocínio formal, podendo ser expressa por meiode sintaxe, sentenças e semânticas. A <u>sintaxe,</u> componente do sistema linguístico, estabelece as relações formais na estrutura das sentenças. Já as <u>sentenças</u> bem construídas seguem essa estrutura, enquanto sentenças mal construídas a violam. A <u>semântica</u>, por sua vez, lida com o sentido das palavras e a interpretação de sentenças, definindo a verdade em diferentes contextos. 
+<br /><br />
+Para uma sentença α ser verdadeira em um modelo m, dizemos que m satisfaz α. A relação lógica entre sentenças, denotada por <strong>α ⊨ β</strong>, indica que α implica β, e a verdade de β depende da verdade de α. A <u>implicação</u> e a <u>inferência lógica</u> (processo de dedução ou conclusão lógica de informações novas com base em informações existentes) são expressas pela inclusão de conjuntos de modelos: α⊨β se e somente se o conjunto de modelos de α está contido no conjunto de modelos de β. Este raciocínio lógico pode ser aplicado em contextos como o mundo wumpus, exemplificando a aplicação prática desses conceitos.
+<br /><br />
+Na lógica, a <strong>notação 1</strong>, conforme mostra a <strong>imagem 2</strong> a baixo, indica que um algoritmo de inferência <strong><i>i</i></strong> pode derivar <strong><i>α</i></strong> da base de conhecimento <strong><i>KB</i></strong>, ou seja, <strong><i>α</i></strong> é obtido por meio de <strong><i>i</i></strong> a partir <strong><i>KB</i></strong>.
+<figure>
+    <img src="/img/notacao1_logica.png" width="200" height="200" align="center" />
+        <figcaption align="center"><strong>Imagem 2</strong>: Notação 1.
+            <br /> 
+                Ref.: autoria própria.
+        </figcaption>
+</figure>
+<br />
+Um algoritmo de inferência é considerado completo se pode derivar qualquer sentença relacionada à base de conhecimento. Sendo assim, podemos utilizar a sintaxe da lógica proposicional, um ramo da lóge lida com o estudo e manipulação de proposições, que são afirmações ou declarações que podem ser verdadeiras ou falsas. Nesse sistema, as proposições são representadas por símbolos, como A, B ou C, e são combinadas utilizando conectivos lógicos, como:
+<br /><br />
+<strong>∧</strong> (AND)
+<br /><br />
+<strong>∨</strong> (OU)
+<br /><br />
+<strong>¬</strong> ou <strong>~</strong> (NÃO)
+<br /><br />
+<strong>⇒</strong> (IMPLICA)
+<br /><br />
+<strong>⇔</strong> (SE e SOMENTE SE)
+<br /><br />
+<strong>⊕</strong> (OU EXCLUSIVO).
+<br /><br />
+Outra ferramenta interessante é a gramática BNF (Backus–Naur Form), é usada para definir a estrutura de sentenças em lógica proposicional, considerando precedências de operadores da mais alta para mais baixa.
+<br /><br />
+Por fim, a semântica estabelece regras para determinar a verdade de uma sentença em relação a um modelo específico. Para sentenças complexas, cinco regras se aplicam a quaisquer sub-sentenças <strong>A</strong> e <strong>B</strong> em qualquer modelo <strong>m</strong> (considerando <u><i>sse</i></u> como <u> se e somente se</u>). São elas:
+<br /><br />
+¬A é verdadeiro <u>sse</u> A é falso em m.
+<br /><br />
+A∧B é verdadeiro <u>sse</u> A e B são verdadeiros em m.
+<br /><br />
+A∨B é verdadeiro <u>sse</u> A ou B for verdadeiro em m.
+<br /><br />
+A ⇒ B é verdadeiro, a menos que A seja verdadeiro e B seja falso em m.
+<br /><br />
+A ⇔ B é verdadeiro <u>sse</u> A e B são ambos verdadeiros ou ambos falsos em m.
+<br /><br />
+Confira a <strong>Imagem 3</strong> a baixo, a qual representa uma tabela verdade para os valores de A e B de acordo com as regras a cima:
+<figure>
+    <img src="/img/tabela_verdade_logica.png" align="center" />
+        <figcaption align="center"><strong>Imagem 2</strong>: Tabela Verdade para os valores das sub-sentenças A e B.
+            <br /> 
+                Ref.: autoria própria.
+        </figcaption>
+</figure>
+</p>
+
+<h2 id="processo-de-inferência">Processo de Inferência</h2>
+
+<p align="justify">
+A inteligência artificial (IA) faz uso de uma base de conhecimento (KB) na qual são armazenadas afirmações sobre o mundo. Sendo assim, o processo de inferência em IA é uma ferramenta que envolve o raciocínio sobre essa base para tomar decisões e, para isso, utiliza-se de <u>equivalência lógica</u> (≡): duas sentenças são equivalentes se são verdadeiras para o mesmo conjunto de modelos. (<strong>Ex.:</strong> A v B ≡ B v A)
+<br /><br />
+Outro conceito importanté é a <u>validade de uma sentença</u>, chamada de <strong>tautologia</strong>, a qual ocorre quando é verdadeira em todos os modelos. Por outro lado, existe um teroema muito importante denominado <strong>Teorema da Dedução</strong> o qual afirma que uma sentença β é consequência de α se e somente se α implica em β. Isso se relaciona com a validade e <strong>satisfatibilidade</strong> que, por sua vez, consiste em determinar que uma sentença é satisfazível se for verdadeira em algum modelo.
+<br /><br />
+Existem diversas outras ferramentas utilizadas na lógica, tais como o método de prova conhecido como <i>reductio ad absurdum</i> (redução por contradição/absurdo), que busca estabelecer a veracidade de uma afirmação ao assumir o contrário dela e, em seguida, demonstrar que essa suposição levaria a uma contradição ou a uma conclusão absurda. Outras técnicas como o <strong>Modus Ponens</strong> e a <strong>Eliminação por Conjunção</strong> são regras de inferência sólidas que formam a base para derivar outras regras, sendo a completude dos algoritmos de inferência, especialmente em estratégias como a busca de aprofundamento iterativo, crucial para garantir que todas as soluções alcançáveis sejam encontradas. Confira a seguir uma explicação mais detalhada dessas regras.
+<br /><br />
+<strong>1 - <i>Modus Ponens</i>:</strong> se há uma sentença condicional do tipo "Se A ⇒ B" e sabemos que A é verdadeiro, então podemos inferir que B também é verdadeiro. Isso pode ser escrito da seguinte forma:
+<figure>
+    <img src="/img/Modus_Ponens.png" align="center" />
+        <figcaption align="center"><strong>Imagem 3</strong>: escrita formal do <i>Modus Ponens</i>.
+            <br /> 
+                Ref.: autoria própria.
+        </figcaption>
+</figure>
+<br />
+<strong>2 - Eliminação por Conjunção (And-Elimination):</strong> se soubermos que uma conjunção (por exemplo, A ∧ B) é verdadeira, podemos inferir que cada componente individual (A e B) também é verdadeiro. Isso pode ser escrito da seguinte forma:
+<figure>
+    <img src="/img/Eliminação_por_Conjunção.png" align="center" />
+        <figcaption align="center"><strong>Imagem 4</strong>: escrita formal da Eliminação por Conjunção.
+            <br /> 
+                Ref.: autoria própria.
+        </figcaption>
+</figure>
+<br /><br />
+Um bom exemplo de regra derivada do <i>Modus Ponens</i> e da Eliminação por Conjunção é a <strong>Eliminação Bicondicional</strong>. Nela, o bicondicional (↔) entre duas sentenças, por exemplo, α ↔ β, pode ser expresso como (α → β) ∧ (β → α).
+<br /><br />
+Por fim, vale ressaltar que os algoritmos de pesquisa, como a pesquisa de aprofundamento iterativo, garantem completude ao encontrar qualquer objetivo atingível. No entanto, se as regras de inferência disponíveis são inadequadas, conclui-se que o objetivo não é alcançável, pois não há uma prova possível utilizando apenas essas regras. Além disso, existe uma regra denominada <u>inferência por resolução</u>, a qual é usada para inferir novas cláusulas a partir de cláusulas existentes. Esta regra opera identificando dois literais complementares (um é a negação do outro) em diferentes cláusulas e removendo-os, resultando em uma nova cláusula que contém os literais restantes (resolução de unidade).
+<br /><br />
+A regra de inferência por resolução, quando combinada com um algoritmo de procura, forma um algoritmo de inferência completo. Essa regra pode ser generalizada para a resolução total, onde duas cláusulas produzem uma nova contendo todos os literais das cláusulas originais, exceto os complementares. Tal cláusula resultante deve conter apenas uma cópia de cada literal, e a remoção de múltiplas cópias é chamada de <strong>fatoração</strong>. Essas estratégias são essenciais para uma inferência lógica eficaz.
+</p>
+
+<h2 id="agente-baseado-em-lógica-proposicional">Agente baseado em Lógica Proposicional</h2>
+
+<p align="justify">
+Um Agente baseado em Lógica Proposicional refere-se a um agente de inteligência artificial que utiliza a lógica proposicional como base para representar o conhecimento e realizar inferências. Nesse contexto, a lógica proposicional é uma forma de lógica que lida com proposições ou declarações que podem ser verdadeiras ou falsas. Esse tipo de agente utiliza regras de inferência lógica para processar informações, tomar decisões e agir no ambiente.
+<br /><br />
+As implicações desse tipo de agente incluem a capacidade de representar conhecimento de maneira declarativa, expressar relações lógicas entre proposições e realizar inferências para tomar decisões. No entanto, a lógica proposicional tem suas limitações, pois lida apenas com sentenças simples, sem considerar a estrutura interna das proposições. Isso significa que, embora seja eficaz para representar conhecimento em domínios específicos, pode ser menos expressiva em comparação com formas mais avançadas de representação de conhecimento, como a <u>lógica de primeira ordem</u> (ou cálculo de predicados de primeira ordem). Portanto, a escolha de um agente baseado em lógica proposicional dependerá da natureza do problema e da complexidade das relações a serem representadas e inferidas.
+</p>
+
+<h2 id="conclusões">Conclusões</h2>
+
+<p align="justify">
+Neste artigo, foram abordados uma variedade de conceitos fundamentais relacionados à representação de conhecimento e raciocínio lógico. De início, foram abordados os agentes baseados em conhecimento, cuja capacidade de tomar decisões é fundamentada em processos de raciocínio sobre representações internas. Somado a isso, tais esses agentes utilizam a lógica como uma classe geral de representações para respaldar suas operações, sendo a base de conhecimento o componente central. Essa base, composta por sentenças que afirmam algo sobre o mundo, é manipulada por operações como TELL e ASK, permitindo a evolução do conhecimento por meio da inferência, sendo o problema de micromundo do Wumpus, um bom exemplo prático para aplicar esses conceitos. 
+<br /><br />
+Não obstante, a lógica proposicional, a qual utiliza-se de conectores lógicos como ∧ (AND), ∨ (OU), ⇒ (IMPLICA), ⇔ (SE e SOMENTE SE), ⊕ (OU EXCLUSIVO) e outros, se mostrou uma ferramenta crucial para a representação de sentenças de diferentes níveis de complexidade. Somado a isso, a semântica, que define as regras para determinar a verdade das sentenças em relação a modelos, foi explorada, assim como as <u>regras de inferência sólidas</u>, como o Modus Ponens e a Eliminação por Conjunto. Por fim, foram abordadas as implicações práticas desses conceitos em inferência por resolução, resolução de unidade e fatoração. 
+<br /><br />
+Por fim, é possivel concluir que algoritmos como a pesquisa de aprofundamento iterativo são completos, capazes de alcançar objetivos, desde que as regras de inferência disponíveis sejam adequadas. Em resumo, ao percorrer esses conceitos fundamentais, aprende-se as bases que sustentam a capacidade dos sistemas de IA em representar conhecimento, raciocinar logicamente e tomar decisões informadas.
+</p>
+
+<h2 id="referências">Referências</h2>
+
+<blockquote>
+  <p>SISTEMAS Inteligentes: Agentes Lógicos. [S. l.], 21 out. 2023. Disponível em: https://www.inf.ufsc.br/~alexandre.goncalves.silva/courses/14s2/ine5633/slides/aula1021.pdf. Acesso em: 13 nov. 2023.</p>
+</blockquote>
+
+<blockquote>
+  <p>AGENTES Baseados na Lógica Proposicional. [S. l.], 2014. Disponível em: https://slideplayer.com.br/slide/2262895/. Acesso em: 13 nov. 2023.</p>
+</blockquote>
+
+<blockquote>
+  <p>LÓGICA de primeira ordem. [S. l.], 2 set. 2022. Disponível em: https://pt.wikipedia.org/wiki/L%C3%B3gica_de_primeira_ordem. Acesso em: 13 nov. 2023.</p>
+</blockquote>

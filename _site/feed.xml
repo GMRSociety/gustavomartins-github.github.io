@@ -5,9 +5,495 @@
     <description>这里是 @Hux黄玄 的个人博客，与你一起发现更大的世界 | 要做一个有 swag 的程序员</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 14 Nov 2023 19:44:01 -0300</pubDate>
-    <lastBuildDate>Tue, 14 Nov 2023 19:44:01 -0300</lastBuildDate>
+    <pubDate>Thu, 16 Nov 2023 14:25:24 -0300</pubDate>
+    <lastBuildDate>Thu, 16 Nov 2023 14:25:24 -0300</lastBuildDate>
     <generator>Jekyll v4.3.2</generator>
+    
+      <item>
+        <title>Agentes Lógicos</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;“Aprendizado automático nos permite construir soluções de software que superam o entendimento humano e mostram que a inteligência artificial pode inervar qualquer indústria” - &lt;strong&gt;&lt;i&gt;Steve Jurvetson&lt;/i&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;impressões-iniciais&quot;&gt;Impressões Iniciais&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+Os algoritmos de agentes lógicos são ferramentas especialmente úteis para resolver problemas complexos em inteligência artificial. Somado a isso, tais algoritmos são utilizados em diversas tecnologias e domínios, tais como os Sistemas Especialistas e Big Data, evidenciando sua contribuir para o avanço da inteligência artificial em diversos domínios. Diante disso, o presente artigo tem como objetivo instruir o leitor um pouco mais sobre este universo.
+&lt;/p&gt;
+
+&lt;h2 id=&quot;algoritmos-de-agentes-lógicos-discussão-exemplo-prático-e-implementação&quot;&gt;Algoritmos de Agentes Lógicos: discussão, exemplo prático e implementação&lt;/h2&gt;
+&lt;p align=&quot;justify&quot;&gt;
+Os algoritmos de agentes lógicos desempenham um papel crucial na inteligência artificial, permitindo que os agentes ajam de maneira informada e lógica em ambientes complexos. Eles são fundamentais para a representação, inferência e tomada de decisões em contextos nos quais a lógica desempenha um papel central. Tais algoritmos são projetados para representar conhecimento de maneira formal. Isso pode envolver a utilização de lógica proposicional ou de primeira ordem para expressar informações sobre o mundo em que o agente opera. 
+&lt;br /&gt;&lt;br /&gt;
+Por sua vez, os algoritmos de inferência lógica são implementados para permitir que agentes derivem novas informações a partir do conhecimento existente. Isso é crucial para a capacidade do agente de tomar decisões informadas com base em raciocínio lógico. Além disso, vale ressaltar que a lógica é frequentemente utilizada na tomada de decisões, permitindo que os agentes avaliem condições, estabeleçam metas e escolham ações com base em uma análise lógica do ambiente. Diante do exposto, confira &lt;strong&gt;um exemplo prático&lt;/strong&gt; de algoritmo de agente lógico conhecido como &lt;i&gt;Semantic Network&lt;/i&gt;.
+&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+&lt;strong&gt;Semantic network (Rede Semântica): &lt;/strong&gt; Uma rede semântica é uma representação gráfica do conhecimento que utiliza nós e arestas para modelar relações semânticas entre conceitos. Cada nó representa um conceito, e as arestas indicam relações entre esses conceitos. Essas redes são usadas para capturar o significado e a interconexão de informações em um determinado domínio. Um bom exemplo é a &lt;u&gt;rede de similaridade semântica de artigos de PNL&lt;/u&gt; (Programação Neurolinguística) desenvolvido pela engenheira eletrônica e de comunicação elétrica Anukriti Ranjan, cujo algoritmo pode ser visto a seguir. Por fim, a saída do código pode ser vista pela &lt;strong&gt;Imagem 1&lt;/strong&gt; logo em seguida.
+&lt;br /&gt;&lt;br /&gt;
+&lt;strong&gt;Implementação da solução em &lt;u&gt;python&lt;/u&gt;:&lt;/strong&gt;
+&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;
+REF: https://towardsdatascience.com/semantic-similarity-networks-9aca31082d8e
+
+Obs.: baixe as seguintes bibliotecas (pip3 para linux e pip para windows)
+
+1) sentence_transformers
+2) seaborn
+3) bokeh
+
+&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sentence_transformers&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SentenceTransformer&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sklearn.metrics&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DistanceMetric&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sklearn.cluster&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AgglomerativeClustering&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;seaborn&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sns&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bokeh.palettes&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;viridis&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;networkx&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nx&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;#document embeddings
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;embedder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;SentenceTransformer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;allenai/specter&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;corpus&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df_nlp_filtered&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;papers&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;tolist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;corpus_embeddings&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;embedder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;corpus&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;#distance measures
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dist&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DistanceMetric&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;get_metric&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;euclidean&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;dist_scores&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;pairwise&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;corpus_embeddings&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;all_scores&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dist_scores&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;triu_indices&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dist_scores&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;#visualizing the distance measures
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sns&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;figure.figsize&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)})&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#width=12, #height=8
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sns&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;histplot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;all_scores&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bins&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;#clustering
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clustering&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;AgglomerativeClustering&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n_clusters&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;affinity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;euclidean&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;distance_threshold&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;fit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;corpus_embeddings&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;clusters&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clustering&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;labels_&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;#np.unique(clusters).shape[0]
+#get the list of papers corresponding to each cluster
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;idx_sort&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;argsort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clusters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;sorted_clusters&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clusters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;idx_sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# returns the unique values, the index of the first occurrence of a value, and the count for each element
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vals&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;idx_start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;unique&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sorted_clusters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;return_counts&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;return_index&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# splits the indices into separate arrays
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clusters_split&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;idx_sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;idx_start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:])&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;#create a dict which will be used as attribute for the network of nodes
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color_options_clust&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;viridis&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clusters_split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;cluster_num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;node_title&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;color_clust&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#Loop through each community in the network
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cluster_number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cluster&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;enumerate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clusters_split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;#For each member of the community, add their community number and a distinct color
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cluster&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; 
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cluster_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;keys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;cluster_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cluster_number&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;node_title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;df_nlp_filtered&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;color_clust&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;color_options_clust&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cluster_number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+            
+&lt;span class=&quot;c1&quot;&gt;#get a threshold for edges
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;avg_dist_score&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;zeros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clusters_split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clust&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;enumerate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clusters_split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;clust_dist_score&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clust&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;node1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clust&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;node2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clust&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;clust_dist_score&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dist_scores&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;avg_dist_score&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clust_dist_score&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clust&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    
+&lt;span class=&quot;n&quot;&gt;threshold_graph&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;avg_dist_score&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;avg_dist_score&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;dist_scores_graph&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dist_scores&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;copy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;dist_scores_graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dist_scores_graph&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;threshold_graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;dist_scores_graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dist_scores_graph&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;threshold_graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;#create a network
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;G&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;from_numpy_matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dist_scores_graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;#add attributes
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;set_node_attributes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;G&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cluster_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;cluster_num&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;nx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;set_node_attributes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;G&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node_title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;node_title&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;nx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;set_node_attributes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;G&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;color_clust&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;color_clust&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;degrees&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;degree&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;G&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;nx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;set_node_attributes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;G&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;degree&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;values&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;degrees&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;#special functions for querying the network graph
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;make_node_dict_for_cluster&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cluster_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clusters_split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;G&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;node_dict&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clusters_split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cluster_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;node_dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;neighbors&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;G&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;neighbors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;neighbor_cluster&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;G&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;cluster_num&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;G&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;neighbors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;node_dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;neighbors&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;neighbors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;node_dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;neighbor_cluster&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;neighbor_cluster&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node_dict&lt;/span&gt;
+    
+ 
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;connections_with_cluster&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node_dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clust_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node_dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;keys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;clust_array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node_dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]][&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;neighbor_cluster&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;node_array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node_dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]][&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;neighbors&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:]:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;hstack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clust_array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node_dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;neighbor_cluster&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]])&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;hstack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node_array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node_dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;neighbors&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]])&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;count_nonzero&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clust_array&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clust_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;unique&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node_array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clust_array&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clust_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+    
+&lt;span class=&quot;c1&quot;&gt;#node dictionary for cluster 3
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dict_node_3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;make_node_dict_for_cluster&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clusters_split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;G&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#getting its relatedness with cluster 10
+&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;connections_with_cluster&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dict_node_3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+   
+   &lt;span class=&quot;c1&quot;&gt;#most central nodes of the network and least central 
+&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;#(not to be confused with importance)
+&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;#it gives information on intra network connectedness
+&lt;/span&gt;   
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get_most_central_nodes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;G&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clust_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;top_k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bottom_k&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clusters_split&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clusters_split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;G_new&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;G&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;subgraph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clusters_split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clust_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;sorted_dict&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sorted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;closeness_centrality&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;G_new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reverse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bottom_k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sorted_dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;keys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;top_k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:]&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sorted_dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;keys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;top_k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; 
+&lt;span class=&quot;nf&quot;&gt;get_most_central_nodes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;G&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clusters_split&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clusters_split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;figure&gt;
+    &lt;img src=&quot;/img/rede_semantica.webp&quot; align=&quot;center&quot; /&gt;
+        &lt;figcaption align=&quot;center&quot;&gt;&lt;strong&gt;Imagem 1&lt;/strong&gt;: Saída do código a cima: uma rede de similaridade semântica de artigos de PNL &lt;br /&gt;
+                Ref.: &lt;a href=&quot;https://towardsdatascience.com/semantic-similarity-networks-9aca31082d8e&quot;&gt;Redes de Similaridade Semântica: Mineração de conhecimento a partir da interconectividade de documentos&lt;/a&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot;&gt;
+&lt;strong&gt;Obs.:&lt;/strong&gt; Os agentes lógicos, embora sejam poderosos em certas aplicações, apresentam algumas limitações, tais como complexidade computacional,  dificuldade de manuseio de ambientes dinâmicos e problemas em compreender texto não estruturado.
+&lt;/p&gt;
+
+&lt;h2 id=&quot;expansão-do-uso-de-agentes-lógicos&quot;&gt;Expansão do uso de agentes lógicos&lt;/h2&gt;
+&lt;p align=&quot;justify&quot;&gt;
+Os agentes lógicos têm uma ampla variedade de aplicações em diferentes contextos devido a sua capacidade de representar conhecimento, realizar inferências e tomar decisões lógicas. Confira a seguir alguns exemplos de contextos de aplicação.
+&lt;/p&gt;
+
+&lt;ul align=&quot;justify&quot;&gt;
+
+    &lt;li&gt;&lt;strong&gt;Sistemas Especialistas:&lt;/strong&gt; os agentes lógicos, devido a sua capacidade de representação do conhecimento por meio de regras lógicas,é particularmente útil em domínios específicos, como medicina e engenharia, onde a decisão baseada em lógica especializada é crucial. &lt;/li&gt;
+
+    &lt;li&gt;&lt;strong&gt;Jogos Inteligentes:&lt;/strong&gt; agentes lógicos podem ser usados para criar NPCs (personagens não jogáveis) que simulem um jogador humano. Diante disso, esses personagens podem se adaptar ao ambiente do jogo e tomar decisões com base em regras pré-definidas. Jogos com &lt;a href=&quot;https://starcraft2.blizzard.com/pt-br/&quot;&gt;StarCraft II: Wings of Liberty&lt;/a&gt;, &lt;a href=&quot;https://www.leagueoflegends.com/pt-br/&quot;&gt;League of Legends&lt;/a&gt; e &lt;a href=&quot;https://lichess.org/&quot;&gt;Lichess&lt;/a&gt; são ótimos exemplos de aplicação de jogos onlines com NPCs inteligentes.&lt;/li&gt;
+
+    &lt;li&gt;&lt;strong&gt;Big Data:&lt;/strong&gt; atividades como análise de dados e mineração de conhecimento podem utilizar agentes lógicos para identificar padrões, tendências e relações lógicas em conjuntos de dados complexos. Isso é especialmente valioso em áreas como &lt;strong&gt;machine learning&lt;/strong&gt; e análise preditiva.&lt;/li&gt;
+
+    &lt;li&gt;&lt;strong&gt;Sistemas de Navegação Autônoma:&lt;/strong&gt; em sistemas autônomos, agentes lógicos desempenham um papel vital na navegação segura. Eles interpretam dados de sensores, tomam decisões lógicas sobre direção e evitam obstáculos com base em algoritmos de inferência. Alguns bons exemplos de sistemas de navegação autônoma são os robôs autônomos fornecidos pela empresa &lt;a href=&quot;https://bostondynamics.com/&quot;&gt;Dynamic Robots&lt;/a&gt; e os carros autônomos de nível 2 fornecidos pela &lt;a href=&quot;https://www.tesla.com/&quot;&gt;Tesla&lt;/a&gt;.&lt;/li&gt;
+
+    &lt;li&gt;&lt;strong&gt;Sistemas de Recomendação:&lt;/strong&gt; em relação aos serviços de streaming e e-commerce, por exemplo, agentes lógicos podem analisar preferências passadas, comportamentos de compra e informações contextuais a fim de oferecer recomendações personalizadas para os usuários.&lt;/li&gt;
+
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;conclusões&quot;&gt;Conclusões&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+    De acrodo com o exposto neste artigo, percebe-se que os agentes lógicos possuem um amplo domínio de aplicação, tais como sistemas especialistas, jogos, Big Data, etc. Por outro lado, a pesar de muito útil em divesos contextos, possui algumas limitações as quais devem ser ponderadas antes de utilizar tais ferramentas. Por fim, é possível inferir que, de acordo com sua ampla aplicabilidade e possíbilidade em lidar com problemas complexos, os agentes lógicos são extremamente impactantes para tecnologias de inteligência artificial, sendo este assunto de suma importância para a área.
+&lt;/p&gt;
+</description>
+        <pubDate>Tue, 14 Nov 2023 20:50:00 -0300</pubDate>
+        <link>http://localhost:4000/2023/11/14/P4-2023/</link>
+        <guid isPermaLink="true">http://localhost:4000/2023/11/14/P4-2023/</guid>
+        
+        <category>Portifólio 4</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Agentes Baseados em Conhecimento e Lógica</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;“A imaginação é mais importante que o conhecimento. O conhecimento é limitado, enquanto a imaginação abraça o mundo inteiro, estimulando o progresso, e dando origem à evolução.” - &lt;strong&gt;&lt;i&gt;Albert Einstein&lt;/i&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;impressões-iniciais&quot;&gt;Impressões Iniciais&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+No âmbito da inteligência artificial, a representação eficiente do conhecimento e o raciocínio lógico desempenham papéis essenciais. Ao estudar tais assuntos, emergem conceitos fundamentais que moldam a capacidade dos sistemas de IA em compreender e interagir com o mundo. Diante disso, o presente artigo possui o intúito de instruir o leitor um pouco mais sobre esse mundo, considerando aspectos como agentes baseados em conhecimento, lógica, inferência e, por fim, agentes baseados em lógica proposicional.
+&lt;/p&gt;
+
+&lt;h2 id=&quot;agente-baseado-em-conhecimento&quot;&gt;Agente Baseado em Conhecimento&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+Na área de Inteligência Artificial (IA), os agentes baseados em conhecimento utilizam um processo de raciocínio, ponderando sobre representações internas para tomar decisões. No entanto, os agentes atuais têm conhecimento limitado e inflexível. Somado a isso, a lógica é adotada como uma classe geral de representações para respaldar esses agentes, sendo a base de conhecimento (KB) seu componente central. A KB é composta por um conjunto de sentenças que expressam afirmações sobre o mundo, chamadas axiomas quando aceitas sem derivação. Essas sentenças são formuladas em uma linguagem de representação de conhecimento. Operações cruciais, como TELL para adicionar e ASK para consultar a KB, permitem a evolução do conhecimento. 
+&lt;br /&gt;&lt;br /&gt;
+Não obstante, a inferência, que é a capacidade de derivar novas sentenças, é fundamental e segue o requisito de consistência. Adicionalmente, duas abordagens para construir a KB são destacadas: a declarativa, onde o projetista especifica sentenças uma a uma, e a procedural, que codifica comportamentos desejados diretamente como código de programa. Esses elementos essenciais constituem a base para o funcionamento eficaz dos agentes baseados em conhecimento em sistemas de IA.
+&lt;br /&gt;&lt;br /&gt;
+De acordo com o artigo &lt;a href=&quot;https://gustavomartins-github.github.io/2023/08/08/P1-2023/&quot;&gt;Bert Raphael&lt;/a&gt; propôs ao mundo uma ideia conhecida como blocks world (problemas de micro-mundo), usado como caso de teste em pesquisas sobre sistemas de IA e lógica. Um bom exemplo de micromundo para ilustrar a aplicação de agentes baseados em conhecimento é o &lt;i&gt;Wumpus World&lt;/i&gt;. Nele, há uma caverna a qual é composta por câmaras conectadas por passagens, onde um temível monstro, o Wumpus, reside em alguma parte. O agente, munido de apenas uma flecha, pode eliminar o Wumpus, mas deve ser cauteloso, pois algumas câmaras abrigam poços mortais. Além disso, há um tesouro escondido em alguma câmara. Os elementos fundamentais incluem atuadores, uma medida de performance, um ambiente com sensores e um agente único. 
+&lt;br /&gt;&lt;br /&gt;
+O Wumpus World é determinístico, discreto, estático e de agente único. Sua natureza sequencial implica que a recompensa é obtida após uma série de ações. No entanto, o ambiente é parcialmente observável, apresentando desafios adicionais ao agente. Este cenário proporciona uma base prática para compreender como agentes baseados em conhecimento operam em ambientes complexos, tomando decisões informadas para maximizar o desempenho em meio a incertezas. Confira a &lt;strong&gt;Imagem 1&lt;/strong&gt; a seguir a qual carrega um exemplo de caverna no micro-mundo Wumpus World.
+&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;/img/wumpus_world.png&quot; align=&quot;center&quot; /&gt;
+        &lt;figcaption align=&quot;center&quot;&gt;&lt;strong&gt;Imagem 1&lt;/strong&gt;: Exemplo de caverna no micro-mundo &lt;strong&gt;Wumpus World&lt;/strong&gt;
+            &lt;br /&gt; 
+                Ref.: &lt;a href=&quot;https://www.geeksforgeeks.org/ai-the-wumpus-world-description/&quot;&gt;Geeksforgeeks&lt;/a&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;lógica&quot;&gt;Lógica&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+A lógica abrange diversos elementos essenciais na análise linguística e raciocínio formal, podendo ser expressa por meiode sintaxe, sentenças e semânticas. A &lt;u&gt;sintaxe,&lt;/u&gt; componente do sistema linguístico, estabelece as relações formais na estrutura das sentenças. Já as &lt;u&gt;sentenças&lt;/u&gt; bem construídas seguem essa estrutura, enquanto sentenças mal construídas a violam. A &lt;u&gt;semântica&lt;/u&gt;, por sua vez, lida com o sentido das palavras e a interpretação de sentenças, definindo a verdade em diferentes contextos. 
+&lt;br /&gt;&lt;br /&gt;
+Para uma sentença α ser verdadeira em um modelo m, dizemos que m satisfaz α. A relação lógica entre sentenças, denotada por &lt;strong&gt;α ⊨ β&lt;/strong&gt;, indica que α implica β, e a verdade de β depende da verdade de α. A &lt;u&gt;implicação&lt;/u&gt; e a &lt;u&gt;inferência lógica&lt;/u&gt; (processo de dedução ou conclusão lógica de informações novas com base em informações existentes) são expressas pela inclusão de conjuntos de modelos: α⊨β se e somente se o conjunto de modelos de α está contido no conjunto de modelos de β. Este raciocínio lógico pode ser aplicado em contextos como o mundo wumpus, exemplificando a aplicação prática desses conceitos.
+&lt;br /&gt;&lt;br /&gt;
+Na lógica, a &lt;strong&gt;notação 1&lt;/strong&gt;, conforme mostra a &lt;strong&gt;imagem 2&lt;/strong&gt; a baixo, indica que um algoritmo de inferência &lt;strong&gt;&lt;i&gt;i&lt;/i&gt;&lt;/strong&gt; pode derivar &lt;strong&gt;&lt;i&gt;α&lt;/i&gt;&lt;/strong&gt; da base de conhecimento &lt;strong&gt;&lt;i&gt;KB&lt;/i&gt;&lt;/strong&gt;, ou seja, &lt;strong&gt;&lt;i&gt;α&lt;/i&gt;&lt;/strong&gt; é obtido por meio de &lt;strong&gt;&lt;i&gt;i&lt;/i&gt;&lt;/strong&gt; a partir &lt;strong&gt;&lt;i&gt;KB&lt;/i&gt;&lt;/strong&gt;.
+&lt;figure&gt;
+    &lt;img src=&quot;/img/notacao1_logica.png&quot; width=&quot;200&quot; height=&quot;200&quot; align=&quot;center&quot; /&gt;
+        &lt;figcaption align=&quot;center&quot;&gt;&lt;strong&gt;Imagem 2&lt;/strong&gt;: Notação 1.
+            &lt;br /&gt; 
+                Ref.: autoria própria.
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;br /&gt;
+Um algoritmo de inferência é considerado completo se pode derivar qualquer sentença relacionada à base de conhecimento. Sendo assim, podemos utilizar a sintaxe da lógica proposicional, um ramo da lóge lida com o estudo e manipulação de proposições, que são afirmações ou declarações que podem ser verdadeiras ou falsas. Nesse sistema, as proposições são representadas por símbolos, como A, B ou C, e são combinadas utilizando conectivos lógicos, como:
+&lt;br /&gt;&lt;br /&gt;
+&lt;strong&gt;∧&lt;/strong&gt; (AND)
+&lt;br /&gt;&lt;br /&gt;
+&lt;strong&gt;∨&lt;/strong&gt; (OU)
+&lt;br /&gt;&lt;br /&gt;
+&lt;strong&gt;¬&lt;/strong&gt; ou &lt;strong&gt;~&lt;/strong&gt; (NÃO)
+&lt;br /&gt;&lt;br /&gt;
+&lt;strong&gt;⇒&lt;/strong&gt; (IMPLICA)
+&lt;br /&gt;&lt;br /&gt;
+&lt;strong&gt;⇔&lt;/strong&gt; (SE e SOMENTE SE)
+&lt;br /&gt;&lt;br /&gt;
+&lt;strong&gt;⊕&lt;/strong&gt; (OU EXCLUSIVO).
+&lt;br /&gt;&lt;br /&gt;
+Outra ferramenta interessante é a gramática BNF (Backus–Naur Form), é usada para definir a estrutura de sentenças em lógica proposicional, considerando precedências de operadores da mais alta para mais baixa.
+&lt;br /&gt;&lt;br /&gt;
+Por fim, a semântica estabelece regras para determinar a verdade de uma sentença em relação a um modelo específico. Para sentenças complexas, cinco regras se aplicam a quaisquer sub-sentenças &lt;strong&gt;A&lt;/strong&gt; e &lt;strong&gt;B&lt;/strong&gt; em qualquer modelo &lt;strong&gt;m&lt;/strong&gt; (considerando &lt;u&gt;&lt;i&gt;sse&lt;/i&gt;&lt;/u&gt; como &lt;u&gt; se e somente se&lt;/u&gt;). São elas:
+&lt;br /&gt;&lt;br /&gt;
+¬A é verdadeiro &lt;u&gt;sse&lt;/u&gt; A é falso em m.
+&lt;br /&gt;&lt;br /&gt;
+A∧B é verdadeiro &lt;u&gt;sse&lt;/u&gt; A e B são verdadeiros em m.
+&lt;br /&gt;&lt;br /&gt;
+A∨B é verdadeiro &lt;u&gt;sse&lt;/u&gt; A ou B for verdadeiro em m.
+&lt;br /&gt;&lt;br /&gt;
+A ⇒ B é verdadeiro, a menos que A seja verdadeiro e B seja falso em m.
+&lt;br /&gt;&lt;br /&gt;
+A ⇔ B é verdadeiro &lt;u&gt;sse&lt;/u&gt; A e B são ambos verdadeiros ou ambos falsos em m.
+&lt;br /&gt;&lt;br /&gt;
+Confira a &lt;strong&gt;Imagem 3&lt;/strong&gt; a baixo, a qual representa uma tabela verdade para os valores de A e B de acordo com as regras a cima:
+&lt;figure&gt;
+    &lt;img src=&quot;/img/tabela_verdade_logica.png&quot; align=&quot;center&quot; /&gt;
+        &lt;figcaption align=&quot;center&quot;&gt;&lt;strong&gt;Imagem 2&lt;/strong&gt;: Tabela Verdade para os valores das sub-sentenças A e B.
+            &lt;br /&gt; 
+                Ref.: autoria própria.
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+
+&lt;h2 id=&quot;processo-de-inferência&quot;&gt;Processo de Inferência&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+A inteligência artificial (IA) faz uso de uma base de conhecimento (KB) na qual são armazenadas afirmações sobre o mundo. Sendo assim, o processo de inferência em IA é uma ferramenta que envolve o raciocínio sobre essa base para tomar decisões e, para isso, utiliza-se de &lt;u&gt;equivalência lógica&lt;/u&gt; (≡): duas sentenças são equivalentes se são verdadeiras para o mesmo conjunto de modelos. (&lt;strong&gt;Ex.:&lt;/strong&gt; A v B ≡ B v A)
+&lt;br /&gt;&lt;br /&gt;
+Outro conceito importanté é a &lt;u&gt;validade de uma sentença&lt;/u&gt;, chamada de &lt;strong&gt;tautologia&lt;/strong&gt;, a qual ocorre quando é verdadeira em todos os modelos. Por outro lado, existe um teroema muito importante denominado &lt;strong&gt;Teorema da Dedução&lt;/strong&gt; o qual afirma que uma sentença β é consequência de α se e somente se α implica em β. Isso se relaciona com a validade e &lt;strong&gt;satisfatibilidade&lt;/strong&gt; que, por sua vez, consiste em determinar que uma sentença é satisfazível se for verdadeira em algum modelo.
+&lt;br /&gt;&lt;br /&gt;
+Existem diversas outras ferramentas utilizadas na lógica, tais como o método de prova conhecido como &lt;i&gt;reductio ad absurdum&lt;/i&gt; (redução por contradição/absurdo), que busca estabelecer a veracidade de uma afirmação ao assumir o contrário dela e, em seguida, demonstrar que essa suposição levaria a uma contradição ou a uma conclusão absurda. Outras técnicas como o &lt;strong&gt;Modus Ponens&lt;/strong&gt; e a &lt;strong&gt;Eliminação por Conjunção&lt;/strong&gt; são regras de inferência sólidas que formam a base para derivar outras regras, sendo a completude dos algoritmos de inferência, especialmente em estratégias como a busca de aprofundamento iterativo, crucial para garantir que todas as soluções alcançáveis sejam encontradas. Confira a seguir uma explicação mais detalhada dessas regras.
+&lt;br /&gt;&lt;br /&gt;
+&lt;strong&gt;1 - &lt;i&gt;Modus Ponens&lt;/i&gt;:&lt;/strong&gt; se há uma sentença condicional do tipo &quot;Se A ⇒ B&quot; e sabemos que A é verdadeiro, então podemos inferir que B também é verdadeiro. Isso pode ser escrito da seguinte forma:
+&lt;figure&gt;
+    &lt;img src=&quot;/img/Modus_Ponens.png&quot; align=&quot;center&quot; /&gt;
+        &lt;figcaption align=&quot;center&quot;&gt;&lt;strong&gt;Imagem 3&lt;/strong&gt;: escrita formal do &lt;i&gt;Modus Ponens&lt;/i&gt;.
+            &lt;br /&gt; 
+                Ref.: autoria própria.
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;br /&gt;
+&lt;strong&gt;2 - Eliminação por Conjunção (And-Elimination):&lt;/strong&gt; se soubermos que uma conjunção (por exemplo, A ∧ B) é verdadeira, podemos inferir que cada componente individual (A e B) também é verdadeiro. Isso pode ser escrito da seguinte forma:
+&lt;figure&gt;
+    &lt;img src=&quot;/img/Eliminação_por_Conjunção.png&quot; align=&quot;center&quot; /&gt;
+        &lt;figcaption align=&quot;center&quot;&gt;&lt;strong&gt;Imagem 4&lt;/strong&gt;: escrita formal da Eliminação por Conjunção.
+            &lt;br /&gt; 
+                Ref.: autoria própria.
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;br /&gt;&lt;br /&gt;
+Um bom exemplo de regra derivada do &lt;i&gt;Modus Ponens&lt;/i&gt; e da Eliminação por Conjunção é a &lt;strong&gt;Eliminação Bicondicional&lt;/strong&gt;. Nela, o bicondicional (↔) entre duas sentenças, por exemplo, α ↔ β, pode ser expresso como (α → β) ∧ (β → α).
+&lt;br /&gt;&lt;br /&gt;
+Por fim, vale ressaltar que os algoritmos de pesquisa, como a pesquisa de aprofundamento iterativo, garantem completude ao encontrar qualquer objetivo atingível. No entanto, se as regras de inferência disponíveis são inadequadas, conclui-se que o objetivo não é alcançável, pois não há uma prova possível utilizando apenas essas regras. Além disso, existe uma regra denominada &lt;u&gt;inferência por resolução&lt;/u&gt;, a qual é usada para inferir novas cláusulas a partir de cláusulas existentes. Esta regra opera identificando dois literais complementares (um é a negação do outro) em diferentes cláusulas e removendo-os, resultando em uma nova cláusula que contém os literais restantes (resolução de unidade).
+&lt;br /&gt;&lt;br /&gt;
+A regra de inferência por resolução, quando combinada com um algoritmo de procura, forma um algoritmo de inferência completo. Essa regra pode ser generalizada para a resolução total, onde duas cláusulas produzem uma nova contendo todos os literais das cláusulas originais, exceto os complementares. Tal cláusula resultante deve conter apenas uma cópia de cada literal, e a remoção de múltiplas cópias é chamada de &lt;strong&gt;fatoração&lt;/strong&gt;. Essas estratégias são essenciais para uma inferência lógica eficaz.
+&lt;/p&gt;
+
+&lt;h2 id=&quot;agente-baseado-em-lógica-proposicional&quot;&gt;Agente baseado em Lógica Proposicional&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+Um Agente baseado em Lógica Proposicional refere-se a um agente de inteligência artificial que utiliza a lógica proposicional como base para representar o conhecimento e realizar inferências. Nesse contexto, a lógica proposicional é uma forma de lógica que lida com proposições ou declarações que podem ser verdadeiras ou falsas. Esse tipo de agente utiliza regras de inferência lógica para processar informações, tomar decisões e agir no ambiente.
+&lt;br /&gt;&lt;br /&gt;
+As implicações desse tipo de agente incluem a capacidade de representar conhecimento de maneira declarativa, expressar relações lógicas entre proposições e realizar inferências para tomar decisões. No entanto, a lógica proposicional tem suas limitações, pois lida apenas com sentenças simples, sem considerar a estrutura interna das proposições. Isso significa que, embora seja eficaz para representar conhecimento em domínios específicos, pode ser menos expressiva em comparação com formas mais avançadas de representação de conhecimento, como a &lt;u&gt;lógica de primeira ordem&lt;/u&gt; (ou cálculo de predicados de primeira ordem). Portanto, a escolha de um agente baseado em lógica proposicional dependerá da natureza do problema e da complexidade das relações a serem representadas e inferidas.
+&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusões&quot;&gt;Conclusões&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+Neste artigo, foram abordados uma variedade de conceitos fundamentais relacionados à representação de conhecimento e raciocínio lógico. De início, foram abordados os agentes baseados em conhecimento, cuja capacidade de tomar decisões é fundamentada em processos de raciocínio sobre representações internas. Somado a isso, tais esses agentes utilizam a lógica como uma classe geral de representações para respaldar suas operações, sendo a base de conhecimento o componente central. Essa base, composta por sentenças que afirmam algo sobre o mundo, é manipulada por operações como TELL e ASK, permitindo a evolução do conhecimento por meio da inferência, sendo o problema de micromundo do Wumpus, um bom exemplo prático para aplicar esses conceitos. 
+&lt;br /&gt;&lt;br /&gt;
+Não obstante, a lógica proposicional, a qual utiliza-se de conectores lógicos como ∧ (AND), ∨ (OU), ⇒ (IMPLICA), ⇔ (SE e SOMENTE SE), ⊕ (OU EXCLUSIVO) e outros, se mostrou uma ferramenta crucial para a representação de sentenças de diferentes níveis de complexidade. Somado a isso, a semântica, que define as regras para determinar a verdade das sentenças em relação a modelos, foi explorada, assim como as &lt;u&gt;regras de inferência sólidas&lt;/u&gt;, como o Modus Ponens e a Eliminação por Conjunto. Por fim, foram abordadas as implicações práticas desses conceitos em inferência por resolução, resolução de unidade e fatoração. 
+&lt;br /&gt;&lt;br /&gt;
+Por fim, é possivel concluir que algoritmos como a pesquisa de aprofundamento iterativo são completos, capazes de alcançar objetivos, desde que as regras de inferência disponíveis sejam adequadas. Em resumo, ao percorrer esses conceitos fundamentais, aprende-se as bases que sustentam a capacidade dos sistemas de IA em representar conhecimento, raciocinar logicamente e tomar decisões informadas.
+&lt;/p&gt;
+
+&lt;h2 id=&quot;referências&quot;&gt;Referências&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;SISTEMAS Inteligentes: Agentes Lógicos. [S. l.], 21 out. 2023. Disponível em: https://www.inf.ufsc.br/~alexandre.goncalves.silva/courses/14s2/ine5633/slides/aula1021.pdf. Acesso em: 13 nov. 2023.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;AGENTES Baseados na Lógica Proposicional. [S. l.], 2014. Disponível em: https://slideplayer.com.br/slide/2262895/. Acesso em: 13 nov. 2023.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;LÓGICA de primeira ordem. [S. l.], 2 set. 2022. Disponível em: https://pt.wikipedia.org/wiki/L%C3%B3gica_de_primeira_ordem. Acesso em: 13 nov. 2023.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Mon, 13 Nov 2023 02:00:00 -0300</pubDate>
+        <link>http://localhost:4000/2023/11/13/P4-2023/</link>
+        <guid isPermaLink="true">http://localhost:4000/2023/11/13/P4-2023/</guid>
+        
+        <category>Portifólio 4</category>
+        
+        
+      </item>
     
       <item>
         <title>Um pouco mais sobre CSPs</title>
